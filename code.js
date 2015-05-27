@@ -37,7 +37,7 @@ var cy = cytoscape({
             'target-arrow-color': 'data(AuthColor)'
     }),
     
-  // Call the Nodes and Edges
+// Call the Nodes and Edges
   elements: BlogEles
     
 });
@@ -56,8 +56,8 @@ var cose = {
     name: 'cose',
     padding: 5,
     nodeRepulsion: 4000000,
-    idealEdgeLength: 10,
-    edgeElasticity: 200,
+    idealEdgeLength: 1,
+    edgeElasticity: 100,
     animate: true
   };
 var cola = {
@@ -101,10 +101,8 @@ var breadthfirst = {
     animate: true
   };
 
-
 // Calls Desired Layout  
 cy.layout(cose);
-
 
 // Links Nodes to the "Content" Div
 cy.on('tap', 'node', function(){

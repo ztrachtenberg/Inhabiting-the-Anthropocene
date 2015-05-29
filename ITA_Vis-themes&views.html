@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Inhabiting the Anthropocene</title>
+		<style>
+            .container {
+                height: 1200px;
+                overflow: hidden;
+            }
+
+            .right {
+                height: 100%;
+                width: 50%;
+                float: right;
+            }
+
+            .left {
+                float: none; /* not needed, just for clarification */
+                background: #e8f6fe;
+                /* the next props are meant to keep this block independent from the other floated one */
+                width: auto;
+                overflow: hidden;
+            }
+            ​​
+			body {
+			    height: 100%
+ 				font: 14px helvetica neue, helvetica, arial, sans-serif;
+			}
+
+			#cy {
+  				height: 100%;
+  				width: 50%;
+  				position: absolute;
+  				left: 0;
+  				top: 0;
+			}
+
+			#info {
+ 		 		color: #c88;
+  				font-size: 1em;
+  				position: absolute;
+  				z-index: -1;
+  				left: 1em;
+  				top: 1em;
+			}
+			
+		</style>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script src="cytoscape/dist/cytoscape.js"></script>
+		<script src="theme_&_view_elements.js"></script>
+		<script src="code.js"></script>
+	</head>
+	<body>
+	    <div class="container">
+		    <div class="left" id="cy"></div>
+		    <div class="right">
+		        <iframe src="http://sma.ztclasses.com/" name="content" frameborder="0" style="position:relative; height:100%; width:100%"></iframe>
+		    </div>
+		</div>
+	</body>
+</html>

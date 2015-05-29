@@ -7,16 +7,17 @@ var cy = cytoscape({
   style: cytoscape.stylesheet()
     .selector('node')
         .css({
-            'content': 'data(name)',
+            'width': 'data(weight)',
+            'height': 'data(weight)',
+//            'shape': 'data(faveShape)',
+//            'content': 'data(name)',
             'text-valign': 'center',
             'color': 'white',
             'text-outline-width': 2,
             'text-outcolor': '#888',
             'font-size': 10,
-            'background-color': 'data(color)',
-            'width': 'data(weight)',
-            'height': 'data(weight)'
-      })
+            'background-color': 'data(color)'
+    })
     .selector(':selected')
         .css({
             'content': 'data(name)',
@@ -29,7 +30,7 @@ var cy = cytoscape({
             'text-outcolor': 'black',
             'width': 'data(weight)',
             'height': 'data(weight)'
-      })
+    })
     .selector('edge')
         .css({
             'width': 'data(width)',
@@ -73,13 +74,23 @@ var cose = {
     name: 'cose',
     padding: 5,
     nodeRepulsion: 4000000,
-    idealEdgeLength: 10,
-    edgeElasticity: 200,
+    idealEdgeLength: 5,
+    edgeElasticity: 20,
+    fit: true,
+//    randomize: false,
     animate: true
   };
 
 // Calls Desired Layout  
 cy.layout(cose);
+
+cy.on('mouseover', 'node', function(){
+	this.select()
+});
+
+cy.on('mouseout', 'node', function(){
+	this.unselect()
+});
 
 // Links Nodes to the "Content" Div
 cy.on('tap', 'node', function(){
@@ -88,6 +99,12 @@ cy.on('tap', 'node', function(){
     } catch(e){ // fall back on url change
         window.location.href = this.data('href');
     }
+});
+
+cy.on('layoutstop', function() {
+    cy.maxZoom(1);
+    cy.fit();
+    cy.minZoom(1);
 });
 
 }); // on dom ready

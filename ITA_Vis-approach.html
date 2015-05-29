@@ -4,22 +4,23 @@
 		<title>Inhabiting the Anthropocene</title>
 		<style>
             .container {
-                height: 1200px;
-                overflow: hidden;
+                height: 800px;
+                overflow: scroll;
             }
 
             .right {
                 height: 100%;
                 width: 50%;
                 float: right;
+                overflow: scroll;
+                padding: 25px;
             }
 
             .left {
-                float: left; /* not needed, just for clarification */
-                background: #e8f6fe;
+                float: none; /* not needed, just for clarification */
                 /* the next props are meant to keep this block independent from the other floated one */
                 width: 50%;
-                overflow: hidden;
+                overflow: scroll;
             }
             
             .hovered {
@@ -36,7 +37,6 @@
   				height: 100%;
   				width: 50%;
   				position: absolute;
-                background: #e8f6fe;
   				left: 0;
   				top: 1;
 			}
@@ -59,6 +59,7 @@
 	<body>
 	    <div class="container">
 		    <div class="left">
+                <div align="center"><h1>Approaches</h1></div>
 		    	<select onchange="location = this.options[this.selectedIndex].value;">
                     <option value="ITA_Vis.html">Please select</option>
                     <option value="ITA_Vis-approach.html">Approaches</option>

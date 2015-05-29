@@ -103,8 +103,8 @@ cy.on('tap', 'node', function(){
 
 cy.on('layoutstop', function() {
     cy.maxZoom(1);
-    cy.fit();
     cy.minZoom(1);
+    cy.fit();
 });
 
 }); // on dom ready

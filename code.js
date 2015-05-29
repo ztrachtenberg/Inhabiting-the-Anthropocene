@@ -12,10 +12,11 @@ var cy = cytoscape({
 //            'shape': 'data(faveShape)',
 //            'content': 'data(name)',
             'text-valign': 'center',
-            'color': 'white',
-            'text-outline-width': 2,
+            'color': 'black',
+//            'text-outline-width': 2,
             'text-outcolor': '#888',
-            'font-size': 10,
+            'font-size': 30,
+            'text-color': 'black',
             'background-color': 'data(color)'
     })
     .selector(':selected')
@@ -102,8 +103,8 @@ cy.on('tap', 'node', function(){
 });
 
 cy.on('layoutstop', function() {
-    cy.maxZoom(1);
-    cy.minZoom(1);
+    cy.maxZoom(.5);
+    cy.minZoom(.5);
     cy.fit();
 });
 

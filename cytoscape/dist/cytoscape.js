@@ -4805,7 +4805,7 @@ this.cytoscape = cytoscape;
     var fontWeight = 'normal' || this.containerPropertyAsString('font-weight') || 'normal';
     var color = '#000' || this.containerPropertyAsString('color') || '#000';
     var textTransform = 'none' || this.containerPropertyAsString('text-transform') || 'none';
-    var fontSize = 16 || this.containerPropertyAsString('font-size') || 16;
+    var fontSize = 10 || this.containerPropertyAsString('font-size') || 10;
 
     // fill the style with the default stylesheet
     this

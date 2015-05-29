@@ -1,31 +1,33 @@
-//design notes
+//Design notes
 //Node size
-//--Approach nodes larger
-//--Post nodes as now
+//--Theme nodes largest, like Approach nodes in approach_elements
+//--Post nodes same as in approach elements
+//--View nodes smallest
 //Mouse behavior
 //--Nodes
-//----Approach node: onHover--show name; onClick--go to URL with description
+//----Theme node: onHover--show name; onClick--go to URL with description
+//----View node: onHover--show name; onClick--go to URL with description
 //----Post node: onHover--show name; onClick--go to URL with post
-//--Edges: none
+//--Edges
+//----Theme-view: nothing
+//----View-post: nothing
+//----Theme-post: onHover--show sentence about respective view (as per Post-view edge data)
 //Color scheme
 //--Nodes
-//----Approach nodes should have 4 different primary colors
-//----Post nodes--should have color of primary approach (see edges data below)
+//----Post nodes: color as per scheme in approach_elements
+//----Theme nodes: 4 other basic colors, other than those used for approaches
+//----View nodes: for each theme, two related but distinct colors (i.e. show that these views related to the theme, but they contrast with each other
 //--Edges
-//----"primary approach edges" should be same color as respective nodes (linked nodes will be same color as per above
-//----"secondary approach edges" should be black
+//----Theme-view: same color as view node
+//----View-post: same color as respective theme node
+//----Theme-post: same color as respective view node (as per Post-view edge data)
 
 
 var BlogEles = {
     nodes: [
-    //Approach nodes
-        { data: { id: 'D', name: 'Descriptive', href: 'http://sma.ztclasses.com/map.html#D', color: '#FFFF00', weight:120 } },
-		{ data: { id: 'I', name: 'Interpretive', href: 'http://sma.ztclasses.com/map.html#I', color: '#0000FF', weight:120 } },
-		{ data: { id: 'N', name: 'Normative', href: 'http://sma.ztclasses.com/map.html#N', color: '#FF0000', weight:120 } },
-		{ data: { id: 'P', name: 'Practical', href: 'http://sma.ztclasses.com/map.html#P', color: '#009933', weight:120 } },
     //Post nodes
         { data: { id: '1', name: 'Of Property', href: 'http://sma.ztclasses.com/post1.html', color: '#FF0000', weight:60 } },
-        { data: { id: '4', name: 'Organisms as Ecosystem Engineers', href: 'http://sma.ztclasses.com/post4.html', color: '#FFFF00', weight:60 } },
+        { data: { id: '4', name: 'Organisms as Ecosystem Engineers', href: 'http://sma.ztclasses.com/post4', color: '#FFFF00', weight:60 } },
         { data: { id: '13', name: '"Diachronous Beginnings of the Anthropocene: The Lower Bounding Surface of Anthropogenic Deposits"', href: 'http://sma.ztclasses.com/post13.html', color: '#0000FF', weight:60 } },
         { data: { id: '14', name: 'Building "Equitable" Urban Resilience: The Challenge for Cities', href: 'http://sma.ztclasses.com/post14.html', color: '#009933', weight:60 } },
         { data: { id: '17', name: 'Principles of Tsawalk: An Indigenous Approach to Global Crisis', href: 'http://sma.ztclasses.com/post17.html', color: '#0000FF', weight:60 } },
@@ -39,9 +41,50 @@ var BlogEles = {
         { data: { id: '29', name: "Habitability's Non-Inevitability", href: 'http://sma.ztclasses.com/post29.html', color: '#0000FF', weight:60 } },
         { data: { id: '31', name: 'Habitability as a commons: Fearing a tragedy of human(ized) nature', href: 'http://sma.ztclasses.com/post31.html', color: '#FFFF00', weight:60 } },
         { data: { id: '32', name: 'Toward a More Than Human Anthropocene', href: 'http://sma.ztclasses.com/post32.html', color: '#0000FF', weight:60 } },
-        { data: { id: '36', name: 'The Dust of Civilization', href: 'http://sma.ztclasses.com/post36.html', color: '#FFFF00', weight:60 } }
+        { data: { id: '36', name: 'The Dust of Civilization', href: 'http://sma.ztclasses.com/post36.html', color: '#FFFF00', weight:60 } },
+	//Theme nodes
+	    { data: { id: 'H', name: 'History', color: '#9900FF', weight:120 } },
+		{ data: { id: 'F', name: 'Future', color: '#996633', weight:120 } },
+		{ data: { id: 'A', name: 'Agency', color: '#009999', weight:120 } },
+		{ data: { id: 'L', name: 'Limits', color: '#FF99CC', weight:120 } },
+    //Approach nodes
+        { data: { id: 'D', name: 'Descriptive', href: 'http://sma.ztclasses.com/map.html#D', color: '#FFFF00', weight:120 } },
+		{ data: { id: 'I', name: 'Interpretive', href: 'http://sma.ztclasses.com/map.html#I', color: '#0000FF', weight:120 } },
+		{ data: { id: 'N', name: 'Normative', href: 'http://sma.ztclasses.com/map.html#N', color: '#FF0000', weight:120 } },
+		{ data: { id: 'P', name: 'Practical', href: 'http://sma.ztclasses.com/map.html#P', color: '#009933', weight:120 } },
 	],	
     edges: [
+    //Theme 1 edges
+        { data: { source: '1', target: 'A', AuthColor: 'red', Arrow: 'none' } },
+        { data: { source: '4', target: 'A', AuthColor: 'red', Arrow: 'none' } },
+        { data: { source: '13', target: 'H', AuthColor: 'red', Arrow: 'none' } },
+        { data: { source: '14', target: 'L', AuthColor: 'red', Arrow: 'none' } },
+        { data: { source: '17', target: 'A', AuthColor: 'red', Arrow: 'none' } },
+        { data: { source: '18', target: 'H', AuthColor: 'red', Arrow: 'none' } },
+        { data: { source: '22', target: 'A', AuthColor: 'red', Arrow: 'none' } },
+        { data: { source: '23', target: 'L', AuthColor: 'red', Arrow: 'none' } },
+        { data: { source: '25', target: 'L', AuthColor: 'red', Arrow: 'none' } },
+        { data: { source: '26', target: 'A', AuthColor: 'red', Arrow: 'none' } },
+        { data: { source: '27', target: 'L', AuthColor: 'red', Arrow: 'none' } },
+        { data: { source: '28', target: 'A', AuthColor: 'red', Arrow: 'none' } },
+        { data: { source: '29', target: 'H', AuthColor: 'red', Arrow: 'none' } },
+        { data: { source: '31', target: 'F', AuthColor: 'red', Arrow: 'none' } },
+        { data: { source: '32', target: 'A', AuthColor: 'red', Arrow: 'none' } },
+        { data: { source: '36', target: 'F', AuthColor: 'red', Arrow: 'none' } },
+    //Theme 2 edges
+        { data: { source: '4', target: 'H', AuthColor: 'red', Arrow: 'none' } },
+        { data: { source: '14', target: 'H', AuthColor: 'red', Arrow: 'none' } },
+        { data: { source: '17', target: 'H', AuthColor: 'red', Arrow: 'none' } },
+        { data: { source: '22', target: 'H', AuthColor: 'red', Arrow: 'none' } },
+        { data: { source: '23', target: 'F', AuthColor: 'red', Arrow: 'none' } },
+        { data: { source: '25', target: 'A', AuthColor: 'red', Arrow: 'none' } },
+        { data: { source: '26', target: 'F', AuthColor: 'red', Arrow: 'none' } },
+        { data: { source: '27', target: 'F', AuthColor: 'red', Arrow: 'none' } },
+        { data: { source: '28', target: 'H', AuthColor: 'red', Arrow: 'none' } },
+        { data: { source: '29', target: 'F', AuthColor: 'red', Arrow: 'none' } },
+        { data: { source: '31', target: 'L', AuthColor: 'red', Arrow: 'none' } },
+        { data: { source: '32', target: 'L', AuthColor: 'red', Arrow: 'none' } },
+        { data: { source: '36', target: 'A', AuthColor: 'red', Arrow: 'none' } },
     //Primary approach edges
         { data: { source: '1', target: 'N', AuthColor: 'red', Arrow: 'none' } },
         { data: { source: '4', target: 'D', AuthColor: 'yellow', Arrow: 'none' } },
@@ -74,6 +117,5 @@ var BlogEles = {
         { data: { source: '31', target: 'I', AuthColor: 'black', Arrow: 'none' } },
         { data: { source: '32', target: 'D', AuthColor: 'black', Arrow: 'none' } },
         { data: { source: '36', target: 'P', AuthColor: 'black', Arrow: 'none' } }
-
     ]
 }

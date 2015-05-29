@@ -16,24 +16,6 @@ var BlogEles = {
         { data: { id: '29', name: "Habitability's Non-Inevitability", href: 'http://inhabitingtheanthropocene.com/2015/03/31/habitabilitys-non-inevitability/', color: '#86B342', weight:60 } },
         { data: { id: '31', name: 'Habitability as a commons: Fearing a tragedy of human(ized) nature', href: 'http://inhabitingtheanthropocene.com/2015/04/04/habitability-as-commons/', color: '#86B342', weight:60 } },
         { data: { id: '32', name: 'Toward a More Than Human Anthropocene', href: 'http://inhabitingtheanthropocene.com/2015/04/08/toward-a-more-than-human-anthropocene/', color: '#86B342', weight:60 } },
-        { data: { id: '36', name: 'The Dust of Civilization', href: 'http://inhabitingtheanthropocene.com/2015/04/11/the-dust-of-civilization/', color: '#86B342', weight:60 } }
-    ],
-    edges: [
-        { data: { source: '1', target: '32', AuthColor: 'red', Arrow: 'none' } },
-        { data: { source: '18', target: '1', AuthColor: 'red', Arrow: 'triangle' } },
-        { data: { source: '25', target: '27', AuthColor: 'red', Arrow: 'none' } },
-        { data: { source: '25', target: '28', AuthColor: 'red', Arrow: 'triangle' } },
-        { data: { source: '31', target: '36', AuthColor: 'red', Arrow: 'triangle' } },
-        { data: { source: '4', target: '22', AuthColor: 'green', Arrow: 'triangle' } },
-        { data: { source: '26', target: '31', AuthColor: 'green', Arrow: 'triangle' } },
-        { data: { source: '4', target: '18', AuthColor: 'green', Arrow: 'none' } },
-        { data: { source: '25', target: '22', AuthColor: 'green', Arrow: 'none' } },
-        { data: { source: '23', target: '25', AuthColor: 'magenta', Arrow: 'triangle' } },
-        { data: { source: '31', target: '14', AuthColor: 'magenta', Arrow: 'none' } },
-        { data: { source: '18', target: '23', AuthColor: 'orange', Arrow: 'triangle' } },
-        { data: { source: '36', target: '13', AuthColor: 'orange', Arrow: 'none' } },
-        { data: { source: '4', target: '18', AuthColor: 'orange', Arrow: 'triangle' } }
-=======
         { data: { id: '36', name: 'The Dust of Civilization', href: 'http://inhabitingtheanthropocene.com/2015/04/11/the-dust-of-civilization/', color: '#86B342', weight:60 } },
         { data: { id: 'ZT', name: 'Zev Trachtenberg', href: 'http//sma.ztclasses.com/#zt/', color: '#86B342', weight:60 } },
         { data: { id: 'KG', name: 'Organisms as Ecosystem Engineers', href: 'http//sma.ztclasses.com/bio#kg/', color: '#86B342', weight:60 } },

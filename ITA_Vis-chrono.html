@@ -18,7 +18,7 @@
                 float: none; /* not needed, just for clarification */
                 background: #e8f6fe;
                 /* the next props are meant to keep this block independent from the other floated one */
-                width: auto;
+                width: 50%;
                 overflow: hidden;
             }
             ​​
@@ -30,9 +30,10 @@
 			#cy {
   				height: 100%;
   				width: 50%;
+                background: #e8f6fe;
   				position: absolute;
   				left: 0;
-  				top: 0;
+  				top: 1;
 			}
 
 			#info {
@@ -52,7 +53,15 @@
 	</head>
 	<body>
 	    <div class="container">
-		    <div class="left" id="cy"></div>
+	        <div class="left">
+		    	<select onchange="location = this.options[this.selectedIndex].value;">
+                    <option value="ITA_Vis.html">Please select</option>
+                    <option value="ITA_Vis-approach.html">Approaches</option>
+                    <option value="ITA_Vis-author.html">Authors</option>
+                    <option value="ITA_Vis-chrono.html">Chronological</option>
+                </select>
+		        <div id="cy"></div>
+		    </div>
 		    <div class="right">
 		        <iframe src="http://sma.ztclasses.com/" name="content" frameborder="0" style="position:relative; height:100%; width:100%"></iframe>
 		    </div>

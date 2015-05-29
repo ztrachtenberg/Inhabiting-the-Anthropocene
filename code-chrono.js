@@ -103,7 +103,7 @@ var breadthfirst = {
 
 
 // Calls Desired Layout  
-cy.layout(cola);
+cy.layout(concentric);
 
 // Links Nodes to the "Content" Div
 cy.on('tap', 'node', function(){

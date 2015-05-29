@@ -29,21 +29,21 @@ var BlogEles = {
         { data: { id: '36', name: 'The Dust of Civilization', href: 'http://sma.ztclasses.com/post36.html', color: '#FFFF00', weight:60 } }
 	],	
     edges: [
-        { data: { source: '1', target: '4', AuthColor: 'red', Arrow: 'triangle' } },
-        { data: { source: '4', target: '13', AuthColor: 'red', Arrow: 'triangle' } },
-        { data: { source: '13', target: '14', AuthColor: 'red', Arrow: 'triangle' } },
-        { data: { source: '14', target: '17', AuthColor: 'red', Arrow: 'triangle' } },
-        { data: { source: '17', target: '18', AuthColor: 'red', Arrow: 'triangle' } },
-        { data: { source: '18', target: '22', AuthColor: 'red', Arrow: 'triangle' } },
-        { data: { source: '22', target: '23', AuthColor: 'red', Arrow: 'triangle' } },
-        { data: { source: '23', target: '25', AuthColor: 'red', Arrow: 'triangle' } },
-        { data: { source: '25', target: '26', AuthColor: 'red', Arrow: 'triangle' } },
-        { data: { source: '26', target: '27', AuthColor: 'red', Arrow: 'triangle' } },
-        { data: { source: '27', target: '28', AuthColor: 'red', Arrow: 'triangle' } },
-        { data: { source: '28', target: '29', AuthColor: 'red', Arrow: 'triangle' } },
-        { data: { source: '29', target: '31', AuthColor: 'red', Arrow: 'triangle' } },
-        { data: { source: '31', target: '32', AuthColor: 'red', Arrow: 'triangle' } },
-        { data: { source: '32', target: '36', AuthColor: 'red', Arrow: 'triangle' } }
+        { data: { source: '1', target: '4', AuthColor: 'red', width: 10, Arrow: 'triangle' } },
+        { data: { source: '4', target: '13', AuthColor: 'red', width: 10, Arrow: 'triangle' } },
+        { data: { source: '13', target: '14', AuthColor: 'red', width: 10, Arrow: 'triangle' } },
+        { data: { source: '14', target: '17', AuthColor: 'red', width: 10, Arrow: 'triangle' } },
+        { data: { source: '17', target: '18', AuthColor: 'red', width: 10, Arrow: 'triangle' } },
+        { data: { source: '18', target: '22', AuthColor: 'red', width: 10, Arrow: 'triangle' } },
+        { data: { source: '22', target: '23', AuthColor: 'red', width: 10, Arrow: 'triangle' } },
+        { data: { source: '23', target: '25', AuthColor: 'red', width: 10, Arrow: 'triangle' } },
+        { data: { source: '25', target: '26', AuthColor: 'red', width: 10, Arrow: 'triangle' } },
+        { data: { source: '26', target: '27', AuthColor: 'red', width: 10, Arrow: 'triangle' } },
+        { data: { source: '27', target: '28', AuthColor: 'red', width: 10, Arrow: 'triangle' } },
+        { data: { source: '28', target: '29', AuthColor: 'red', width: 10, Arrow: 'triangle' } },
+        { data: { source: '29', target: '31', AuthColor: 'red', width: 10, Arrow: 'triangle' } },
+        { data: { source: '31', target: '32', AuthColor: 'red', width: 10, Arrow: 'triangle' } },
+        { data: { source: '32', target: '36', AuthColor: 'red', width: 10, Arrow: 'triangle' } }
 
     ]
 }

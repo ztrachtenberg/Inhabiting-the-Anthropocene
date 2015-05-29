@@ -6,8 +6,8 @@
             .container {
                 height: 1200px;
                 overflow: hidden;
-            }
-
+            }     
+                
             .right {
                 height: 100%;
                 width: 50%;
@@ -16,9 +16,9 @@
 
             .left {
                 float: none; /* not needed, just for clarification */
-                background: #e8f6fe;
                 /* the next props are meant to keep this block independent from the other floated one */
-                width: auto;
+                background: #e8f6fe;
+                width: 50%;
                 overflow: hidden;
             }
             ​​
@@ -31,8 +31,9 @@
   				height: 100%;
   				width: 50%;
   				position: absolute;
+                background: #e8f6fe;
   				left: 0;
-  				top: 0;
+  				top: 1;
 			}
 
 			#info {
@@ -52,7 +53,15 @@
 	</head>
 	<body>
 	    <div class="container">
-		    <div class="left" id="cy"></div>
+		    <div class="left">
+		    	<select onchange="location = this.options[this.selectedIndex].value;">
+                    <option>Please select</option>
+                    <option value="http://www.apple.com/">Apple</option>
+                    <option value="http://www.bbc.com">BBC</option>
+                    <option value="http://www.facebook.com">Facebook</option>
+                </select>
+		        <div id="cy"></div>
+		    </div>
 		    <div class="right">
 		        <iframe src="http://inhabitingtheanthropocene.com/" name="content" frameborder="0" style="position:relative; height:100%; width:100%"></iframe>
 		    </div>

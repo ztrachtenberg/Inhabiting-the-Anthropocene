@@ -5,20 +5,12 @@
 		<link rel="stylesheet" href="style.css">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 		<script src="cytoscape/dist/cytoscape.js"></script>
-		<script src="approach_elements.js"></script>
+		<script src="Elements.js"></script>
 		<script src="code.js"></script>
 	</head>
 	<body>
 	    <div class="container">
-		    <div class="left">
-		    	<select onchange="location = this.options[this.selectedIndex].value;">
-                    <option value="ITA_Vis.html">Please select</option>
-                    <option value="ITA_Vis-approach.html">Approaches</option>
-                    <option value="ITA_Vis-author.html">Authors</option>
-                    <option value="ITA_Vis-chrono.html">Chronological</option>
-                </select>
-		        <div id="cy"></div>
-		    </div>
+		    <div class="left" id="cy"></div>
 		    <div class="right">
 		        <iframe src="http://inhabitingtheanthropocene.com/" name="content" frameborder="0" style="position:relative; height:100%; width:100%"></iframe>
 		    </div>

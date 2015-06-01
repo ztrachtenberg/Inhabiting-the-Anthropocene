@@ -9,7 +9,7 @@ var cy = cytoscape({
         .css({
             'width': 'data(weight)',
             'height': 'data(weight)',
-            'shape': 'data(faveShape)',
+//            'shape': 'data(faveShape)',
             'text-valign': 'center',
             'border-style': 'solid',
             'border-width': 1,

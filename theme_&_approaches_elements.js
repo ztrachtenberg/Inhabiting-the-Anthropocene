@@ -48,10 +48,10 @@ var BlogEles = {
 		{ data: { id: 'A', name: 'Agency', color: '#009999', weight:60, faveShape: 'rectangle' } },
 		{ data: { id: 'L', name: 'Limits', color: '#FF99CC', weight:60, faveShape: 'rectangle' } },
     //Approach nodes
-        { data: { id: 'D', name: 'Descriptive', href: 'http://sma.ztclasses.com/map.html#D', color: '#FFFF00', weight:60, faveShape: 'diamond' } },
-		{ data: { id: 'I', name: 'Interpretive', href: 'http://sma.ztclasses.com/map.html#I', color: '#0000FF', weight:60, faveShape: 'diamond' } },
-		{ data: { id: 'N', name: 'Normative', href: 'http://sma.ztclasses.com/map.html#N', color: '#FF0000', weight:60, faveShape: 'diamond' } },
-		{ data: { id: 'P', name: 'Practical', href: 'http://sma.ztclasses.com/map.html#P', color: '#009933', weight:60, faveShape: 'diamond' } },
+        { data: { id: 'D', name: 'Descriptive', href: 'http://sma.ztclasses.com/map.html#D', color: '#FFFF00', weight:60, faveShape: 'heptagon' } },
+		{ data: { id: 'I', name: 'Interpretive', href: 'http://sma.ztclasses.com/map.html#I', color: '#0000FF', weight:60, faveShape: 'heptagon' } },
+		{ data: { id: 'N', name: 'Normative', href: 'http://sma.ztclasses.com/map.html#N', color: '#FF0000', weight:60, faveShape: 'heptagon' } },
+		{ data: { id: 'P', name: 'Practical', href: 'http://sma.ztclasses.com/map.html#P', color: '#009933', weight:60, faveShape: 'heptagon' } },
 	],	
     edges: [
     //Theme 1 edges

@@ -9,7 +9,7 @@ var cy = cytoscape({
         .css({
             'width': 'data(weight)',
             'height': 'data(weight)',
-//            'shape': 'data(faveShape)',
+            'shape': 'data(faveShape)',
             'text-valign': 'center',
             'border-style': 'solid',
             'border-width': 1,
@@ -80,7 +80,6 @@ var circle = {
   ready: undefined, // callback on layoutready
   stop: undefined // callback on layoutstop
 };
-
 var concentric = {
     name: 'concentric',
     concentric: function(){ return this.data('weight'); },
@@ -108,7 +107,7 @@ cy.layout(cose);
 cy.on('mouseover', 'node', function(){
 	this.addClass('hovered')
 });
- cy.on('mouseout', 'node', function(){
+cy.on('mouseout', 'node', function(){
 	this.removeClass('hovered')
  });
 
@@ -143,6 +142,7 @@ cy.on('layoutstop', function() {
     cy.fit();
 });
 
+// Resizes Graph to fit viewport
 window.onresize = function() {
     cy.fit();
 };

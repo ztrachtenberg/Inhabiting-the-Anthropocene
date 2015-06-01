@@ -10,10 +10,10 @@ var cy = cytoscape({
             'width': 'data(weight)',
             'height': 'data(weight)',
 //            'shape': 'data(faveShape)',
-//            'content': 'data(name)',
             'text-valign': 'center',
+            'border-style': 'solid',
+            'border-width': 1,
             'color': 'black',
-//            'text-outline-width': 2,
             'text-outcolor': '#888',
             'font-size': 30,
             'background-color': 'data(color)'
@@ -125,7 +125,6 @@ cy.on('tap', 'node', function(){
 cy.on('tap', 'node', function (e) {
     var node = e.cyTarget;
     var neighborhood = node.neighborhood().add(node);
-
     cy.elements().addClass('faded');
     neighborhood.removeClass('faded');
 });

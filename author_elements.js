@@ -8,11 +8,30 @@
 //--Edges: none
 //Color scheme
 //--Nodes
-//----Author nodes: should have color of primary approach (from approach_elements)
+//----Author nodes: see chart below
 //----Post nodes: reading posts another basic color; reflection posts a second other basic color
 //--Edges: 
 //----Author-author edges: black
 //----Author-post edges: same color as type of post (i.e. reading or reflection)
+//Color palette
+//--Approach colors
+//----D: #AF923C (brownish)
+//----I: #9C3655 (reddish)
+//----N: #649C35 (greenish)
+//----P: #36367A (bluish)
+//--Author colors
+//---D color family
+//----Kiza: #FFEAAC
+//----Antonio: #D9BE6E
+//----Ingo: #876B19
+//----Lynn: #5C4501
+//---I color family
+//----Asa: #C2627F
+//----Noah: #791634
+//---N color family
+//----Zev: #8DC162
+//---P color family
+//----Meghan: #585898
 
 
 var BlogEles = {
@@ -37,26 +56,26 @@ var BlogEles = {
         { data: { id: '32', name: 'Toward a More Than Human Anthropocene', href: 'http://sma.ztclasses.com/post32.html', color: '#CC00CC', weight:60 } },
         { data: { id: '36', name: 'The Dust of Civilization', href: 'http://sma.ztclasses.com/post36.html', color: '#CC00CC', weight:60 } },
     //--Author nodes (color by primary approach)
-        { data: { id: 'ZT', name: 'Zev Trachtenberg', href: 'http//sma.ztclasses.com/#zt/', color: '#FF0000', weight:120 } },
-        { data: { id: 'KG', name: 'Kiza Gates', href: 'http//sma.ztclasses.com/bio#kg/', color: '#FFFF00', weight:120 } },
-        { data: { id: 'AR', name: 'Asa Randall', href: 'http//sma.ztclasses.com/bio#ar/', color: '#0000FF', weight:120 } },
-        { data: { id: 'MW', name: 'K. Meghan Wieters', href: 'http//sma.ztclasses.com/bio#mw/', color: '#009933', weight:120 } },
-        { data: { id: 'NT', name: 'Noah Theriault', href: 'http//sma.ztclasses.com/bio#nt/', color: '#0000FF', weight:120 } },
-        { data: { id: 'LS', name: 'Gerilyn Soreghan', href: 'http//sma.ztclasses.com/bio#ls/', color: '#FFFF00', weight:120 } },
-        { data: { id: 'IS', name: 'Ingo Schlupp', href: 'http//sma.ztclasses.com/post22/', color: '#FFFF00', weight:120 } },
-        { data: { id: 'AC', name: 'Antonio Martinez Castro', href: 'http//sma.ztclasses.com/bio#ac/', color: '#FFFF00', weight:120 } }
+        { data: { id: 'ZT', name: 'Zev Trachtenberg', href: 'http//sma.ztclasses.com/#zt/', color: '#8DC162', weight:120 } },
+        { data: { id: 'KG', name: 'Kiza Gates', href: 'http//sma.ztclasses.com/bio#kg/', color: '#FFEAAC', weight:120 } },
+        { data: { id: 'AR', name: 'Asa Randall', href: 'http//sma.ztclasses.com/bio#ar/', color: '#C2627F', weight:120 } },
+        { data: { id: 'MW', name: 'K. Meghan Wieters', href: 'http//sma.ztclasses.com/bio#mw/', color: '#585898', weight:120 } },
+        { data: { id: 'NT', name: 'Noah Theriault', href: 'http//sma.ztclasses.com/bio#nt/', color: '#791634', weight:120 } },
+        { data: { id: 'LS', name: 'Gerilyn Soreghan', href: 'http//sma.ztclasses.com/bio#ls/', color: '#5C4501', weight:120 } },
+        { data: { id: 'IS', name: 'Ingo Schlupp', href: 'http//sma.ztclasses.com/post22/', color: '#876B19', weight:120 } },
+        { data: { id: 'AC', name: 'Antonio Martinez Castro', href: 'http//sma.ztclasses.com/bio#ac/', color: '#D9BE6E', weight:120 } }
   
 	],	
     edges: [
 		//Author-author edges
-        { data: { source: 'AC', target: 'KG', AuthColor: 'black', width: 10, Arrow: 'none' } },
-        { data: { source: 'KG', target: 'AR', AuthColor: 'black', width: 10, Arrow: 'none' } },
-        { data: { source: 'AR', target: 'IS', AuthColor: 'black', width: 10, Arrow: 'none' } },
-        { data: { source: 'IS', target: 'LS', AuthColor: 'black', width: 10, Arrow: 'none' } },
-        { data: { source: 'LS', target: 'NT', AuthColor: 'black', width: 10, Arrow: 'none' } },
-        { data: { source: 'NT', target: 'ZT', AuthColor: 'black', width: 10, Arrow: 'none' } },
-        { data: { source: 'ZT', target: 'MW', AuthColor: 'black', width: 10, Arrow: 'none' } },
-        { data: { source: 'MW', target: 'AC', AuthColor: 'black', width: 10, Arrow: 'none' } },
+//        { data: { source: 'AC', target: 'KG', AuthColor: 'black', width: 10, Arrow: 'none' } },
+//        { data: { source: 'KG', target: 'AR', AuthColor: 'black', width: 10, Arrow: 'none' } },
+//        { data: { source: 'AR', target: 'IS', AuthColor: 'black', width: 10, Arrow: 'none' } },
+//        { data: { source: 'IS', target: 'LS', AuthColor: 'black', width: 10, Arrow: 'none' } },
+//        { data: { source: 'LS', target: 'NT', AuthColor: 'black', width: 10, Arrow: 'none' } },
+//        { data: { source: 'NT', target: 'ZT', AuthColor: 'black', width: 10, Arrow: 'none' } },
+//        { data: { source: 'ZT', target: 'MW', AuthColor: 'black', width: 10, Arrow: 'none' } },
+//        { data: { source: 'MW', target: 'AC', AuthColor: 'black', width: 10, Arrow: 'none' } },
 		//Author-post edges
 		//--Reading posts
         { data: { source: 'AC', target: '23', AuthColor: 'red', width: 10, Arrow: 'none' } },

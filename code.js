@@ -10,13 +10,12 @@ var cy = cytoscape({
             'width': 'data(weight)',
             'height': 'data(weight)',
 //            'shape': 'data(faveShape)',
-//            'content': 'data(name)',
             'text-valign': 'center',
+            'border-style': 'solid',
+            'border-width': 1,
             'color': 'black',
-//            'text-outline-width': 2,
             'text-outcolor': '#888',
             'font-size': 30,
-            'text-color': 'black',
             'background-color': 'data(color)'
     })
     .selector(':selected')
@@ -24,20 +23,44 @@ var cy = cytoscape({
             'content': 'data(name)',
             'text-valign': 'center',
             'text-outline-width': 1,
-            'background-color': 'purple',
-            'color': 'white',
+            'background-color': 'data(color)',
+            'color': 'black',
+            'z-index': 10,
             'target-arrow-color': 'black',
             'source-arrow-color': 'black',
             'text-outcolor': 'black',
             'width': 'data(weight)',
-            'height': 'data(weight)'
+            'height': 'data(weight)',
+            'border-color': 'red',
+            'border-width': 3
     })
+    .selector('node.hovered')
+        .css({
+            'content': 'data(name)',
+            'text-valign': 'center',
+            'text-outline-width': 1,
+            'color': 'white',
+            'target-arrow-color': 'black',
+            'source-arrow-color': 'black',
+            'z-index': 20,
+            'text-outcolor': 'black',
+            'width': 'data(weight)',
+            'height': 'data(weight)',
+            'border-color': 'red',
+            'border-width': 3
+    })        
     .selector('edge')
         .css({
             'width': 'data(width)',
             'line-color': 'data(AuthColor)',
             'target-arrow-shape': 'data(Arrow)',
             'target-arrow-color': 'data(AuthColor)'
+    })
+    
+    .selector('.faded')
+        .css({
+            'opacity': .25,
+            'text-opacity': 0
     }),
     
   // Call the Nodes and Edges
@@ -61,7 +84,6 @@ var circle = {
   ready: undefined, // callback on layoutready
   stop: undefined // callback on layoutstop
 };
-
 var concentric = {
     name: 'concentric',
     concentric: function(){ return this.data('weight'); },
@@ -76,22 +98,22 @@ var cose = {
     padding: 5,
     nodeRepulsion: 4000000,
     idealEdgeLength: 5,
+    nodeOverlap: 100,
     edgeElasticity: 20,
     fit: true,
-//    randomize: false,
     animate: true
   };
 
 // Calls Desired Layout  
 cy.layout(cose);
 
+// Highlights nodes on hover
 cy.on('mouseover', 'node', function(){
-	this.select()
+	this.addClass('hovered')
 });
-
 cy.on('mouseout', 'node', function(){
-	this.unselect()
-});
+	this.removeClass('hovered')
+ });
 
 // Links Nodes to the "Content" Div
 cy.on('tap', 'node', function(){
@@ -102,10 +124,31 @@ cy.on('tap', 'node', function(){
     }
 });
 
+// Add Faded Class
+cy.on('tap', 'node', function (e) {
+    var node = e.cyTarget;
+    var neighborhood = node.neighborhood().add(node);
+    cy.elements().addClass('faded');
+    neighborhood.removeClass('faded');
+});
+
+// Remove Faded Class
+cy.on('tap', function (e) {
+    if (e.cyTarget === cy) {
+        cy.elements().removeClass('faded');
+    }
+});
+
+// Sets zoom options
 cy.on('layoutstop', function() {
     cy.maxZoom(.5);
-    cy.minZoom(.5);
+    cy.minZoom(.25);
     cy.fit();
 });
+
+// Resizes Graph to fit viewport
+window.onresize = function() {
+    cy.fit();
+};
 
 }); // on dom ready

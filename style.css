@@ -1,6 +1,6 @@
             .container {
-                height: 800px;
-                overflow: scroll;
+                height: 99vh;
+                overflow: hidden;
             }
 
             .right {
@@ -8,42 +8,44 @@
                 width: 65%;
                 float: right;
                 overflow: scroll;
-                padding: 25px;
+                padding: 5px;
     			border-left: thick double #000000;
             }
 
             .left {
-                float: left; /* not needed, just for clarification */
-                /* the next props are meant to keep this block independent from the other floated one */
+                float: none;
+                height: 50%
                 width: 35%;
-                overflow: scroll;
+                overflow: hidden;
             }
             
             .bottomleft {
-            height: 50%;
-            width: 35%;
-            position: fixed;
-			left: 0;
-			bottom: 0;
+                height: 50%;
+                width: 35%;
+                position: absolute;
+			    left: 0;
+			    bottom: 0;
 			}
 			
 			.name {
-			float: left;
-			width: 80%;
+			    float: left;
+			    width: 70%;
 			}
 			
 			.control {
-			padding-right: 10%;
+			    float: right;
+			    width: 24%;
+                padding-top: 5%;
+                padding-right: 5%;
+			}
+            ​​
+			html, body {
+			    height: 98vh;
+ 				font: 14px helvetica neue, helvetica, arial, sans-serif;
 			}
 			
-            .hovered {
-            	background-color: purple;
-            	
-            	}
-            ​​
-			body {
-			    height: 100%
- 				font: 14px helvetica neue, helvetica, arial, sans-serif;
+			#control {
+			    float: left;
 			}
 			
 			#cy {
@@ -63,5 +65,11 @@
   				z-index: -1;
   				left: 1em;
   				top: 1em;
+			}
+			
+			#content {
+			    position: relative;
+			    height: 100%;
+			    width: 100%;
 			}
 	

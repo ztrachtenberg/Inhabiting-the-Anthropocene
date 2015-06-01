@@ -23,27 +23,31 @@ var cy = cytoscape({
             'content': 'data(name)',
             'text-valign': 'center',
             'text-outline-width': 1,
-            'background-color': 'purple',
-            'color': 'white',
+            'background-color': 'data(color)',
+            'color': 'black',
+            'z-index': 10,
             'target-arrow-color': 'black',
             'source-arrow-color': 'black',
             'text-outcolor': 'black',
             'width': 'data(weight)',
-            'height': 'data(weight)'
+            'height': 'data(weight)',
+            'border-color': 'red',
+            'border-width': 3
     })
     .selector('node.hovered')
         .css({
             'content': 'data(name)',
             'text-valign': 'center',
             'text-outline-width': 1,
-            'background-color': 'purple',
             'color': 'white',
             'target-arrow-color': 'black',
             'source-arrow-color': 'black',
             'z-index': 20,
             'text-outcolor': 'black',
             'width': 'data(weight)',
-            'height': 'data(weight)'
+            'height': 'data(weight)',
+            'border-color': 'red',
+            'border-width': 3
     })        
     .selector('edge')
         .css({
@@ -55,7 +59,7 @@ var cy = cytoscape({
     
     .selector('.faded')
         .css({
-            'opacity': 0.50,
+            'opacity': .25,
             'text-opacity': 0
     }),
     
@@ -80,7 +84,6 @@ var circle = {
   ready: undefined, // callback on layoutready
   stop: undefined // callback on layoutstop
 };
-
 var concentric = {
     name: 'concentric',
     concentric: function(){ return this.data('weight'); },
@@ -108,7 +111,7 @@ cy.layout(cose);
 cy.on('mouseover', 'node', function(){
 	this.addClass('hovered')
 });
- cy.on('mouseout', 'node', function(){
+cy.on('mouseout', 'node', function(){
 	this.removeClass('hovered')
  });
 
@@ -143,6 +146,7 @@ cy.on('layoutstop', function() {
     cy.fit();
 });
 
+// Resizes Graph to fit viewport
 window.onresize = function() {
     cy.fit();
 };

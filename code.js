@@ -25,6 +25,7 @@ var cy = cytoscape({
             'text-outline-width': 1,
             'background-color': 'purple',
             'color': 'white',
+            'z-index': 10,
             'target-arrow-color': 'black',
             'source-arrow-color': 'black',
             'text-outcolor': 'black',

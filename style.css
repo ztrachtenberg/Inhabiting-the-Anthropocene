@@ -1,6 +1,6 @@
             .container {
-                height: 800px;
-                overflow: scroll;
+                height: 99vh;
+                overflow: hidden;
             }
 
             .right {
@@ -8,12 +8,13 @@
                 width: 65%;
                 float: right;
                 overflow: scroll;
-                padding: 20px;
+                padding: 5px;
     			border-left: thick double #000000;
             }
 
             .left {
                 float: none;
+                height: 50%
                 width: 35%;
                 overflow: hidden;
             }
@@ -27,16 +28,17 @@
 			}
 			
 			.name {
-			float: left;
+			float: none;
 			width: 80%;
 			}
 			
 			.control {
-			padding-right: 10%;
+			    float: right;
+                padding-right: 5%;
 			}
             ​​
-			body {
-			    height: 100%
+			html, body {
+			    height: 98vh;
  				font: 14px helvetica neue, helvetica, arial, sans-serif;
 			}
 			
@@ -57,5 +59,11 @@
   				z-index: -1;
   				left: 1em;
   				top: 1em;
+			}
+			
+			#content {
+			    position: relative;
+			    height: 100%;
+			    width: 100%;
 			}
 	

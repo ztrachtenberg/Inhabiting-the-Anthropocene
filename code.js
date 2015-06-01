@@ -32,6 +32,19 @@ var cy = cytoscape({
             'width': 'data(weight)',
             'height': 'data(weight)'
     })
+    .selector('node.hovered')
+        .css({
+            'content': 'data(name)',
+            'text-valign': 'center',
+            'text-outline-width': 1,
+            'background-color': 'purple',
+            'color': 'white',
+            'target-arrow-color': 'black',
+            'source-arrow-color': 'black',
+            'text-outcolor': 'black',
+            'width': 'data(weight)',
+            'height': 'data(weight)'
+    })        
     .selector('edge')
         .css({
             'width': 'data(width)',
@@ -86,12 +99,12 @@ var cose = {
 cy.layout(cose);
 
 cy.on('mouseover', 'node', function(){
-	this.select()
+	this.addClass('hovered')
 });
 
-cy.on('mouseout', 'node', function(){
-	this.unselect()
-});
+ cy.on('mouseout', 'node', function(){
+	this.removeClass('hovered')
+ });
 
 // Links Nodes to the "Content" Div
 cy.on('tap', 'node', function(){

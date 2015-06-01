@@ -20,26 +20,32 @@
             }
             
             .bottomleft {
-            height: 50%;
-            width: 35%;
-            position: absolute;
-			left: 0;
-			bottom: 0;
+                height: 50%;
+                width: 35%;
+                position: absolute;
+			    left: 0;
+			    bottom: 0;
 			}
 			
 			.name {
-			float: none;
-			width: 80%;
+			    float: left;
+			    width: 70%;
 			}
 			
 			.control {
 			    float: right;
+			    width: 24%;
+                padding-top: 5%;
                 padding-right: 5%;
 			}
             ​​
 			html, body {
 			    height: 98vh;
  				font: 14px helvetica neue, helvetica, arial, sans-serif;
+			}
+			
+			#control {
+			    float: left;
 			}
 			
 			#cy {

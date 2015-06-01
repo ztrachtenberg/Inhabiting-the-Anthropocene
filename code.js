@@ -15,8 +15,7 @@ var cy = cytoscape({
             'color': 'black',
 //            'text-outline-width': 2,
             'text-outcolor': '#888',
-            'font-size': 30,
-            'text-color': 'black',
+            'font-size': 50,
             'background-color': 'data(color)'
     })
     .selector(':selected')
@@ -90,6 +89,7 @@ var cose = {
     padding: 5,
     nodeRepulsion: 4000000,
     idealEdgeLength: 5,
+    nodeOverlap: 100,
     edgeElasticity: 20,
     fit: true,
 //    randomize: false,

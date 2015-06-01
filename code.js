@@ -51,6 +51,12 @@ var cy = cytoscape({
             'line-color': 'data(AuthColor)',
             'target-arrow-shape': 'data(Arrow)',
             'target-arrow-color': 'data(AuthColor)'
+    })
+    
+    .selector('.faded')
+        .css({
+            'opacity': 0.50,
+            'text-opacity': 0
     }),
     
   // Call the Nodes and Edges
@@ -92,17 +98,16 @@ var cose = {
     nodeOverlap: 100,
     edgeElasticity: 20,
     fit: true,
-//    randomize: false,
     animate: true
   };
 
 // Calls Desired Layout  
 cy.layout(cose);
 
+// Highlights nodes on hover
 cy.on('mouseover', 'node', function(){
 	this.addClass('hovered')
 });
-
  cy.on('mouseout', 'node', function(){
 	this.removeClass('hovered')
  });
@@ -116,6 +121,23 @@ cy.on('tap', 'node', function(){
     }
 });
 
+// Add Faded Class
+cy.on('tap', 'node', function (e) {
+    var node = e.cyTarget;
+    var neighborhood = node.neighborhood().add(node);
+
+    cy.elements().addClass('faded');
+    neighborhood.removeClass('faded');
+});
+
+// Remove Faded Class
+cy.on('tap', function (e) {
+    if (e.cyTarget === cy) {
+        cy.elements().removeClass('faded');
+    }
+});
+
+// Sets zoom options
 cy.on('layoutstop', function() {
     cy.maxZoom(.5);
     cy.minZoom(.25);

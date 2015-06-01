@@ -21,7 +21,7 @@
             .bottomleft {
             height: 50%;
             width: 35%;
-            position: fixed;
+            position: absolute;
 			left: 0;
 			bottom: 0;
 			}

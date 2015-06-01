@@ -143,4 +143,8 @@ cy.on('layoutstop', function() {
     cy.fit();
 });
 
+window.onresize = function() {
+    cy.fit();
+};
+
 }); // on dom ready

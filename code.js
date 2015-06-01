@@ -41,6 +41,7 @@ var cy = cytoscape({
             'color': 'white',
             'target-arrow-color': 'black',
             'source-arrow-color': 'black',
+            'z-index': 20,
             'text-outcolor': 'black',
             'width': 'data(weight)',
             'height': 'data(weight)'
@@ -117,7 +118,7 @@ cy.on('tap', 'node', function(){
 
 cy.on('layoutstop', function() {
     cy.maxZoom(.5);
-    cy.minZoom(.5);
+    cy.minZoom(.25);
     cy.fit();
 });
 

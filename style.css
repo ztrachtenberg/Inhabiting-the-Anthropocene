@@ -8,15 +8,14 @@
                 width: 65%;
                 float: right;
                 overflow: scroll;
-                padding: 25px;
+                padding: 20px;
     			border-left: thick double #000000;
             }
 
             .left {
-                float: left; /* not needed, just for clarification */
-                /* the next props are meant to keep this block independent from the other floated one */
+                float: none;
                 width: 35%;
-                overflow: scroll;
+                overflow: hidden;
             }
             
             .bottomleft {
@@ -35,11 +34,6 @@
 			.control {
 			padding-right: 10%;
 			}
-			
-            .hovered {
-            	background-color: purple;
-            	
-            	}
             ​​
 			body {
 			    height: 100%

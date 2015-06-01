@@ -10,17 +10,25 @@
 	</head>
 	<body>
 	    <div class="container">
-	        <div class="left">
-		    	<select onchange="location = this.options[this.selectedIndex].value;">
-                    <option value="ITA_Vis.html">Please select</option>
-                    <option value="ITA_Vis-approach.html">Approaches</option>
-                    <option value="ITA_Vis-author.html">Authors</option>
-                    <option value="ITA_Vis-chrono.html">Chronological</option>
-                </select>
+		    <div class="left">
 		        <div id="cy"></div>
 		    </div>
 		    <div class="right">
 		        <iframe src="http://sma.ztclasses.com/" name="content" frameborder="0" style="position:relative; height:100%; width:100%"></iframe>
+		    </div>
+		    <div class="bottomleft">
+		    	<div align="center" class="name">
+		    		<h1>Chronological</h1>
+		    		<div align="right" class="control">
+		    			<select onchange="location = this.options[this.selectedIndex].value;" id="control">
+                   	 	<option value="ITA_Vis.html">Please select</option>
+                    	<option value="ITA_Vis-approach.html">Approaches</option>
+                    	<option value="ITA_Vis-author.html">Authors</option>
+                    	<option value="ITA_Vis-chrono.html">Chronological</option>
+                    	<option value="ITA_Vis-themes.html">Themes</option>
+                		</select>	
+                	</div>	
+		    	</div>
 		    </div>
 		</div>
 	</body>

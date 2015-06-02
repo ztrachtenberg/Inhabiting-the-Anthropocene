@@ -5,7 +5,7 @@
 
             .right {
                 height: 100%;
-                width: 65%;
+                width: 50%;
                 float: right;
                 overflow: scroll;
                 padding: 5px;
@@ -15,13 +15,13 @@
             .left {
                 float: none;
                 height: 50%
-                width: 35%;
+                width: 50%;
                 overflow: hidden;
             }
             
             .bottomleft {
                 height: 50%;
-                width: 35%;
+                width: 45%;
                 position: absolute;
 			    left: 0;
 			    bottom: 0;
@@ -50,7 +50,7 @@
 			
 			#cy {
   				height: 50%;
-  				width: 30%;
+  				width: 45%;
   				position: absolute;
   				left: 5;
   				top: 1;

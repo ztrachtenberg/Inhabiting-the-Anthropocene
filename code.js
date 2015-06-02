@@ -7,38 +7,42 @@ var cy = cytoscape({
   style: cytoscape.stylesheet()
     .selector('node')
         .css({
+            'content': 'data(label)',
             'width': 'data(weight)',
             'height': 'data(weight)',
-//            'shape': 'data(faveShape)',
+            'shape': 'data(faveShape)',
             'text-valign': 'center',
+            'text-outline-width': 1,
+            'background-color': 'data(color)',
+            'color': 'white',
             'border-style': 'solid',
             'border-width': 1,
-            'color': 'black',
             'text-outcolor': '#888',
-            'font-size': 30,
-            'background-color': 'data(color)'
+            'font-size': 25,
+
     })
     .selector(':selected')
         .css({
             'content': 'data(name)',
             'text-valign': 'center',
-            'text-outline-width': 1,
+            'text-outline-width': 3,
+            'font-size': 25,
             'background-color': 'data(color)',
-            'color': 'black',
+            'color': 'white',
             'z-index': 10,
             'target-arrow-color': 'black',
             'source-arrow-color': 'black',
             'text-outcolor': 'black',
             'width': 'data(weight)',
             'height': 'data(weight)',
-            'border-color': 'red',
-            'border-width': 3
+            'border-color': 'yellow',
+            'border-width': 5
     })
     .selector('node.hovered')
         .css({
             'content': 'data(name)',
             'text-valign': 'center',
-            'text-outline-width': 1,
+            'text-outline-width': 3,
             'color': 'white',
             'target-arrow-color': 'black',
             'source-arrow-color': 'black',
@@ -46,20 +50,36 @@ var cy = cytoscape({
             'text-outcolor': 'black',
             'width': 'data(weight)',
             'height': 'data(weight)',
-            'border-color': 'red',
-            'border-width': 3
+            'border-color': 'yellow',
+            'border-width': 5
     })        
     .selector('edge')
         .css({
             'width': 'data(width)',
             'line-color': 'data(AuthColor)',
+            'line-style': 'data(style)',
             'target-arrow-shape': 'data(Arrow)',
-            'target-arrow-color': 'data(AuthColor)'
+//          'target-arrow-color': 'data(AuthColor)'
     })
-    
+
+    .selector('edge.hovered')
+        .css({
+            'content': 'data(comment)',
+            'text-valign': 'center',
+            'text-outline-width': 3,
+            'color': 'white',
+            'font-size': 25,
+            'z-index': 20,
+            'text-outcolor': 'black',
+			'width': 'data(width)',
+            'line-color': 'data(AuthColor)',
+            'line-style': 'data(style)',
+            'target-arrow-shape': 'data(Arrow)'    
+    })
+        
     .selector('.faded')
         .css({
-            'opacity': .25,
+            'opacity': .3,
             'text-opacity': 0
     }),
     
@@ -96,10 +116,10 @@ var concentric = {
 var cose = {
     name: 'cose',
     padding: 5,
-    nodeRepulsion: 4000000,
+    nodeRepulsion: 8000000,
     idealEdgeLength: 5,
     nodeOverlap: 100,
-    edgeElasticity: 20,
+    edgeElasticity: 25,
     fit: true,
     animate: true
   };
@@ -114,6 +134,15 @@ cy.on('mouseover', 'node', function(){
 cy.on('mouseout', 'node', function(){
 	this.removeClass('hovered')
  });
+
+// Show edge comment on hover
+cy.on('mouseover', 'edge', function(){
+	this.addClass('hovered')
+});
+cy.on('mouseout', 'edge', function(){
+	this.removeClass('hovered')
+ });
+
 
 // Links Nodes to the "Content" Div
 cy.on('tap', 'node', function(){

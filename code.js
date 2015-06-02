@@ -168,7 +168,7 @@ cy.on('tap', function (e) {
 
 // Sets zoom options
 cy.on('layoutstop', function() {
-    cy.maxZoom(.75);
+    cy.maxZoom(2);
     cy.minZoom(.25);
     cy.fit();
 });

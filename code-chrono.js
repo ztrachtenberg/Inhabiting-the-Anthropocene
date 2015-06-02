@@ -7,34 +7,61 @@ var cy = cytoscape({
   style: cytoscape.stylesheet()
     .selector('node')
         .css({
-            'content': 'data(name)',
-            'text-valign': 'center',
-            'color': 'white',
-            'text-outline-width': 2,
-            'text-outcolor': '#888',
-            'font-size': 10,
-            'background-color': 'data(color)',
             'width': 'data(weight)',
-            'height': 'data(weight)'
-      })
+            'height': 'data(weight)',
+            'text-valign': 'center',
+            'text-outline-width': 1,
+            'background-color': 'data(color)',
+            'color': 'white',
+            'border-style': 'solid',
+            'border-width': 1,
+            'text-outcolor': '#888',
+            'font-size': 25,
+    })
     .selector(':selected')
         .css({
             'content': 'data(name)',
             'text-valign': 'center',
-            'text-outline-width': 1,
-            'background-color': 'purple',
+            'text-outline-width': 3,
+            'font-size': 25,
+            'background-color': 'data(color)',
             'color': 'white',
+            'z-index': 10,
             'target-arrow-color': 'black',
             'source-arrow-color': 'black',
             'text-outcolor': 'black',
             'width': 'data(weight)',
-            'height': 'data(weight)'
-      })
+            'height': 'data(weight)',
+            'border-color': 'yellow',
+            'border-width': 5
+    })
+    .selector('node.hovered')
+        .css({
+            'content': 'data(name)',
+            'text-valign': 'center',
+            'text-outline-width': 3,
+            'color': 'white',
+            'target-arrow-color': 'black',
+            'source-arrow-color': 'black',
+            'z-index': 20,
+            'text-outcolor': 'black',
+            'width': 'data(weight)',
+            'height': 'data(weight)',
+            'border-color': 'yellow',
+            'border-width': 5
+    })        
     .selector('edge')
         .css({
+            'width': 'data(width)',
             'line-color': 'data(AuthColor)',
             'target-arrow-shape': 'data(Arrow)',
             'target-arrow-color': 'data(AuthColor)'
+    })
+        
+    .selector('.faded')
+        .css({
+            'opacity': .3,
+            'text-opacity': 0
     }),
     
   // Call the Nodes and Edges
@@ -43,11 +70,26 @@ var cy = cytoscape({
 });
 
 // Layout Options
+var circle = {
+  name: 'circle',
+  fit: true, // whether to fit the viewport to the graph
+  padding: 30, // the padding on fit
+  boundingBox: undefined, // constrain layout bounds; { x1, y1, x2, y2 } or { x1, y1, w, h }
+  avoidOverlap: true, // prevents node overlap, may overflow boundingBox and radius if not enough space
+  radius: undefined, // the radius of the circle
+  startAngle: 3/2 * Math.PI, // the position of the first node
+  counterclockwise: false, // whether the layout should go counterclockwise (true) or clockwise (false)
+  sort: undefined, // a sorting function to order the nodes; e.g. function(a, b){ return a.data('weight') - b.data('weight') }
+  animate: false, // whether to transition the node positions
+  animationDuration: 500, // duration of animation in ms if enabled
+  ready: undefined, // callback on layoutready
+  stop: undefined // callback on layoutstop
+};
 var concentric = {
     name: 'concentric',
     concentric: function(){ return this.data('weight'); },
     levelWidth: function( nodes ){ return 5; },
-    minNodeSpacing: 30,
+    minNodeSpacing: 50,
     fit: true,
     padding: 10,
     animate: true
@@ -55,55 +97,24 @@ var concentric = {
 var cose = {
     name: 'cose',
     padding: 5,
-    nodeRepulsion: 4000000,
-    idealEdgeLength: 10,
-    edgeElasticity: 200,
+    nodeRepulsion: 8000000,
+    idealEdgeLength: 5,
+    nodeOverlap: 100,
+    edgeElasticity: 25,
+    fit: true,
     animate: true
   };
-var cola = {
-    name: 'cola',
-    
-    animate: true, // whether to show the layout as it's running
-    refresh: 1, // number of ticks per frame; higher is faster but more jerky
-    maxSimulationTime: 4000, // max length in ms to run the layout
-    ungrabifyWhileSimulating: false, // so you can't drag nodes during layout
-    fit: true, // on every layout reposition of nodes, fit the viewport
-    padding: 30, // padding around the simulation
-    boundingBox: undefined, // constrain layout bounds; { x1, y1, x2, y2 } or { x1, y1, w, h }
-
-    // positioning options
-    randomize: false, // use random node positions at beginning of layout
-    avoidOverlap: true, // if true, prevents overlap of node bounding boxes
-    handleDisconnected: true, // if true, avoids disconnected components from overlapping
-     nodeSpacing: function( node ){ return 10; }, // extra spacing around nodes
-    flow: undefined, // use DAG/tree flow layout if specified, e.g. { axis: 'y', minSeparation: 30 }
-    alignment: undefined, // relative alignment constraints on nodes, e.g. function( node ){ return { x: 0, y: 1 } }
-
-    // different methods of specifying edge length
-    // each can be a constant numerical value or a function like `function( edge ){ return 2; }`
-    edgeLength: undefined, // sets edge length directly in simulation
-    edgeSymDiffLength: undefined, // symmetric diff edge length in simulation
-    edgeJaccardLength: undefined, // jaccard edge length in simulation
-
-    // iterations of cola algorithm; uses default values on undefined
-    unconstrIter: undefined, // unconstrained initial layout iterations
-    userConstIter: undefined, // initial layout iterations with user-specified constraints
-    allConstIter: undefined, // initial layout iterations with all constraints including non-overlap
-
-    // infinite layout options
-    infinite: false // overrides all other options for a forces-all-the-time mode
-};
-var breadthfirst = {
-    name: 'breadthfirst',
-    directed: true,
-    roots: '#a',
-    padding: 10,
-    animate: true
-  };
-
 
 // Calls Desired Layout  
 cy.layout(concentric);
+
+// Highlights nodes on hover
+cy.on('mouseover', 'node', function(){
+	this.addClass('hovered')
+});
+cy.on('mouseout', 'node', function(){
+	this.removeClass('hovered')
+ });
 
 // Links Nodes to the "Content" Div
 cy.on('tap', 'node', function(){
@@ -113,5 +124,32 @@ cy.on('tap', 'node', function(){
         window.location.href = this.data('href');
     }
 });
+
+// Add Faded Class
+cy.on('tap', 'node', function (e) {
+    var node = e.cyTarget;
+    var neighborhood = node.neighborhood().add(node);
+    cy.elements().addClass('faded');
+    neighborhood.removeClass('faded');
+});
+
+// Remove Faded Class
+cy.on('tap', function (e) {
+    if (e.cyTarget === cy) {
+        cy.elements().removeClass('faded');
+    }
+});
+
+// Sets zoom options
+cy.on('layoutstop', function() {
+    cy.maxZoom(2);
+    cy.minZoom(.25);
+    cy.fit();
+});
+
+// Resizes Graph to fit viewport
+window.onresize = function() {
+    cy.fit();
+};
 
 }); // on dom ready

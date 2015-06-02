@@ -1,3 +1,4 @@
+// Cytoscape
 $(function(){ // on dom ready
 
 // Defines Nodes and Edges and Their Styles
@@ -179,3 +180,23 @@ window.onresize = function() {
 };
 
 }); // on dom ready
+
+
+$(function() {
+    $(window).bind('resize', function()
+    {
+        resizeMe();
+        }).trigger('resize');
+    });
+
+function resizeMe() {
+    var preferredHeight = 768;
+    var fontsize = 24;
+    
+    var displayHeight = $(window).height();
+    var percentage = displayHeight / preferredHeight;
+    var newFontSize = Math.floor(fontsize * percentage);
+    if (newFontSize >= 20){
+        $("h1").css("font-size", newFontSize);
+    }
+}

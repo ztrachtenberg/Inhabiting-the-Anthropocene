@@ -15,13 +15,13 @@
             .left {
                 float: none;
                 height: 50%
-                width: 35%;
+                width: 45%;
                 overflow: hidden;
             }
             
             .bottomleft {
                 height: 50%;
-                width: 35%;
+                width: 45%;
                 position: absolute;
 			    left: 0;
 			    bottom: 0;

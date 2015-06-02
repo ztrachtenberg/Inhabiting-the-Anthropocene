@@ -68,7 +68,7 @@ var cy = cytoscape({
             'text-outline-width': 3,
             'color': 'white',
             'font-size': 25,
-            'z-index': 20,
+            'z-index': 100,
             'text-outcolor': 'black',
 			'width': 'data(width)',
             'line-color': 'data(AuthColor)',
@@ -168,7 +168,7 @@ cy.on('tap', function (e) {
 
 // Sets zoom options
 cy.on('layoutstop', function() {
-    cy.maxZoom(.5);
+    cy.maxZoom(.75);
     cy.minZoom(.25);
     cy.fit();
 });

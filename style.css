@@ -1,4 +1,6 @@
-            .container {
+            .bodycontainer {
+                padding: 3%;
+                padding-top: 60px;
                 height: 99vh;
                 overflow: hidden;
             }
@@ -20,7 +22,8 @@
             }
             
             .bottomleft {
-                height: 50%;
+                padding: 15px;
+                height: 45%;
                 width: 45%;
                 position: absolute;
 			    left: 0;
@@ -39,8 +42,8 @@
                 padding-right: 5%;
 			}
             ​​
-			html, body {
-			    height: 98vh;
+			body {
+			    padding-top: 50px;
  				font: 14px helvetica neue, helvetica, arial, sans-serif;
 			}
 			

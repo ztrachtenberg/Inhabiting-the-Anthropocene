@@ -185,16 +185,16 @@ window.onresize = function() {
 $(function() {
     $(window).bind('resize', function()
     {
-        resizeMe();
+        resizeTitle();
         }).trigger('resize');
     });
 
-function resizeMe() {
-    var preferredHeight = 768;
+function resizeTitle() {
+    var preferredWidth = 768;
     var fontsize = 24;
     
-    var displayHeight = $(window).height();
-    var percentage = displayHeight / preferredHeight;
+    var displayWidth = $(window).width();
+    var percentage = displayWidth / preferredWidth;
     var newFontSize = Math.floor(fontsize * percentage);
     if (newFontSize >= 20){
         $("h1").css("font-size", newFontSize);

@@ -181,22 +181,3 @@ window.onresize = function() {
 
 }); // on dom ready
 
-
-$(function() {
-    $(window).bind('resize', function()
-    {
-        resizeTitle();
-        }).trigger('resize');
-    });
-
-function resizeTitle() {
-    var preferredWidth = 768;
-    var fontsize = 24;
-    
-    var displayWidth = $(window).width();
-    var percentage = displayWidth / preferredWidth;
-    var newFontSize = Math.floor(fontsize * percentage);
-    if (newFontSize >= 20){
-        $("h1").css("font-size", newFontSize);
-    }
-}

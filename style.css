@@ -3,9 +3,6 @@
 			    padding-top: 50px;
 			}
 			
-			h1 {
-			    text-align: center;
-			}
 			
             .bodycontainer {
                 padding: 1%;
@@ -26,6 +23,7 @@
                 float: none;
                 height: 50%
                 width: 45%;
+                padding-bottom: 5px;
                 overflow: hidden;
             }
             
@@ -39,6 +37,7 @@
 			}
 			
 			.name {
+			    text-align: center;
 			    float: none;
 			    padding-left: 15px;
 			    width: 100%;

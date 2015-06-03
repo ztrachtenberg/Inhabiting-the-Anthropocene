@@ -153,7 +153,7 @@ cy.on('tap', 'node', function(){
 });
 
 // Add Faded Class
-cy.on('tap', 'node', function (e) {
+ cy.on('tap', 'node', function (e) {
     var node = e.cyTarget;
     var neighborhood = node.neighborhood().add(node);
     cy.elements().addClass('faded');
@@ -161,7 +161,7 @@ cy.on('tap', 'node', function (e) {
 });
 
 // Remove Faded Class
-cy.on('tap', function (e) {
+ cy.on('tap', function (e) {
     if (e.cyTarget === cy) {
         cy.elements().removeClass('faded');
     }

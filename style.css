@@ -13,24 +13,24 @@
                 height: 100%;
                 width: 50%;
                 float: right;
-                overflow: scroll;
+                overflow: hidden;
                 padding: 5px;
     			border-left: thick double #000000;
             }
 
             .left {
                 float: none;
-                height: 50%
+                height: 100%
                 width: 45%;
-                padding-bottom: 5px;
                 overflow: hidden;
             }
             
             .bottomleft {
-                height: 40%;
+                float: none;
+                height: 45%;
                 width: 45%;
                 position: absolute;
-                padding-top: 20px
+                padding-top: 25px;
 			    left: 5;
 			    bottom: 0;
 			    overflow: hidden;
@@ -38,33 +38,11 @@
 			
 			.nav-internal {
 				width: 100%;
-				padding-top: 25px;
+				margin-top: 5px;
 			}
-			
-			.name {
-			    text-align: center;
-			    float: none;
-			    padding-left: 15px;
-			    width: 100%;
-			}
-			
-			.control {
-			    float: right;
-			    min-width: 150px;
-			    max-width: 200px;
-			    width: 24%;
-                padding-right: 5%;
-                padding-left: 1px;
-			}
-			
+		
 			.navbar-fixed-top {
 			    margin-bottom: 19px;
-			}
-			
-			#control {
-			    float: left;
-			    width: 100%;
-			    bottom: 0;
 			}
 			
 			#cy {
@@ -74,8 +52,9 @@
     			border-radius: 25px;
     			overflow: hidden;
     			border: 2px solid #000000;
-    			margin-bottom: 5px;
+    			margin-bottom: 25px;
     			box-shadow: 2px 2px 3px #888888;
+    			clear: both;
 			}
 
 			

@@ -66,14 +66,6 @@
     			border: 2px solid #000000;
 			}
 
-			#info {
- 		 		color: #c88;
-  				font-size: 1em;
-  				position: absolute;
-  				z-index: -1;
-  				left: 1em;
-  				top: 1em;
-			}
 			
 			#content {
 			    position: relative;

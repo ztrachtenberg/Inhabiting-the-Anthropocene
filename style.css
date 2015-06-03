@@ -49,6 +49,11 @@
 			    max-width: 200px;
 			    width: 24%;
                 padding-right: 5%;
+                padding-left: 1px;
+			}
+			
+			.navbar-fixed-top {
+			    margin-bottom: 19px;
 			}
 			
 			#control {
@@ -64,6 +69,7 @@
     			border-radius: 25px;
     			overflow: hidden;
     			border: 2px solid #000000;
+    			margin-bottom: 5px;
 			}
 
 			

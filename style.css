@@ -1,7 +1,12 @@
+ 			body {
+ 			    height: 95vh;
+			    padding-top: 50px;
+			}
+			
+			
             .bodycontainer {
-                padding: 3%;
-                padding-top: 60px;
-                height: 99vh;
+                padding: 1%;
+                height: 100%;
                 overflow: hidden;
             }
 
@@ -18,56 +23,49 @@
                 float: none;
                 height: 50%
                 width: 45%;
+                padding-bottom: 5px;
                 overflow: hidden;
             }
             
             .bottomleft {
-                padding: 15px;
-                height: 45%;
+                height: 40%;
                 width: 45%;
                 position: absolute;
 			    left: 0;
 			    bottom: 0;
+			    overflow: hidden;
 			}
 			
 			.name {
-			    float: left;
-			    width: 70%;
+			    text-align: center;
+			    float: none;
+			    padding-left: 15px;
+			    width: 100%;
 			}
 			
 			.control {
 			    float: right;
+			    min-width: 150px;
+			    max-width: 200px;
 			    width: 24%;
-                padding-top: 5%;
                 padding-right: 5%;
-			}
-            ​​
-			body {
-			    padding-top: 50px;
 			}
 			
 			#control {
 			    float: left;
+			    width: 100%;
+			    bottom: 0;
 			}
 			
 			#cy {
   				height: 50%;
   				width: 45%;
   				position: absolute;
-  				left: 5;
-  				top: 1;
     			border-radius: 25px;
+    			overflow: hidden;
     			border: 2px solid #000000;
 			}
 
-			#info {
- 		 		color: #c88;
-  				font-size: 1em;
-  				position: absolute;
-  				z-index: -1;
-  				left: 1em;
-  				top: 1em;
-			}
 			
 			#content {
 			    position: relative;

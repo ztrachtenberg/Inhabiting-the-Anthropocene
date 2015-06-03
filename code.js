@@ -1,3 +1,4 @@
+// Cytoscape
 $(function(){ // on dom ready
 
 // Defines Nodes and Edges and Their Styles
@@ -179,3 +180,4 @@ window.onresize = function() {
 };
 
 }); // on dom ready
+

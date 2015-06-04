@@ -119,7 +119,6 @@ var cose = {
     nodeRepulsion: 8000000,
     idealEdgeLength: 5,
     nodeOverlap: 100,
-    padding: 20,
     edgeElasticity: 25,
     fit: true,
     animate: true
@@ -151,6 +150,15 @@ cy.on('tap', 'node', function(){
     } catch(e){ // fall back on url change
         window.location.href = this.data('href');
     }
+});
+
+// Populate Comments Div on Edge Hover
+cy.on('mouseover', 'edge', function(){
+	try {
+	    window.open( this.data('href'), 'remarks');
+	} catch(e){
+	    window.location.href = this.data('link');
+	}
 });
 
 // Add Faded Class

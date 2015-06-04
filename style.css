@@ -42,7 +42,23 @@
 			}
 		
 			.navbar-fixed-top {
-			    margin-bottom: 19px;
+			    margin-bottom: 15px;
+			}
+			
+			.legend {
+			    float: left;
+			    width: 50%;
+			    height: 60%;
+    			border-radius: 25px;
+    			border: 2px solid #000000;
+			}
+			
+			.comments {
+			    float: right;
+			    width: 50%;
+			    height: 60%;
+    			border-radius: 25px;
+    			border: 2px solid #000000; 
 			}
 			
 			#cy {
@@ -54,12 +70,18 @@
     			box-shadow: 2px 2px 3px #888888;
 			}
 
-			
 			#content {
 			    position: relative;
 			    height: 100%;
 			    width: 100%;
 			}
-
+            
+            #remarks {
+                position: relative;
+                height: 100%;
+                padding: 1%;
+                overflow: scroll;
+                width: 100%;
+            }
 
 	

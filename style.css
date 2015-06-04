@@ -50,7 +50,7 @@
 			    float: left;
 			    width: 48%;
 			    height: 60%;
-			    padding: 2%;
+			    padding: 10px;
     			border-radius: 25px;
     			border: 2px solid #000000;
 			}
@@ -58,6 +58,7 @@
 			.comments {
 			    float: right;
 			    width: 48%;
+			    padding: 10px;
 			    height: 60%;
     			border-radius: 25px;
     			border: 2px solid #000000; 
@@ -80,10 +81,9 @@
 			    width: 100%;
 			}
             
-            #remarks {
+            #comments {
                 position: relative;
                 height: 100%;
-                padding: 1%;
                 overflow: scroll;
                 width: 100%;
             }

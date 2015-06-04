@@ -155,9 +155,9 @@ cy.on('tap', 'node', function(){
 // Populate Comments Div on Edge Hover
 cy.on('mouseover', 'edge', function(){
 	try {
-	    window.open( this.data('href'), 'remarks');
+	    window.open( this.data('href'), 'comments');
 	} catch(e){
-	    window.location.href = this.data('link');
+	    window.location.href = this.data('href');
 	}
 });
 

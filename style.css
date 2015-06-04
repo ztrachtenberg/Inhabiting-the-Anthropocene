@@ -5,6 +5,7 @@
 				
             .bodycontainer {
                 padding: 1%;
+                position: relative;
                 height: 100%;
                 overflow: hidden;
             }
@@ -19,20 +20,20 @@
             }
 
             .left {
-                float: none;
-                height: 100%
-                width: 45%;
+				position: relative;
+				float: left;
+                height: 100%;
+                width: 49%;
                 overflow: hidden;
             }
             
             .bottomleft {
-                float: none;
+                float: left;
                 height: 45%;
-                width: 45%;
-                position: absolute;
+                width: 100%;
+                position: relative;
 			    left: 5;
 			    bottom: 0;
-			    overflow: hidden;
 			}
 			
 			.nav-internal {
@@ -46,14 +47,11 @@
 			
 			#cy {
   				height: 50%;
-  				width: 45%;
-  				position: absolute;
+  				width: 100%;
     			border-radius: 25px;
-    			overflow: hidden;
     			border: 2px solid #000000;
     			padding-bottom: 5px;
     			box-shadow: 2px 2px 3px #888888;
-    			clear: both;
 			}
 
 			

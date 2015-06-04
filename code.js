@@ -119,6 +119,7 @@ var cose = {
     nodeRepulsion: 8000000,
     idealEdgeLength: 5,
     nodeOverlap: 100,
+    padding: 20,
     edgeElasticity: 25,
     fit: true,
     animate: true

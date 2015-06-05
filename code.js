@@ -181,15 +181,21 @@ cy.on('tap', 'node', function (e) {
         neighborhood.removeClass('faded');
     }
     
-// Add invisible class (for filter)
+// Filter by comment to add invisible class based on weight of node
 cy.on('tap', 'node', function () {
-    if (this.data('weight') != 45){
+    if (this.data('weight') == 45){
         cy.filter(function(i, element){
             if (element.isEdge() && (element.data("comment") == 'From discipline')){
                 element.addClass('invisible');
             }
         })
-    }
+    } else if (this.data('weight') != 45){
+        cy.filter(function(i, element){
+            if (element.isEdge() && (element.data("comment") == 'Found in post')){
+                element.addClass('invisible');
+            }
+        })
+    }    
 });
 
 // Remove Faded and Invisible Classes when you click on background

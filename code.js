@@ -81,6 +81,12 @@ var cy = cytoscape({
         .css({
             'opacity': .3,
             'text-opacity': 0
+    })
+
+    .selector('.invisible')
+        .css({
+            'opacity': 0,
+            'text-opacity': 0
     }),
     
   // Call the Nodes and Edges
@@ -168,23 +174,30 @@ cy.on('mouseover', 'edge', function(){
 
 // Add Faded Class
 cy.on('tap', 'node', function (e) {
-    var node = e.cyTarget;
-    var neighborhood = node.neighborhood().add(node);
-    cy.elements().addClass('faded');
-    neighborhood.removeClass('faded');
-
-// Remove Faded Class
-cy.on('tap', function (e) {
-    if (e.cyTarget === cy) {
-        cy.elements().removeClass('faded');
+    if (this.data('filter') != 'yes'){
+        var node = e.cyTarget;
+        var neighborhood = node.neighborhood().add(node);
+        cy.elements().addClass('faded');
+        neighborhood.removeClass('faded');
+    }
+    
+// Add invisible class (for filter)
+cy.on('tap', 'node', function () {
+    if (this.data('weight') != 45){
+        cy.filter(function(i, element){
+            if (element.isEdge() && (element.data("comment") == 'From discipline')){
+                element.addClass('invisible');
+            }
+        })
     }
 });
 
-cy.on('tap', 'node', function (e) {
-	var node = e.cyTarget;
-	if(node.data('weight')=45) {
-		cy.edges().remove();
-	}		
+// Remove Faded and Invisible Classes when you click on background
+cy.on('tap', function (e) {
+    if (e.cyTarget === cy) {
+        cy.elements().removeClass('faded');
+        cy.elements().removeClass('invisible');
+    }
 });
 
 // Sets zoom options

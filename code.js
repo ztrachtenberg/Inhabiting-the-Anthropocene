@@ -87,6 +87,11 @@ var cy = cytoscape({
         .css({
             'opacity': 0,
             'text-opacity': 0
+    })
+    
+    .selector('node.triggered')
+        .css({
+            'background-color': 'black'
     }),
     
   // Call the Nodes and Edges
@@ -184,18 +189,21 @@ cy.on('tap', 'node', function (e) {
     
 // Filter by comment to add invisible class based on weight of node
 cy.on('tap', 'node', function () {
-    if (!this.hasClass(':selected') && this.data('weight') == 45){
+    if (!this.hasClass('triggered') && this.data('weight') == 45){
+        this.addClass('triggered');
         cy.filter(function(i, element){
             if (element.isEdge() && (element.data("comment") == 'From discipline')){
                 element.addClass('invisible');
             }
         })
-    } else if (this.hasClass(':selected') && this.data('weight') == 45){    
+    } else if (this.hasClass('triggered') && this.data('weight') == 45){   
+        this.removeClass('triggered'); 
         cy.filter(function(i, element){
             if (element.isEdge() && (element.data("comment") == 'From discipline')){
                 element.removeClass('invisible');
             }
         })
+    // Keep working from here
     } else if (this.data('weight') != 45){
         cy.filter(function(i, element){
             if (element.isEdge() && (element.data("comment") == 'Found in post')){

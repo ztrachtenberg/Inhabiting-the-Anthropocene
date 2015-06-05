@@ -174,6 +174,7 @@ cy.on('mouseover', 'edge', function(){
 
 // Add Faded Class
 cy.on('tap', 'node', function (e) {
+    // Only adds faded class if this isn't a filter node
     if (this.data('filter') != 'yes'){
         var node = e.cyTarget;
         var neighborhood = node.neighborhood().add(node);

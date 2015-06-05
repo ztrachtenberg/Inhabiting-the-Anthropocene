@@ -123,6 +123,11 @@ var cose = {
     fit: true,
     animate: true
   };
+var arbor = {
+    name: 'arbor',
+    repulsion: 200,
+//    infinite: true
+};
 
 // Calls Desired Layout  
 cy.layout(cose);
@@ -167,6 +172,8 @@ cy.on('mouseover', 'edge', function(){
     var neighborhood = node.neighborhood().add(node);
     cy.elements().addClass('faded');
     neighborhood.removeClass('faded');
+
+// Fit view to selection
     cy.fit(neighborhood, 10)
 });
 

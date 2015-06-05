@@ -167,6 +167,7 @@ cy.on('mouseover', 'edge', function(){
     var neighborhood = node.neighborhood().add(node);
     cy.elements().addClass('faded');
     neighborhood.removeClass('faded');
+    cy.fit(neighborhood, 10)
 });
 
 // Remove Faded Class
@@ -180,12 +181,12 @@ cy.on('mouseover', 'edge', function(){
 cy.on('layoutstop', function() {
     cy.maxZoom(2);
     cy.minZoom(.25);
-    cy.fit();
+    cy.fit(10);
 });
 
 // Resizes Graph to fit viewport
 window.onresize = function() {
-    cy.fit();
+    cy.fit(10);
 };
 
 }); // on dom ready

@@ -173,20 +173,18 @@ cy.on('tap', 'node', function (e) {
     cy.elements().addClass('faded');
     neighborhood.removeClass('faded');
 
-// Fit view to selection
-    cy.fit(neighborhood, 10)
-});
-
-cy.on('tap', 'node', function (e) {
-    cy.batch(function(){
-        cy.$('
-});
-
 // Remove Faded Class
 cy.on('tap', function (e) {
     if (e.cyTarget === cy) {
         cy.elements().removeClass('faded');
     }
+});
+
+cy.on('tap', 'node', function (e) {
+	var node = e.cyTarget;
+	if(node.data('weight')=45) {
+		cy.edges().remove();
+	}		
 });
 
 // Sets zoom options
@@ -200,6 +198,10 @@ cy.on('layoutstop', function() {
 window.onresize = function() {
     cy.fit(10);
 };
+
+// Fit view to selection
+    cy.fit(neighborhood, 10)
+});
 
 }); // on dom ready
 

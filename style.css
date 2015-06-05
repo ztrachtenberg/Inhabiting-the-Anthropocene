@@ -48,7 +48,7 @@
 			
 			.legend {
 			    float: left;
-			    width: 48%;
+			    width: 35%;
 			    height: 60%;
 			    padding: 10px;
     			border-radius: 25px;
@@ -57,7 +57,7 @@
 			
 			.comments {
 			    float: right;
-			    width: 48%;
+			    width: 64%;
 			    padding: 10px;
 			    height: 60%;
     			border-radius: 25px;

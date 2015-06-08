@@ -110,7 +110,5 @@ var BlogEles = {
         { data: { source: '31', target: 'I', AuthColor: '#D9BE6E', width: 5, Arrow: 'none', style: 'dotted', comment: 'Found in post' } },
         { data: { source: '32', target: 'D', AuthColor: '#791634', width: 5, Arrow: 'none', style: 'dotted', comment: 'Found in post' } },
         { data: { source: '36', target: 'P', AuthColor: '#5C4501', width: 5, Arrow: 'none', style: 'dotted', comment: 'Found in post' } }
-
-
     ]
 }

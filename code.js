@@ -72,7 +72,7 @@ var cy = cytoscape({
             'line-color': 'data(AuthColor)',
             'line-style': 'data(style)',
             'target-arrow-shape': 'data(Arrow)',
-//          'target-arrow-color': 'data(AuthColor)'
+          	'target-arrow-color': 'data(AuthColor)'
     })
 
     .selector('edge.hovered')
@@ -82,7 +82,7 @@ var cy = cytoscape({
             'text-outline-width': 3,
             'color': 'white',
             'font-size': 25,
-            'z-index': 100,
+            'z-index': 20,
             'text-outcolor': 'black',
 			'width': 'data(width)',
             'line-color': 'data(AuthColor)',
@@ -104,7 +104,9 @@ var cy = cytoscape({
     
     .selector('node.triggered')
         .css({
-            'background-color': 'black'
+            'background-color': 'red',
+            'border-color': 'black',
+            'border-width': 1
     }),
     
   // Call the Nodes and Edges
@@ -141,9 +143,9 @@ var cose = {
     name: 'cose',
     padding: 5,
     nodeRepulsion: 8000000,
-    idealEdgeLength: 5,
+    idealEdgeLength: 10,
     nodeOverlap: 100,
-    edgeElasticity: 25,
+    edgeElasticity: 50,
     fit: true,
     animate: true
   };

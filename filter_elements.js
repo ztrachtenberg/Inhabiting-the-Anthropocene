@@ -39,9 +39,9 @@
 var BlogEles = {
     nodes: [
     //Filter Nodes
-        { data: { id: 'B', label: 'Filter By', name: 'Filter By', href: 'text/approaches.html#D', color: '#808080', weight: 300, faveShape: 'roundrectangle', filter: 'yes' }, position: { x: 0, y: 50}, locked: true, selectable: false },
-        { data: { id: 'Foo', label: 'Foo', name: 'Foo', href: 'www.google.com', color: '#AF923C', weight: 45, faveShape: 'roundrectangle', parent: 'B', filter: 'yes' }, position: { x: 0, y: 25 }, locked: true },
-        { data: { id: 'Bar', label: 'Bar', name: 'Bar', href: 'www.google.com', color: '#AF923C', weight: 45, faveShape: 'roundrectangle', parent: 'B', filter: 'yes' }, position: { x: 0, y: 75 }, locked: true },
+        { data: { id: 'B', label: 'Filter By', name: 'Filter By', href: 'text/approaches.html#D', color: '#808080', weight: 300, faveShape: 'roundrectangle', filter: 'yes' }, position: { x: -50, y: 300}, locked: true, selectable: false },
+        { data: { id: 'Foo', label: 'Foo', name: 'Foo', href: 'www.google.com', color: '#AF923C', weight: 45, faveShape: 'roundrectangle', parent: 'B', filter: 'yes' }, position: { x: -50, y: 250 }, locked: true },
+        { data: { id: 'Bar', label: 'Bar', name: 'Bar', href: 'www.google.com', color: '#AF923C', weight: 45, faveShape: 'roundrectangle', parent: 'B', filter: 'yes' }, position: { x: -50, y: 300 }, locked: true },
 
     //Approach nodes
         { data: { id: 'D', label: 'D', name: 'Descriptive', href: 'text/approaches.html#D', color: '#AF923C', weight:45, faveShape: 'roundrectangle' } },

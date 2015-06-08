@@ -40,6 +40,8 @@ var cy = cytoscape({
     })
     .selector('$node > node')
         .css({
+            'color': 'black',
+            'font-size': 30,
             'padding-top': '10px',
             'padding-left': '10px',
             'padding-bottom': '10px',

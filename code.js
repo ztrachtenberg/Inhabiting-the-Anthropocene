@@ -38,6 +38,19 @@ var cy = cytoscape({
             'border-color': 'yellow',
             'border-width': 5
     })
+    .selector('$node > node')
+        .css({
+            'color': 'black',
+            'font-size': 30,
+            'padding-top': '10px',
+            'padding-left': '10px',
+            'padding-bottom': '10px',
+            'padding-right': '10px',
+            'text-valign': 'top',
+            'text-halign': 'center',
+            'height': 200,
+            'width': 100
+    })            
     .selector('node.hovered')
         .css({
             'content': 'data(name)',
@@ -81,6 +94,17 @@ var cy = cytoscape({
         .css({
             'opacity': .3,
             'text-opacity': 0
+    })
+
+    .selector('.invisible')
+        .css({
+            'opacity': 0,
+            'text-opacity': 0
+    })
+    
+    .selector('node.triggered')
+        .css({
+            'background-color': 'black'
     }),
     
   // Call the Nodes and Edges
@@ -123,13 +147,20 @@ var cose = {
     fit: true,
     animate: true
   };
+var arbor = {
+    name: 'arbor',
+    repulsion: 200,
+//    infinite: true
+};
 
 // Calls Desired Layout  
 cy.layout(cose);
 
 // Highlights nodes on hover
 cy.on('mouseover', 'node', function(){
-	this.addClass('hovered')
+    if (this.data('filter') != 'yes'){
+	    this.addClass('hovered')
+	}
 });
 cy.on('mouseout', 'node', function(){
 	this.removeClass('hovered')
@@ -162,19 +193,54 @@ cy.on('mouseover', 'edge', function(){
 });
 
 // Add Faded Class
- cy.on('tap', 'node', function (e) {
-    var node = e.cyTarget;
-    var neighborhood = node.neighborhood().add(node);
-    cy.elements().addClass('faded');
-    neighborhood.removeClass('faded');
-    cy.fit(neighborhood, 10)
+cy.on('tap', 'node', function (e) {
+    // Only adds faded class if this isn't a filter node
+    if (this.data('filter') != 'yes'){
+        var node = e.cyTarget;
+        var neighborhood = node.neighborhood().add(node);
+        cy.elements().addClass('faded');
+        neighborhood.removeClass('faded');
+    }
 });
 
-// Remove Faded Class
- cy.on('tap', function (e) {
+// Remove Faded Class when you click on background
+cy.on('tap', function (e) {
     if (e.cyTarget === cy) {
         cy.elements().removeClass('faded');
     }
+});
+
+// Filter by comment to add invisible class based on name of node
+cy.on('tap', 'node', function () {
+    if (!this.hasClass('triggered') && this.data('name') == 'Similar'){
+        this.addClass('triggered');
+        cy.filter(function(i, element){
+            if (element.isEdge() && (element.data("comment") == 'Similar')){
+                element.addClass('invisible');
+            }
+        })
+    } else if (this.hasClass('triggered') && this.data('name') == 'Similar'){   
+        this.removeClass('triggered'); 
+        cy.filter(function(i, element){
+            if (element.isEdge() && (element.data("comment") == 'Similar')){
+                element.removeClass('invisible');
+            }
+        })
+    } else if (!this.hasClass('triggered') && this.data('name') == 'Different'){
+        this.addClass('triggered');
+        cy.filter(function(i, element){
+            if (element.isEdge() && (element.data("comment") == 'Different')){
+                element.addClass('invisible');
+            }
+        })
+    } else if (this.hasClass('triggered') && this.data('name') == 'Different'){   
+        this.removeClass('triggered'); 
+        cy.filter(function(i, element){
+            if (element.isEdge() && (element.data("comment") == 'Different')){
+                element.removeClass('invisible');
+            }
+        })
+    }   
 });
 
 // Sets zoom options
@@ -188,6 +254,9 @@ cy.on('layoutstop', function() {
 window.onresize = function() {
     cy.fit(10);
 };
+
+// Fit view to selection
+
 
 }); // on dom ready
 

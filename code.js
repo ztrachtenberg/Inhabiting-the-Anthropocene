@@ -38,6 +38,17 @@ var cy = cytoscape({
             'border-color': 'yellow',
             'border-width': 5
     })
+    .selector('$node > node')
+        .css({
+            'padding-top': '10px',
+            'padding-left': '10px',
+            'padding-bottom': '10px',
+            'padding-right': '10px',
+            'text-valign': 'top',
+            'text-halign': 'center',
+            'height': 200,
+            'width': 100
+    })            
     .selector('node.hovered')
         .css({
             'content': 'data(name)',
@@ -145,7 +156,9 @@ cy.layout(cose);
 
 // Highlights nodes on hover
 cy.on('mouseover', 'node', function(){
-	this.addClass('hovered')
+    if (this.data('filter') != 'yes'){
+	    this.addClass('hovered')
+	}
 });
 cy.on('mouseout', 'node', function(){
 	this.removeClass('hovered')
@@ -186,28 +199,35 @@ cy.on('tap', 'node', function (e) {
         cy.elements().addClass('faded');
         neighborhood.removeClass('faded');
     }
-    
-// Filter by comment to add invisible class based on weight of node
+});    
+// Filter by comment to add invisible class based on name of node
 cy.on('tap', 'node', function () {
-    if (!this.hasClass('triggered') && this.data('weight') == 45){
+    if (!this.hasClass('triggered') && this.data('name') == 'Foo'){
         this.addClass('triggered');
         cy.filter(function(i, element){
             if (element.isEdge() && (element.data("comment") == 'From discipline')){
                 element.addClass('invisible');
             }
         })
-    } else if (this.hasClass('triggered') && this.data('weight') == 45){   
+    } else if (this.hasClass('triggered') && this.data('name') == 'Foo'){   
         this.removeClass('triggered'); 
         cy.filter(function(i, element){
             if (element.isEdge() && (element.data("comment") == 'From discipline')){
                 element.removeClass('invisible');
             }
         })
-    // Keep working from here
-    } else if (this.data('weight') != 45){
+    } else if (!this.hasClass('triggered') && this.data('name') == 'Bar'){
+        this.addClass('triggered');
         cy.filter(function(i, element){
             if (element.isEdge() && (element.data("comment") == 'Found in post')){
                 element.addClass('invisible');
+            }
+        })
+    } else if (this.hasClass('triggered') && this.data('name') == 'Bar'){   
+        this.removeClass('triggered'); 
+        cy.filter(function(i, element){
+            if (element.isEdge() && (element.data("comment") == 'Found in post')){
+                element.removeClass('invisible');
             }
         })
     }   
@@ -217,7 +237,6 @@ cy.on('tap', 'node', function () {
 cy.on('tap', function (e) {
     if (e.cyTarget === cy) {
         cy.elements().removeClass('faded');
-        cy.elements().removeClass('invisible');
     }
 });
 
@@ -234,7 +253,10 @@ window.onresize = function() {
 };
 
 // Fit view to selection
-    cy.fit(neighborhood, 10)
+cy.on('tap', 'node', function () {
+    if (this.data('filter') != 'yes'){ 
+        cy.fit(neighborhood, 10)
+    }
 });
 
 }); // on dom ready

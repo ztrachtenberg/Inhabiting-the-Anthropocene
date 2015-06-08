@@ -31,9 +31,9 @@
 var BlogEles = {
     nodes: [
     // Filter Nodes
-        { data: { id: 'B', label: 'Filter By', name: 'Filter By', href: '', color: '#808080', weight: 300, faveShape: 'roundrectangle', filter: 'yes' }, position: { x: 1000, y: 500}, locked: true, selectable: false },
-        { data: { id: 'Similar', label: 'Similar', name: 'Similar', href: '', color: '#AF923C', weight: 45, faveShape: 'roundrectangle', parent: 'B', filter: 'yes' }, position: { x: 1000, y: 450 }, locked: true },
-        { data: { id: 'Different', label: 'Different', name: 'Different', href: '', color: '#AF923C', weight: 45, faveShape: 'roundrectangle', parent: 'B', filter: 'yes' }, position: { x: 1000, y: 500 }, locked: true },
+        { data: { id: 'B', label: 'Filter Edges By', name: 'Filter Edges By', href: '', color: '#808080', weight: 300, faveShape: 'roundrectangle', filter: 'yes' }, position: { x: 1000, y: 500}, locked: true, selectable: false },
+        { data: { id: 'Similar', label: 'Similar', name: 'Similar', href: '', color: 'green', weight: 45, faveShape: 'roundrectangle', parent: 'B', filter: 'yes' }, position: { x: 1000, y: 450 }, locked: true },
+        { data: { id: 'Different', label: 'Different', name: 'Different', href: '', color: 'green', weight: 45, faveShape: 'roundrectangle', parent: 'B', filter: 'yes' }, position: { x: 1000, y: 500 }, locked: true },
 
     //Post nodes
         { data: { id: 'ZT1', label: 'ZT1', name: 'Of Property', href: 'text/posts/ZT1.html', color: '#8DC162', weight:65, faveShape: 'ellipse' } },

@@ -59,16 +59,17 @@ var BlogEles = {
         { data: { id: 'AR2', label: 'AR2', name: "Habitability's Non-Inevitability", href: 'text/posts/AR2.html', color: '#C2627F', weight:65, faveShape: 'ellipse' } },
         { data: { id: 'AC2', label: 'AC2', name: 'Habitability as a commons: Fearing a tragedy of human(ized) nature', href: 'text/posts/AC2.html', color: '#D9BE6E', weight:65, faveShape: 'ellipse' } },
         { data: { id: 'NT2', label: 'NT2', name: 'Toward a More Than Human Anthropocene', href: 'text/posts/NT2.html', color: '#791634', weight:65, faveShape: 'ellipse' } },
-        { data: { id: 'LS2', label: 'LS2', name: 'The Dust of Civilization', href: 'text/posts/LS2.html', color: '#5C4501', weight:65, faveShape: 'ellipse' } }
+        { data: { id: 'LS2', label: 'LS2', name: 'The Dust of Civilization', href: 'text/posts/LS2.html', color: '#5C4501', weight:65, faveShape: 'ellipse' } },
 	//Theme nodes
 	    { data: { id: 'H', label: 'H', name: 'History', href: 'text/main/themes/themes-H.html', color: '#737373', weight:45, faveShape: 'triangle'  } },
 		{ data: { id: 'F', label: 'F', name: 'Future', href: 'text/main/themes/themes-F.html', color: '#737373', weight:45, faveShape: 'rectangle'  } },
 		{ data: { id: 'A', label: 'A', name: 'Agency', href: 'text/main/themes/themes-A.html', color: '#737373', weight:45, faveShape: 'pentagon'  } },
 		{ data: { id: 'L', label: 'L', name: 'Limits', href: 'text/main/themes/themes-L.html', color: '#737373', weight:45, faveShape: 'hexagon'  } }
 	],	
-    edges: [
+    
+   edges: [
     //Theme 1 edges
-        { data: { source: 'ZT1', target: 'A', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dotted', comment: 'Exceptional', href: 'text/edges/themes/Ax.html' } },
+     { data: { source: 'ZT1', target: 'A', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dotted', comment: 'Exceptional', href: 'text/edges/themes/Ax.html' } },
         { data: { source: 'KG1', target: 'A', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dotted', comment: 'Exceptional', href: 'text/edges/themes/Ax.html' } },
         { data: { source: 'AR1', target: 'H', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dotted', comment: 'Complex', href: 'text/edges/themes/Hc.html' } },
         { data: { source: 'MW1', target: 'L', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dashed', comment: 'Moral', href: 'text/edges/themes/Lm.html' } },

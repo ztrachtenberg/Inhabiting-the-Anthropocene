@@ -151,12 +151,12 @@ var cose = {
   };
 var arbor = {
     name: 'arbor',
-    repulsion: 200,
+    repulsion: 2000,
 //    infinite: true
 };
 
-// Calls Desired Layout  
-cy.layout(cose);
+// Calls Desired Layout
+cy.elements("[filter!='yes']").layout(arbor);
 
 // Highlights nodes on hover
 cy.on('mouseover', 'node', function(){

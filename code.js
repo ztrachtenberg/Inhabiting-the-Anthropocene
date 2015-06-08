@@ -151,11 +151,14 @@ var cose = {
   };
 var arbor = {
     name: 'arbor',
+    maxSimulationTime: 8000,
     repulsion: 2000,
+    stiffness: 200,
+    edgeLength: 2,
 //    infinite: true
 };
 
-// Calls Desired Layout
+// Calls Desired Layout for all but filter elements
 cy.elements("[filter!='yes']").layout(arbor);
 
 // Highlights nodes on hover
@@ -186,7 +189,7 @@ cy.on('tap', 'node', function(){
 });
 
 // Populate Comments Div on Edge Hover
-cy.on('mouseover', 'edge', function(){
+cy.on('tap', 'edge', function(){
 	try {
 	    window.open( this.data('href'), 'comments');
 	} catch(e){
@@ -242,7 +245,7 @@ cy.on('tap', 'node', function () {
                 element.removeClass('invisible');
             }
         })
-    }   
+    }
 });
 
 // Sets zoom options

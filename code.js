@@ -212,31 +212,31 @@ cy.on('tap', function (e) {
 
 // Filter by comment to add invisible class based on name of node
 cy.on('tap', 'node', function () {
-    if (!this.hasClass('triggered') && this.data('name') == 'Foo'){
+    if (!this.hasClass('triggered') && this.data('name') == 'Similar'){
         this.addClass('triggered');
         cy.filter(function(i, element){
-            if (element.isEdge() && (element.data("comment") == 'From discipline')){
+            if (element.isEdge() && (element.data("comment") == 'Similar')){
                 element.addClass('invisible');
             }
         })
-    } else if (this.hasClass('triggered') && this.data('name') == 'Foo'){   
+    } else if (this.hasClass('triggered') && this.data('name') == 'Similar'){   
         this.removeClass('triggered'); 
         cy.filter(function(i, element){
-            if (element.isEdge() && (element.data("comment") == 'From discipline')){
+            if (element.isEdge() && (element.data("comment") == 'Similar')){
                 element.removeClass('invisible');
             }
         })
-    } else if (!this.hasClass('triggered') && this.data('name') == 'Bar'){
+    } else if (!this.hasClass('triggered') && this.data('name') == 'Different'){
         this.addClass('triggered');
         cy.filter(function(i, element){
-            if (element.isEdge() && (element.data("comment") == 'Found in post')){
+            if (element.isEdge() && (element.data("comment") == 'Different')){
                 element.addClass('invisible');
             }
         })
-    } else if (this.hasClass('triggered') && this.data('name') == 'Bar'){   
+    } else if (this.hasClass('triggered') && this.data('name') == 'Different'){   
         this.removeClass('triggered'); 
         cy.filter(function(i, element){
-            if (element.isEdge() && (element.data("comment") == 'Found in post')){
+            if (element.isEdge() && (element.data("comment") == 'Different')){
                 element.removeClass('invisible');
             }
         })

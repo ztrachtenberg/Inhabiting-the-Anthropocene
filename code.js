@@ -201,7 +201,15 @@ cy.on('tap', 'node', function (e) {
         cy.elements().addClass('faded');
         neighborhood.removeClass('faded');
     }
-});    
+});
+
+// Remove Faded Class when you click on background
+cy.on('tap', function (e) {
+    if (e.cyTarget === cy) {
+        cy.elements().removeClass('faded');
+    }
+});
+
 // Filter by comment to add invisible class based on name of node
 cy.on('tap', 'node', function () {
     if (!this.hasClass('triggered') && this.data('name') == 'Foo'){
@@ -235,13 +243,6 @@ cy.on('tap', 'node', function () {
     }   
 });
 
-// Remove Faded and Invisible Classes when you click on background
-cy.on('tap', function (e) {
-    if (e.cyTarget === cy) {
-        cy.elements().removeClass('faded');
-    }
-});
-
 // Sets zoom options
 cy.on('layoutstop', function() {
     cy.maxZoom(2);
@@ -255,11 +256,7 @@ window.onresize = function() {
 };
 
 // Fit view to selection
-cy.on('tap', 'node', function () {
-    if (this.data('filter') != 'yes'){ 
-        cy.fit(neighborhood, 10)
-    }
-});
+
 
 }); // on dom ready
 

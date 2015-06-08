@@ -66,6 +66,7 @@ var BlogEles = {
 		{ data: { id: 'A', label: 'A', name: 'Agency', href: 'text/main/themes/themes-A.html', color: '#737373', weight:45, faveShape: 'pentagon'  } },
 		{ data: { id: 'L', label: 'L', name: 'Limits', href: 'text/main/themes/themes-L.html', color: '#737373', weight:45, faveShape: 'hexagon'  } }
 	],	
+    
     edges: [
     //Theme 1 edges
         { data: { source: 'ZT1', target: 'A', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dotted', comment: 'Exceptional', href: 'text/edges/themes/Ax.html' } },

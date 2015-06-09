@@ -83,7 +83,6 @@ var cy = cytoscape({
             'text-outline-width': 3,
             'color': 'white',
             'font-size': 25,
-            'z-index': 20,
             'text-outcolor': 'black',
 			'width': 'data(width)',
             'line-color': 'data(AuthColor)',
@@ -148,18 +147,27 @@ var cose = {
     nodeOverlap: 100,
     edgeElasticity: 50,
     fit: true,
+//    numIter: 10000,
     animate: true
   };
 var arbor = {
     name: 'arbor',
     maxSimulationTime: 8000,
     repulsion: 2000,
-    stiffness: 200,
-    edgeLength: 2,
-//    infinite: true
+//    padding: 200,
+//    boundingBox: {0, 0, 100, 200},
+//    fit: false,
+//    stiffness: 2,
+//    edgeLength: 50
+    infinite: true
+};
+
+var springy = {
+    name: 'springy'
 };
 
 // Calls Desired Layout for all but filter elements
+
 cy.elements("[filter!='yes']").layout(arbor);
 
 // Highlights nodes on hover
@@ -204,7 +212,7 @@ cy.on('tap', 'node', function (e) {
     if (this.data('filter') != 'yes'){
         var node = e.cyTarget;
         var neighborhood = node.neighborhood().add(node);
-        cy.elements().addClass('faded');
+        cy.elements("[filter!='yes']").addClass('faded');
         neighborhood.removeClass('faded');
     }
 });

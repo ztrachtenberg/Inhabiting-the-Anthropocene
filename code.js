@@ -152,18 +152,19 @@ var cose = {
   };
 var arbor = {
     name: 'arbor',
-    maxSimulationTime: 8000,
+    maxSimulationTime: 10000,
     repulsion: 2000,
-//    padding: 200,
+    padding: 50,
 //    boundingBox: {0, 0, 100, 200},
 //    fit: false,
 //    stiffness: 2,
 //    edgeLength: 50
-    infinite: true
+//    infinite: true
 };
 
 var springy = {
-    name: 'springy'
+    name: 'springy',
+    infinite: true
 };
 
 // Calls Desired Layout for all but filter elements
@@ -270,7 +271,20 @@ window.onresize = function() {
 };
 
 // Fit view to selection
+cy.on('tap', 'node', function (e) {
+    // Only adds faded class if this isn't a filter node
+    if (this.data('filter') != 'yes'){
+        var node = e.cyTarget;
+        var neighborhood = node.neighborhood().add(node);
+        cy.fit(neighborhood);
+    }
+});
 
+cy.on('tap', function (e) {
+    if (e.cyTarget === cy) {
+        cy.fit();
+    }
+});
 
 }); // on dom ready
 

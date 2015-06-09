@@ -154,7 +154,8 @@ var arbor = {
     name: 'arbor',
     maxSimulationTime: 8000,
     repulsion: 2000,
-//	boundingBox: { 1, 1, 1000, 600 },
+//    padding: 200,
+//    boundingBox: {0, 0, 100, 200},
 //    fit: false,
 //    stiffness: 2,
 //    edgeLength: 50
@@ -166,6 +167,7 @@ var springy = {
 };
 
 // Calls Desired Layout for all but filter elements
+
 cy.elements("[filter!='yes']").layout(arbor);
 
 // Highlights nodes on hover

@@ -154,9 +154,9 @@ var arbor = {
     name: 'arbor',
     maxSimulationTime: 8000,
     repulsion: 30000,
-    fit: false,
-    stiffness: 10,
-    edgeLength: 500
+//    fit: false,
+//    stiffness: 10,
+//    edgeLength: 500
 //    infinite: true
 };
 

@@ -155,9 +155,13 @@ var arbor = {
     maxSimulationTime: 8000,
     repulsion: 30000,
     fit: false,
-    stiffness: 10,
-    edgeLength: 500
+//    stiffness: 1,
+//    edgeLength: 5
 //    infinite: true
+};
+
+var springy = {
+    name: 'springy'
 };
 
 // Calls Desired Layout for all but filter elements

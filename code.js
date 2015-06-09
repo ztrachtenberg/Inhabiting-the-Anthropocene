@@ -83,7 +83,6 @@ var cy = cytoscape({
             'text-outline-width': 3,
             'color': 'white',
             'font-size': 25,
-            'z-index': 20,
             'text-outcolor': 'black',
 			'width': 'data(width)',
             'line-color': 'data(AuthColor)',
@@ -156,10 +155,10 @@ var arbor = {
     maxSimulationTime: 8000,
     repulsion: 2000,
 //	boundingBox: { 1, 1, 1000, 600 },
-//    fit: false,
+    fit: false,
 //    stiffness: 2,
 //    edgeLength: 50
-//    infinite: true
+    infinite: true
 };
 
 // Calls Desired Layout for all but filter elements

@@ -144,12 +144,12 @@ cy.on('tap', function (e) {
 cy.on('layoutstop', function() {
     cy.maxZoom(2);
     cy.minZoom(.25);
-    cy.fit();
+    cy.fit(10);
 });
 
 // Resizes Graph to fit viewport
 window.onresize = function() {
-    cy.fit();
+    cy.fit(10);
 };
 
 }); // on dom ready

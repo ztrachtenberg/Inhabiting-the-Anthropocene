@@ -57,53 +57,53 @@ var BlogEles = {
     //dotted = similar, dashed = different, solid = same author
 
 		//Zev's links (#8DC162)
-        { data: { source: 'ZT1', target: 'ZT2', href: 'text/edges/pairs/authors/ZT1-ZT2.html', AuthColor: '#8DC162', width: 5, Arrow: 'triangle', style: 'solid', comment: ' ' } },
-        { data: { source: 'LS1', target: 'ZT1', href: 'text/edges/pairs/authors/LS1-ZT1-s.html', AuthColor: '#8DC162', width: 5, Arrow: 'triangle', style: 'dotted', comment: 'Similar ' } },
-        { data: { source: 'ZT1', target: 'NT2', href: 'text/edges/pairs/authors/ZT1-NT2-d.html', AuthColor: '#8DC162', width: 5, Arrow: 'triangle', style: 'dashed', comment: 'Different ' } },
-        { data: { source: 'KG1', target: 'ZT2', href: 'text/edges/pairs/authors/KG1-ZT2-s.html', AuthColor: '#8DC162', width: 5, Arrow: 'triangle', style: 'dotted', comment: 'Similar ' } },
-        { data: { source: 'ZT2', target: 'AR2', href: 'text/edges/pairs/authors/ZT2-AR2-d.html', AuthColor: '#8DC162', width: 5, Arrow: 'none', style: 'dotted', comment: 'Different ' } },
+//        { data: { source: 'ZT1', target: 'ZT2', href: 'text/edges/pairs/authors/ZT1-ZT2.html', AuthColor: '#8DC162', width: 5, Arrow: 'triangle', style: 'solid', comment: ' ' } },
+        { data: { source: 'LS1', target: 'ZT1', href: 'text/edges/pairs/authors/LS1-ZT1-s.html', AuthColor: '#8DC162', width: 5, Arrow: 'triangle', style: 'dotted', comment: 'Similar' } },
+        { data: { source: 'ZT1', target: 'NT2', href: 'text/edges/pairs/authors/ZT1-NT2-d.html', AuthColor: '#8DC162', width: 5, Arrow: 'triangle', style: 'dashed', comment: 'Different' } },
+        { data: { source: 'KG1', target: 'ZT2', href: 'text/edges/pairs/authors/KG1-ZT2-s.html', AuthColor: '#8DC162', width: 5, Arrow: 'triangle', style: 'dotted', comment: 'Similar' } },
+        { data: { source: 'ZT2', target: 'AR2', href: 'text/edges/pairs/authors/ZT2-AR2-d.html', AuthColor: '#8DC162', width: 5, Arrow: 'none', style: 'dashed', comment: 'Different' } },
 
         //Kiza's links (#FFEAAC)
-        { data: { source: 'KG1', target: 'KG2', href: 'text/edges/pairs/authors/KG1-KG2.html', AuthColor: '#FFEAAC', width: 5, Arrow: 'triangle', style: 'solid', comment: ' ' } },
-        { data: { source: 'KG1', target: 'IS1', href: 'text/edges/pairs/authors/KG1-IS1-s.html', AuthColor: '#FFEAAC', width: 5, Arrow: 'triangle', style: 'dotted', comment: 'Similar ' } },
-        { data: { source: 'KG1', target: 'ZT2', href: 'text/edges/pairs/authors/KG1-ZT2-d.html', AuthColor: '#FFEAAC', width: 5, Arrow: 'none', style: 'dashed', comment: 'Different ' } },
-        { data: { source: 'KG2', target: 'AC2', href: 'text/edges/pairs/authors/KG2-AC2-s.html', AuthColor: '#FFEAAC', width: 5, Arrow: 'triangle', style: 'dotted', comment: 'Similar ' } },
-        { data: { source: 'KG2', target: 'MW1', href: 'text/edges/pairs/authors/KG2-MW1-d.html', AuthColor: '#FFEAAC', width: 5, Arrow: 'none', style: 'dotted', comment: 'Different ' } },
+//        { data: { source: 'KG1', target: 'KG2', href: 'text/edges/pairs/authors/KG1-KG2.html', AuthColor: '#FFEAAC', width: 5, Arrow: 'triangle', style: 'solid', comment: ' ' } },
+        { data: { source: 'KG1', target: 'IS1', href: 'text/edges/pairs/authors/KG1-IS1-s.html', AuthColor: '#FFEAAC', width: 5, Arrow: 'triangle', style: 'dotted', comment: 'Similar' } },
+        { data: { source: 'KG1', target: 'ZT2', href: 'text/edges/pairs/authors/KG1-ZT2-d.html', AuthColor: '#FFEAAC', width: 5, Arrow: 'none', style: 'dashed', comment: 'Different' } },
+        { data: { source: 'KG2', target: 'AC2', href: 'text/edges/pairs/authors/KG2-AC2-s.html', AuthColor: '#FFEAAC', width: 5, Arrow: 'triangle', style: 'dotted', comment: 'Similar' } },
+        { data: { source: 'KG2', target: 'MW1', href: 'text/edges/pairs/authors/KG2-MW1-d.html', AuthColor: '#FFEAAC', width: 5, Arrow: 'none', style: 'dashed', comment: 'Different' } },
 
         //Meghan's links (#585898)
-        { data: { source: 'MW1', target: 'MW2', href: 'text/edges/pairs/authors/MW1-MW2.html', AuthColor: '#585898', width: 5, Arrow: 'none', style: 'solid', comment: 'From discipline' } },
-        { data: { source: 'NT1', target: 'MW1', href: 'text/edges/pairs/authors/NT1-MW1-s.html', AuthColor: '#585898', width: 5, Arrow: 'triangle', style: 'dotted', comment: 'Similar ' } },
-        { data: { source: 'MW1', target: 'KG1', href: 'text/edges/pairs/authors/MW1-KG1-d.html', AuthColor: '#585898', width: 5, Arrow: 'triangle', style: 'dashed', comment: 'Different ' } },
-        { data: { source: 'MW2', target: 'IS1', href: 'text/edges/pairs/authors/MW2-IS1-s.html', AuthColor: '#585898', width: 5, Arrow: 'triangle', style: 'dotted', comment: 'Similar' } },
-        { data: { source: 'AC1', target: 'MW2', href: 'text/edges/pairs/authors/AC1-MW2-d.html', AuthColor: '#585898', width: 5, Arrow: 'triangle', style: 'dashed', comment: 'Different' } },
+//        { data: { source: 'MW1', target: 'MW2', href: 'text/edges/pairs/authors/MW1-MW2.html', AuthColor: '#585898', width: 5, Arrow: 'none', style: 'solid', comment: 'From discipline' } },
+        { data: { source: 'NT1', target: 'MW1', href: 'text/edges/pairs/authors/NT1-MW1-s.html', AuthColor: '#585898', width: 5, Arrow: 'triangle', style: 'dotted', comment: 'Similar' } },
+        { data: { source: 'MW1', target: 'KG1', href: 'text/edges/pairs/authors/MW1-KG1-d.html', AuthColor: '#585898', width: 5, Arrow: 'triangle', style: 'dashed', comment: 'Different' } },
+        { data: { source: 'MW2', target: 'AC1', href: 'text/edges/pairs/authors/MW2-AC1-s.html', AuthColor: '#585898', width: 5, Arrow: 'triangle', style: 'dotted', comment: 'Similar' } },
+        { data: { source: 'IS1', target: 'MW2', href: 'text/edges/pairs/authors/IS1-MW2-d.html', AuthColor: '#585898', width: 5, Arrow: 'triangle', style: 'dashed', comment: 'Different' } },
 
         //Asa's links (#C2627F)
-        { data: { source: 'AR1', target: 'AR2', href: 'text/edges/pairs/authors/AR1-AR2.html', AuthColor: '#C2627F', width: 5, Arrow: 'triangle', style: 'solid', comment: ' ' } },
+//        { data: { source: 'AR1', target: 'AR2', href: 'text/edges/pairs/authors/AR1-AR2.html', AuthColor: '#C2627F', width: 5, Arrow: 'triangle', style: 'solid', comment: ' ' } },
         { data: { source: 'NT1', target: 'AR1', href: 'text/edges/pairs/authors/NT1-AR1-s.html', AuthColor: '#C2627F', width: 5, Arrow: 'triangle', style: 'dotted', comment: 'Similar' } },
         { data: { source: 'AR1', target: 'LS1', href: 'text/edges/pairs/authors/AR1-LS1-d.html', AuthColor: '#C2627F', width: 5, Arrow: 'triangle', style: 'dashed', comment: 'Different' } },
         { data: { source: 'AR2', target: 'MW1', href: 'text/edges/pairs/authors/AR2-MW1-s.html', AuthColor: '#C2627F', width: 5, Arrow: 'none', style: 'dotted', comment: 'Similar' } },
         { data: { source: 'AR2', target: 'IS1', href: 'text/edges/pairs/authors/AR2-IS1-d.html', AuthColor: '#C2627F', width: 5, Arrow: 'triangle', style: 'dashed', comment: 'Different' } },
         
         //Noah's links (#791634)
-        { data: { source: 'NT1', target: 'NT2', href: 'text/edges/pairs/authors/NT1-NT2.html', AuthColor: '#791634', width: 5, Arrow: 'triangle', style: 'solid', comment: ' ' } },
+//        { data: { source: 'NT1', target: 'NT2', href: 'text/edges/pairs/authors/NT1-NT2.html', AuthColor: '#791634', width: 5, Arrow: 'triangle', style: 'solid', comment: ' ' } },
         { data: { source: 'NT1', target: 'MW2', href: 'text/edges/pairs/authors/NT1-MW2-s.html', AuthColor: '#791634', width: 5, Arrow: 'none', style: 'dotted', comment: 'Similar' } },
         { data: { source: 'AC1', target: 'NT1', href: 'text/edges/pairs/authors/AC1-NT1-d.html', AuthColor: '#791634', width: 5, Arrow: 'triangle', style: 'dashed', comment: 'Different' } },
         { data: { source: 'NT2', target: 'AR2', href: 'text/edges/pairs/authors/NT2-AR2-s.html', AuthColor: '#791634', width: 5, Arrow: 'none', style: 'dotted', comment: 'Similar' } },
         { data: { source: 'ZT2', target: 'NT2', href: 'text/edges/pairs/authors/ZT2-NT2-d.html', AuthColor: '#791634', width: 5, Arrow: 'triangle', style: 'dashed', comment: 'Different' } },
       
         //Lynn's links (#5C4501)
-        { data: { source: 'LS1', target: 'LS2', href: 'text/edges/pairs/authors/LS1-LS2.html', AuthColor: '#5C4501', width: 5, Arrow: 'triangle', style: 'solid', comment: ' ' } },
+//        { data: { source: 'LS1', target: 'LS2', href: 'text/edges/pairs/authors/LS1-LS2.html', AuthColor: '#5C4501', width: 5, Arrow: 'triangle', style: 'solid', comment: ' ' } },
         { data: { source: 'LS1', target: 'AC1', href: 'text/edges/pairs/authors/LS1-AC1-s.html', AuthColor: '#5C4501', width: 5, Arrow: 'triangle', style: 'dotted', comment: 'Similar' } },
         { data: { source: 'LS2', target: 'AR1', href: 'text/edges/pairs/authors/LS2-AR1-d.html', AuthColor: '#5C4501', width: 5, Arrow: 'triangle', style: 'dashed', comment: 'Different' } },
         { data: { source: 'KG1', target: 'LS1', href: 'text/edges/pairs/authors/KG1-LS1-s.html', AuthColor: '#5C4501', width: 5, Arrow: 'triangle', style: 'dotted', comment: 'Similar' } },
            
         //Ingo's links (#876B19)
-        { data: { source: 'IS1', target: 'IS2', href: 'text/edges/pairs/authors/IS1-IS2.html', AuthColor: '#876B19', width: 5, Arrow: 'triangle', style: 'solid', comment: ' ' } },
+//        { data: { source: 'IS1', target: 'IS2', href: 'text/edges/pairs/authors/IS1-IS2.html', AuthColor: '#876B19', width: 5, Arrow: 'triangle', style: 'solid', comment: ' ' } },
                 
         //Antonio's links (#D9BE6E)
-        { data: { source: 'AC1', target: 'AC2', href: 'text/edges/pairs/authors/AC1-AC2.html', AuthColor: '#D9BE6E', width: 5, Arrow: 'triangle', style: 'solid', comment: ' ' } },
-        { data: { source: 'AC1', target: 'ZT2', href: 'text/edges/pairs/authors/AC1-ZT2.html', AuthColor: '#D9BE6E', width: 5, Arrow: 'triangle', style: 'solid', comment: ' ' } },
-        { data: { source: 'AC2', target: 'MW1', href: 'text/edges/pairs/authors/AC2-MW1.html', AuthColor: '#D9BE6E', width: 5, Arrow: 'triangle', style: 'solid', comment: ' ' } },
+//        { data: { source: 'AC1', target: 'AC2', href: 'text/edges/pairs/authors/AC1-AC2.html', AuthColor: '#D9BE6E', width: 5, Arrow: 'triangle', style: 'solid', comment: ' ' } },
+//        { data: { source: 'AC1', target: 'ZT2', href: 'text/edges/pairs/authors/AC1-ZT2.html', AuthColor: '#D9BE6E', width: 5, Arrow: 'triangle', style: 'solid', comment: ' ' } },
+//        { data: { source: 'AC2', target: 'MW1', href: 'text/edges/pairs/authors/AC2-MW1.html', AuthColor: '#D9BE6E', width: 5, Arrow: 'triangle', style: 'solid', comment: ' ' } },
         
     ]
 }

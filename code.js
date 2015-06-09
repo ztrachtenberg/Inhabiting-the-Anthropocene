@@ -155,7 +155,7 @@ var arbor = {
     maxSimulationTime: 8000,
     repulsion: 2000,
 //	boundingBox: { 1, 1, 1000, 600 },
-    fit: false,
+//    fit: false,
 //    stiffness: 2,
 //    edgeLength: 50
     infinite: true

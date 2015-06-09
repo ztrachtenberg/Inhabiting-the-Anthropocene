@@ -153,12 +153,14 @@ var cose = {
 var arbor = {
     name: 'arbor',
     maxSimulationTime: 10000,
-//    repulsion: 2000,
+    repulsion: 2000,
     padding: 10,
+//    friction: 0,
+    gravity: false,
 //    boundingBox: {0, 0, 100, 200},
 //    fit: false,
     stiffness: 800,
-//    edgeLength: 50
+    edgeLength: 2
 //    infinite: true
 };
 

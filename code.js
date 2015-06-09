@@ -153,9 +153,9 @@ var cose = {
 var arbor = {
     name: 'arbor',
     maxSimulationTime: 8000,
-    repulsion: 2000,
-    stiffness: 200,
-    edgeLength: 2,
+    repulsion: 20000,
+//    stiffness: 1,
+//    edgeLength: 20,
 //    infinite: true
 };
 

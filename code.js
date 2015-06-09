@@ -148,15 +148,17 @@ var cose = {
     nodeOverlap: 100,
     edgeElasticity: 50,
     fit: true,
+//    numIter: 10000,
     animate: true
   };
 var arbor = {
     name: 'arbor',
     maxSimulationTime: 8000,
-    repulsion: 30000,
+    repulsion: 2000,
+//	boundingBox: { 1, 1, 1000, 600 },
 //    fit: false,
-//    stiffness: 10,
-//    edgeLength: 500
+//    stiffness: 2,
+//    edgeLength: 50
 //    infinite: true
 };
 
@@ -205,7 +207,7 @@ cy.on('tap', 'node', function (e) {
     if (this.data('filter') != 'yes'){
         var node = e.cyTarget;
         var neighborhood = node.neighborhood().add(node);
-        cy.elements().addClass('faded');
+        cy.elements("[filter!='yes']").addClass('faded');
         neighborhood.removeClass('faded');
     }
 });

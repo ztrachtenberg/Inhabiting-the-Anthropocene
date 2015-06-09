@@ -12,7 +12,7 @@
 
             .right {
                 height: 100%;
-                width: 50%;
+                width: 35%;
                 float: right;
                 overflow: hidden;
                 padding: 5px;
@@ -24,13 +24,13 @@
 				float: left;
 				padding: 10px;
                 height: 100%;
-                width: 49%;
+                width: 64%;
                 overflow: scroll;
             }
             
             .bottomleft {
                 float: left;
-                height: 45%;
+                height: 35%;
                 width: 100%;
                 position: relative;
 			    left: 5;
@@ -74,7 +74,7 @@
     		}
 			
 			#cy {
-  				height: 50%;
+  				height: 60%;
   				width: 100%;
     			border-radius: 25px;
     			border: 2px solid #000000;

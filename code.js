@@ -154,17 +154,23 @@ var arbor = {
     name: 'arbor',
     maxSimulationTime: 10000,
     repulsion: 2000,
-    padding: 50,
+    padding: 10,
+//    friction: 0,
+    gravity: false,
 //    boundingBox: {0, 0, 100, 200},
 //    fit: false,
-//    stiffness: 2,
-//    edgeLength: 50
+    stiffness: 800,
+    edgeLength: 2
 //    infinite: true
 };
 
 var springy = {
     name: 'springy',
     infinite: true
+};
+
+var cola = {
+    name: 'cola',
 };
 
 // Calls Desired Layout for all but filter elements
@@ -265,24 +271,24 @@ cy.on('layoutstop', function() {
     cy.fit(10);
 });
 
-// Resizes Graph to fit viewport
+// Resizes graph to viewport
 window.onresize = function() {
     cy.fit(10);
 };
 
 // Fit view to selection
-cy.on('tap', 'node', function (e) {
+ cy.on('tap', 'node', function (e) {
     // Only adds faded class if this isn't a filter node
     if (this.data('filter') != 'yes'){
         var node = e.cyTarget;
         var neighborhood = node.neighborhood().add(node);
-        cy.fit(neighborhood);
+        cy.fit(neighborhood, 10);
     }
 });
-
-cy.on('tap', function (e) {
+// Resizes on background tap
+ cy.on('tap', function (e) {
     if (e.cyTarget === cy) {
-        cy.fit();
+        cy.fit(10);
     }
 });
 

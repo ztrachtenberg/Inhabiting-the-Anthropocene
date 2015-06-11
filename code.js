@@ -23,7 +23,7 @@ var cy = cytoscape({
     })
     .selector(':selected')
         .css({
-            'content': 'data(name)',
+//            'content': 'data(name)', keep view cleaner
             'text-valign': 'center',
             'text-outline-width': 3,
             'font-size': 25,
@@ -73,7 +73,7 @@ var cy = cytoscape({
             'line-color': 'data(AuthColor)',
             'line-style': 'data(style)',
             'target-arrow-shape': 'data(Arrow)',
-          	'target-arrow-color': 'data(AuthColor)'
+            'target-arrow-color': 'data(AuthColor)'
     })
 
     .selector('edge.hovered')
@@ -261,7 +261,21 @@ cy.on('tap', 'node', function () {
                 element.removeClass('invisible');
             }
         })
-    }
+    } else if (!this.hasClass('triggered') && this.data('name') == 'Same author'){
+        this.addClass('triggered');
+        cy.filter(function(i, element){
+            if (element.isEdge() && (element.data("comment") == 'Same author')){
+                element.addClass('invisible');
+            }
+        })
+    } else if (this.hasClass('triggered') && this.data('name') == 'Same author'){   
+        this.removeClass('triggered'); 
+        cy.filter(function(i, element){
+            if (element.isEdge() && (element.data("comment") == 'Same author')){
+                element.removeClass('invisible');
+            }
+        })
+    }   
 });
 
 // Sets zoom options

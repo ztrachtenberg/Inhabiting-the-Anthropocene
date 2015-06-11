@@ -13,8 +13,8 @@
 //----Approach nodes should have 4 different primary colors
 //----Post nodes--should have color for author--see list below
 //--Edges
-//----"primary approach edges" should be same color as approach nodes--SOLID LINE
-//----"secondary approach edges" CHANGED TO COLOR OF APPROACH--DASHED LINE
+//----"primary approach edges" should be same color as approach nodes
+//----"secondary approach edges" should be same color as post node
 //Color palette
 //--Approach colors
 //----D: #AF923C (brownish)
@@ -38,12 +38,11 @@
 
 var BlogEles = {
     nodes: [
-
     //Approach nodes
-        { data: { id: 'D', label: 'D', name: 'Descriptive', href: 'text/main/approaches/approaches-D.html', color: '#AF923C', weight:80, faveShape: 'roundrectangle' } },
-		{ data: { id: 'I', label: 'I', name: 'Interpretive', href: 'text/main/approaches/approaches-I.html', color: '#9C3655', weight:80, faveShape: 'roundrectangle' } },
-		{ data: { id: 'N', label: 'N', name: 'Normative', href: 'text/main/approaches/approaches-N.html', color: '#649C35', weight:80, faveShape: 'roundrectangle' } },
-		{ data: { id: 'P', label: 'P', name: 'Practical', href: 'text/main/approaches/approaches-P.html', color: '#36367A', weight:80, faveShape: 'roundrectangle' } },
+        { data: { id: 'D', label: 'D', name: 'Descriptive', href: 'text/main/approaches/approaches-D.html', color: '#AF923C', weight:45, faveShape: 'roundrectangle' } },
+		{ data: { id: 'I', label: 'I', name: 'Interpretive', href: 'text/main/approaches/approaches-I.html', color: '#9C3655', weight:45, faveShape: 'roundrectangle' } },
+		{ data: { id: 'N', label: 'N', name: 'Normative', href: 'text/main/approaches/approaches-N.html', color: '#649C35', weight:45, faveShape: 'roundrectangle' } },
+		{ data: { id: 'P', label: 'P', name: 'Practical', href: 'text/main/approaches/approaches-P.html', color: '#36367A', weight:45, faveShape: 'roundrectangle' } },
     //Post nodes
         { data: { id: 'ZT1', label: 'ZT1', name: 'Of Property', href: 'text/posts/ZT1.html', color: '#8DC162', weight:65, faveShape: 'ellipse' } },
         { data: { id: 'KG1', label: 'KG1', name: 'Organisms as Ecosystem Engineers', href: 'text/posts/KG1.html', color: '#FFEAAC', weight:65, faveShape: 'ellipse' } },
@@ -64,22 +63,22 @@ var BlogEles = {
 	],	
     edges: [
     //Primary approach edges
-        { data: { source: 'ZT1', target: 'N', AuthColor: '#649C35', width: 5, Arrow: 'none', style: 'solid', comment: 'From discipline' } },
-        { data: { source: 'KG1', target: 'D', AuthColor: '#AF923C', width: 5, Arrow: 'none', style: 'solid', comment: 'From discipline' } },
-        { data: { source: 'AR1', target: 'I', AuthColor: '#9C3655', width: 5, Arrow: 'none', style: 'solid', comment: 'From discipline' } },
-        { data: { source: 'MW1', target: 'P', AuthColor: '#36367A', width: 5, Arrow: 'none', style: 'solid', comment: 'From discipline' } },
-        { data: { source: 'NT1', target: 'I', AuthColor: '#9C3655', width: 5, Arrow: 'none', style: 'solid', comment: 'From discipline' } },
-        { data: { source: 'LS1', target: 'D', AuthColor: '#AF923C', width: 5, Arrow: 'none', style: 'solid', comment: 'From discipline' } },
-        { data: { source: 'IS1', target: 'D', AuthColor: '#AF923C', width: 5, Arrow: 'none', style: 'solid', comment: 'From discipline' } },
-        { data: { source: 'AC1', target: 'D', AuthColor: '#AF923C', width: 5, Arrow: 'none', style: 'solid', comment: 'From discipline' } },
-        { data: { source: 'ZT2', target: 'N', AuthColor: '#649C35', width: 5, Arrow: 'none', style: 'solid', comment: 'From discipline' } },
-        { data: { source: 'KG2', target: 'D', AuthColor: '#AF923C', width: 5, Arrow: 'none', style: 'solid', comment: 'From discipline' } },
-        { data: { source: 'MW2', target: 'P', AuthColor: '#36367A', width: 5, Arrow: 'none', style: 'solid', comment: 'From discipline' } },
-        { data: { source: 'IS2', target: 'D', AuthColor: '#AF923C', width: 5, Arrow: 'none', style: 'solid', comment: 'From discipline' } },
-        { data: { source: 'AR2', target: 'I', AuthColor: '#9C3655', width: 5, Arrow: 'none', style: 'solid', comment: 'From discipline' } },
-        { data: { source: 'AC2', target: 'D', AuthColor: '#AF923C', width: 5, Arrow: 'none', style: 'solid', comment: 'From discipline' } },
-        { data: { source: 'NT2', target: 'I', AuthColor: '#9C3655', width: 5, Arrow: 'none', style: 'solid', comment: 'From discipline' } },
-        { data: { source: 'LS2', target: 'D', AuthColor: '#AF923C', width: 5, Arrow: 'none', style: 'solid', comment: 'From discipline' } },
+        { data: { source: 'ZT1', target: 'N', AuthColor: '#649C35', width: 5, Arrow: 'none', style: 'dotted', comment: 'From discipline' } },
+        { data: { source: 'KG1', target: 'D', AuthColor: '#AF923C', width: 5, Arrow: 'none', style: 'dotted', comment: 'From discipline' } },
+        { data: { source: 'AR1', target: 'I', AuthColor: '#9C3655', width: 5, Arrow: 'none', style: 'dotted', comment: 'From discipline' } },
+        { data: { source: 'MW1', target: 'P', AuthColor: '#36367A', width: 5, Arrow: 'none', style: 'dotted', comment: 'From discipline' } },
+        { data: { source: 'NT1', target: 'I', AuthColor: '#9C3655', width: 5, Arrow: 'none', style: 'dotted', comment: 'From discipline' } },
+        { data: { source: 'LS1', target: 'D', AuthColor: '#AF923C', width: 5, Arrow: 'none', style: 'dotted', comment: 'From discipline' } },
+        { data: { source: 'IS1', target: 'D', AuthColor: '#AF923C', width: 5, Arrow: 'none', style: 'dotted', comment: 'From discipline' } },
+        { data: { source: 'AC1', target: 'D', AuthColor: '#AF923C', width: 5, Arrow: 'none', style: 'dotted', comment: 'From discipline' } },
+        { data: { source: 'ZT2', target: 'N', AuthColor: '#649C35', width: 5, Arrow: 'none', style: 'dotted', comment: 'From discipline' } },
+        { data: { source: 'KG2', target: 'D', AuthColor: '#AF923C', width: 5, Arrow: 'none', style: 'dotted', comment: 'From discipline' } },
+        { data: { source: 'MW2', target: 'P', AuthColor: '#36367A', width: 5, Arrow: 'none', style: 'dotted', comment: 'From discipline' } },
+        { data: { source: 'IS2', target: 'D', AuthColor: '#AF923C', width: 5, Arrow: 'none', style: 'dotted', comment: 'From discipline' } },
+        { data: { source: 'AR2', target: 'I', AuthColor: '#9C3655', width: 5, Arrow: 'none', style: 'dotted', comment: 'From discipline' } },
+        { data: { source: 'AC2', target: 'D', AuthColor: '#AF923C', width: 5, Arrow: 'none', style: 'dotted', comment: 'From discipline' } },
+        { data: { source: 'NT2', target: 'I', AuthColor: '#9C3655', width: 5, Arrow: 'none', style: 'dotted', comment: 'From discipline' } },
+        { data: { source: 'LS2', target: 'D', AuthColor: '#AF923C', width: 5, Arrow: 'none', style: 'dotted', comment: 'From discipline' } },
     //Secondary approach edges
     //black edges
 //        { data: { source: '13', target: 'D', AuthColor: 'black', width: 5, Arrow: 'none', style: 'dotted', comment: ' ' } },
@@ -97,19 +96,19 @@ var BlogEles = {
 //        { data: { source: '32', target: 'D', AuthColor: 'black', width: 5, Arrow: 'none', style: 'dotted', comment: ' ' } },
 //        { data: { source: '36', target: 'P', AuthColor: 'black', width: 5, Arrow: 'none', style: 'dotted', comment: ' ' } }
     //author color edges
-        { data: { source: 'AR1', target: 'D', AuthColor: '#AF923C', width: 5, Arrow: 'none', style: 'dashed', comment: 'Found in post' } },
-        { data: { source: 'MW1', target: 'N', AuthColor: '#649C35', width: 5, Arrow: 'none', style: 'dashed', comment: 'Found in post' } },
-        { data: { source: 'NT1', target: 'N', AuthColor: '#649C35', width: 5, Arrow: 'none', style: 'dashed', comment: 'Found in post' } },
-        { data: { source: 'LS1', target: 'I', AuthColor: '#9C3655', width: 5, Arrow: 'none', style: 'dashed', comment: 'Found in post' } },
-        { data: { source: 'IS1', target: 'I', AuthColor: '#9C3655', width: 5, Arrow: 'none', style: 'dashed', comment: 'Found in post' } },
-        { data: { source: 'AC1', target: 'N', AuthColor: '#649C35', width: 5, Arrow: 'none', style: 'dashed', comment: 'Found in post' } },
-        { data: { source: 'ZT2', target: 'D', AuthColor: '#AF923C', width: 5, Arrow: 'none', style: 'dashed', comment: 'Found in post' } },
-        { data: { source: 'KG2', target: 'P', AuthColor: '#36367A', width: 5, Arrow: 'none', style: 'dashed', comment: 'Found in post' } },
-        { data: { source: 'MW2', target: 'N', AuthColor: '#649C35', width: 5, Arrow: 'none', style: 'dashed', comment: 'Found in post' } },
-        { data: { source: 'IS2', target: 'I', AuthColor: '#9C3655', width: 5, Arrow: 'none', style: 'dashed', comment: 'Found in post' } },
-        { data: { source: 'AR2', target: 'D', AuthColor: '#AF923C', width: 5, Arrow: 'none', style: 'dashed', comment: 'Found in post' } },
-        { data: { source: 'AC2', target: 'I', AuthColor: '#9C3655', width: 5, Arrow: 'none', style: 'dashed', comment: 'Found in post' } },
-        { data: { source: 'NT2', target: 'D', AuthColor: '#AF923C', width: 5, Arrow: 'none', style: 'dashed', comment: 'Found in post' } },
-        { data: { source: 'LS2', target: 'P', AuthColor: '#36367A', width: 5, Arrow: 'none', style: 'dashed', comment: 'Found in post' } }
+        { data: { source: 'AR1', target: 'D', AuthColor: '#C2627F', width: 5, Arrow: 'none', style: 'dotted', comment: 'Found in post' } },
+        { data: { source: 'MW1', target: 'N', AuthColor: '#585898', width: 5, Arrow: 'none', style: 'dotted', comment: 'Found in post' } },
+        { data: { source: 'NT1', target: 'N', AuthColor: '#791634', width: 5, Arrow: 'none', style: 'dotted', comment: 'Found in post' } },
+        { data: { source: 'LS1', target: 'I', AuthColor: '#5C4501', width: 5, Arrow: 'none', style: 'dotted', comment: 'Found in post' } },
+        { data: { source: 'IS1', target: 'I', AuthColor: '#876B19', width: 5, Arrow: 'none', style: 'dotted', comment: 'Found in post' } },
+        { data: { source: 'AC1', target: 'N', AuthColor: '#D9BE6E', width: 5, Arrow: 'none', style: 'dotted', comment: 'Found in post' } },
+        { data: { source: 'ZT2', target: 'D', AuthColor: '#8DC162', width: 5, Arrow: 'none', style: 'dotted', comment: 'Found in post' } },
+        { data: { source: 'KG2', target: 'P', AuthColor: '#FFEAAC', width: 5, Arrow: 'none', style: 'dotted', comment: 'Found in post' } },
+        { data: { source: 'MW2', target: 'N', AuthColor: '#585898', width: 5, Arrow: 'none', style: 'dotted', comment: 'Found in post' } },
+        { data: { source: 'IS2', target: 'I', AuthColor: '#876B19', width: 5, Arrow: 'none', style: 'dotted', comment: 'Found in post' } },
+        { data: { source: 'AR2', target: 'D', AuthColor: '#C2627F', width: 5, Arrow: 'none', style: 'dotted', comment: 'Found in post' } },
+        { data: { source: 'AC2', target: 'I', AuthColor: '#D9BE6E', width: 5, Arrow: 'none', style: 'dotted', comment: 'Found in post' } },
+        { data: { source: 'NT2', target: 'D', AuthColor: '#791634', width: 5, Arrow: 'none', style: 'dotted', comment: 'Found in post' } },
+        { data: { source: 'LS2', target: 'P', AuthColor: '#5C4501', width: 5, Arrow: 'none', style: 'dotted', comment: 'Found in post' } }
     ]
 }

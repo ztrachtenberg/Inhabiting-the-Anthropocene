@@ -28,16 +28,16 @@
 //Color palette
 //--Theme colors
 //----H: #AF703C
-//----Hc: #FFD2AC DOTTED
+//----Hc: #FFD2AC solid
 //----Hr: #874B19 DASHED
 //----F: #AFAF3C
-//----Fh: #878719 DOTTED
+//----Fh: #878719 solid
 //----Fd: #D9D96E DASHED
 //----A: #5B2C75
-//----Ax: #42155A DOTTED
+//----Ax: #42155A solid
 //----An: #9B79AF DASHED
 //----L: #246969
-//----Lp: #0F5151 DOTTED
+//----Lp: #0F5151 solid
 //----Lm: #6B9E9E DASHED
 
 
@@ -61,45 +61,45 @@ var BlogEles = {
         { data: { id: 'NT2', label: 'NT2', name: 'Toward a More Than Human Anthropocene', href: 'text/posts/NT2.html', color: '#791634', weight:65, faveShape: 'ellipse' } },
         { data: { id: 'LS2', label: 'LS2', name: 'The Dust of Civilization', href: 'text/posts/LS2.html', color: '#5C4501', weight:65, faveShape: 'ellipse' } },
 	//Theme nodes
-	    { data: { id: 'H', label: 'H', name: 'History', href: 'text/main/themes/themes-H.html', color: '#737373', weight:45, faveShape: 'triangle'  } },
-		{ data: { id: 'F', label: 'F', name: 'Future', href: 'text/main/themes/themes-F.html', color: '#737373', weight:45, faveShape: 'rectangle'  } },
-		{ data: { id: 'A', label: 'A', name: 'Agency', href: 'text/main/themes/themes-A.html', color: '#737373', weight:45, faveShape: 'pentagon'  } },
-		{ data: { id: 'L', label: 'L', name: 'Limits', href: 'text/main/themes/themes-L.html', color: '#737373', weight:45, faveShape: 'hexagon'  } }
+	    { data: { id: 'H', label: 'H', name: 'History', href: 'text/main/themes/themes-H.html', color: '#737373', weight:77, faveShape: 'triangle'  } },
+		{ data: { id: 'F', label: 'F', name: 'Future', href: 'text/main/themes/themes-F.html', color: '#737373', weight:77, faveShape: 'rectangle'  } },
+		{ data: { id: 'A', label: 'A', name: 'Agency', href: 'text/main/themes/themes-A.html', color: '#737373', weight:77, faveShape: 'pentagon'  } },
+		{ data: { id: 'L', label: 'L', name: 'Limits', href: 'text/main/themes/themes-L.html', color: '#737373', weight:77, faveShape: 'hexagon'  } }
 	],	
     
    edges: [
     //Theme 1 edges
-     { data: { source: 'ZT1', target: 'A', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dotted', comment: 'Exceptional', href: 'text/edges/themes/Ax.html' } },
-        { data: { source: 'KG1', target: 'A', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dotted', comment: 'Exceptional', href: 'text/edges/themes/Ax.html' } },
-        { data: { source: 'AR1', target: 'H', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dotted', comment: 'Complex', href: 'text/edges/themes/Hc.html' } },
+     { data: { source: 'ZT1', target: 'A', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'solid', comment: 'Exceptional', href: 'text/edges/themes/Ax.html' } },
+        { data: { source: 'KG1', target: 'A', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'solid', comment: 'Exceptional', href: 'text/edges/themes/Ax.html' } },
+        { data: { source: 'AR1', target: 'H', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'solid', comment: 'Complex', href: 'text/edges/themes/Hc.html' } },
         { data: { source: 'MW1', target: 'L', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dashed', comment: 'Moral', href: 'text/edges/themes/Lm.html' } },
         { data: { source: 'NT1', target: 'A', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dashed', comment: 'Entangled', href: 'text/edges/themes/An.html' } },
         { data: { source: 'LS1', target: 'H', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dashed', comment: 'Reduction', href: 'text/edges/themes/Hr.html' } },
-        { data: { source: 'IS1', target: 'A', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dotted', comment: 'Exceptional', href: 'text/edges/themes/Ax.html' } },
-        { data: { source: 'AC1', target: 'L', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dotted', comment: 'Physical', href: 'text/edges/themes/Lp.html' } },
+        { data: { source: 'IS1', target: 'A', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'solid', comment: 'Exceptional', href: 'text/edges/themes/Ax.html' } },
+        { data: { source: 'AC1', target: 'L', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'solid', comment: 'Physical', href: 'text/edges/themes/Lp.html' } },
         { data: { source: 'ZT2', target: 'L', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dashed', comment: 'Moral', href: 'text/edges/themes/Lm.html' } },
-        { data: { source: 'KG2', target: 'A', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dotted', comment: 'Exceptional', href: 'text/edges/themes/Ax.html' } },
+        { data: { source: 'KG2', target: 'A', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'solid', comment: 'Exceptional', href: 'text/edges/themes/Ax.html' } },
         { data: { source: 'MW2', target: 'L', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dashed', comment: 'Moral', href: 'text/edges/themes/Lm.html' } },
-        { data: { source: 'IS2', target: 'A', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dotted', comment: 'Exceptional', href: 'text/edges/themes/Ax.html' } },
-        { data: { source: 'AR2', target: 'H', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dotted', comment: 'Complex', href: 'text/edges/themes/Hc.html' } },
-        { data: { source: 'AC2', target: 'F', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dotted', comment: 'Hope', href: 'text/edges/themes/Fh.html' } },
+        { data: { source: 'IS2', target: 'A', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'solid', comment: 'Exceptional', href: 'text/edges/themes/Ax.html' } },
+        { data: { source: 'AR2', target: 'H', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'solid', comment: 'Complex', href: 'text/edges/themes/Hc.html' } },
+        { data: { source: 'AC2', target: 'F', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'solid', comment: 'Hope', href: 'text/edges/themes/Fh.html' } },
         { data: { source: 'NT2', target: 'A', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dashed', comment: 'Entangled', href: 'text/edges/themes/An.html' } },
         { data: { source: 'LS2', target: 'F', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dashed', comment: 'Danger', href: 'text/edges/themes/Fd.html' } },
     //Theme 2 edges
         { data: { source: 'KG1', target: 'H', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dashed', comment: 'Reduction', href: 'text/edges/themes/Hr.html' } },
         { data: { source: 'MW1', target: 'H', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dashed', comment: 'Reduction', href: 'text/edges/themes/Hr.html' } },
-        { data: { source: 'NT1', target: 'H', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dotted', comment: 'Complex', href: 'text/edges/themes/Hc.html' } },
-        { data: { source: 'LS1', target: 'A', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dotted', comment: 'Exceptional', href: 'text/edges/themes/Ax.html' } },
+        { data: { source: 'NT1', target: 'H', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'solid', comment: 'Complex', href: 'text/edges/themes/Hc.html' } },
+        { data: { source: 'LS1', target: 'A', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'solid', comment: 'Exceptional', href: 'text/edges/themes/Ax.html' } },
         { data: { source: 'IS1', target: 'H', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dashed', comment: 'Reduction', href: 'text/edges/themes/Hr.html' } },
         { data: { source: 'AC1', target: 'F', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dashed', comment: 'Danger', href: 'text/edges/themes/Fd.html' } },
-        { data: { source: 'ZT2', target: 'A', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dotted', comment: 'Exceptional', href: 'text/edges/themes/Ax.html' } },
+        { data: { source: 'ZT2', target: 'A', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'solid', comment: 'Exceptional', href: 'text/edges/themes/Ax.html' } },
         { data: { source: 'KG2', target: 'F', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dashed', comment: 'Danger', href: 'text/edges/themes/Fd.html' } },
-        { data: { source: 'MW2', target: 'F', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dotted', comment: 'Hope', href: 'text/edges/themes/Fh.html' } },
+        { data: { source: 'MW2', target: 'F', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'solid', comment: 'Hope', href: 'text/edges/themes/Fh.html' } },
         { data: { source: 'IS2', target: 'H', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dashed', comment: 'Reduction', href: 'text/edges/themes/Hr.html' } },
-        { data: { source: 'AR2', target: 'F', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dotted', comment: 'Hope', href: 'text/edges/themes/Fh.html' } },
-        { data: { source: 'AC2', target: 'L', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dotted', comment: 'Physical', href: 'text/edges/themes/Lp.html' } },
+        { data: { source: 'AR2', target: 'F', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'solid', comment: 'Hope', href: 'text/edges/themes/Fh.html' } },
+        { data: { source: 'AC2', target: 'L', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'solid', comment: 'Physical', href: 'text/edges/themes/Lp.html' } },
         { data: { source: 'NT2', target: 'L', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dashed', comment: 'Moral', href: 'text/edges/themes/Lm.html' } },
-        { data: { source: 'LS2', target: 'A', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'dotted', comment: 'Exceptional', href: 'text/edges/themes/Ax.html' } }
+        { data: { source: 'LS2', target: 'A', AuthColor: '#737373', width: 5, Arrow: 'none', style: 'solid', comment: 'Exceptional', href: 'text/edges/themes/Ax.html' } }
     //Theme 1 edges COLOR
 //        { data: { source: '1', target: 'A', AuthColor: '#42155A', width: 5, Arrow: 'none' } },
 //        { data: { source: '4', target: 'A', AuthColor: '#42155A', width: 5, Arrow: 'none' } },

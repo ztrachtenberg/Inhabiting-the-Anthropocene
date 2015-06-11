@@ -147,14 +147,29 @@ var cose = {
     fit: true,
     animate: true
   };
+  
 var arbor = {
     name: 'arbor',
-    repulsion: 200,
+    maxSimulationTime: 10000,
+    repulsion: 2000,
+    padding: 10,
+//    friction: 0,
+    gravity: false,
+//    boundingBox: {0, 0, 100, 200},
+//    fit: false,
+    stiffness: 800,
+    edgeLength: 2,
 //    infinite: true
-};
+};  
+//var arbor = {  older version
+//    name: 'arbor',
+//    repulsion: 200,
+//    infinite: true
+//};
 
 // Calls Desired Layout  
-cy.layout(cose);
+cy.layout(cose); 
+// cy.elements("[filter!='yes']").layout(arbor);
 
 // Highlights nodes on hover
 cy.on('mouseover', 'node', function(){
@@ -178,8 +193,10 @@ cy.on('mouseout', 'edge', function(){
 cy.on('tap', 'node', function(){
     try { // your browser may block popups
         window.open( this.data('href'), 'content' );
+//		window.open( this.data('bio'), 'comment' ); trying to show bio in comment box
     } catch(e){ // fall back on url change
         window.location.href = this.data('href');
+//		window.location.href = this.data('bio'); trying to show bio in comment box
     }
 });
 

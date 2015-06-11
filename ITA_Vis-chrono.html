@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Inhabiting the Anthropocene</title>
         <link href="bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">		
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="layout-style.css">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="cytoscape/dist/cytoscape.js"></script>
 		<script src="chrono_elements.js"></script>
@@ -49,11 +49,10 @@
           								    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Select a View
           								        <span class="caret"></span></a>
           								    <ul class="dropdown-menu">
-            								    <li><a href="ITA_Vis-approach.html">Approaches</a></li>
-            								    <li><a href="ITA_Vis-author.html">Authors</a></li>
-            								    <li><a href="ITA_Vis-chrono.html">Chronological</a></li>
-            								    <li><a href="ITA_Vis-themes.html">Themes</a></li>
-            								    <li><a href="ITA_Vis-views.html">Views</a></li>
+                    							<li><a href="ITA_Vis-approach.html">Approaches</a></li>
+                    							<li><a href="ITA_Vis-themes.html">Themes</a></li>
+                    							<li><a href="ITA_Vis-author-pairings.html">Author-supplied Pairings</a></li>
+                    							<li><a href="ITA_Vis-chrono.html">Chronological</a></li>
           								    </ul>
         							    </li>
       							    </ul>
@@ -61,10 +60,12 @@
   						    </div>
 					    </nav>
 				    </div>
-			        <div class="legend shadow">Legend</div>
-			        <div class="comments shadow">
-			            <iframe src="www.facebook.com" name="comments" frameborder="0" id="comments"></iframe>
-			        </div>
+      <div class="legend shadow"><em>Explanation of elements in Chronological View</em>
+        <iframe src="./text/legends/chrono.html" name="legend" frameborder="0" id="legend"></iframe>
+      </div>
+      <div class="comments shadow"><em>Comments</em>
+        <iframe src="./text/legends/authors-by-approach.html" name="comments" frameborder="0" id="comments"></iframe>
+      </div>
 		        </div> 
 		    </div>
 		    <div class="right">

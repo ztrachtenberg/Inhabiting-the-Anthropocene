@@ -12,7 +12,7 @@
 
             .right {
                 height: 100%;
-                width: 35%;
+                width: 45%;
                 float: right;
                 overflow: hidden;
                 padding: 5px;
@@ -24,13 +24,13 @@
 				float: left;
 				padding: 10px;
                 height: 100%;
-                width: 64%;
+                width: 54%;
                 overflow: scroll;
             }
             
             .bottomleft {
                 float: left;
-                height: 35%;
+                height: 40%;
                 width: 100%;
                 position: relative;
 			    left: 5;
@@ -48,30 +48,33 @@
 			
 			.legend {
 			    float: left;
-			    width: 35%;
+			    width: 48%;
 			    min-width: 140px;
 			    margin-right: 1%;
-			    margin-bottom: 5px;
-			    height: 60%;
-			    padding: 10px;
-    			border-radius: 25px;
-    			border: 2px solid #000000;
+			    margin-bottom: 10px;
+			    height: 100%;
+			    padding: 5px;
+//    			border-radius: 25px;
+ //   			border: 2px solid #000000;
 			}
 			
 			.comments {
-			    float: left;
+			    float: right;
 			    min-width: 140px;
-			    width: 64%;
-			    padding: 10px;
+			    width: 50%;
+			    padding: 5px;
+				margin-right: 1%;
 			    margin-bottom: 10px;
-			    height: 60%;
-    			border-radius: 25px;
-    			border: 2px solid #000000; 
+			    height: 100%;
+ //   			border-radius: 25px;
+ //   			border: 2px solid #000000; 
+     			border-left: thick double #000000;
+
 			}
 			
-			.shadow {
-    			box-shadow: 2px 2px 1px #888888;
-    		}
+//			.shadow {
+ //   			box-shadow: 2px 2px 1px #888888;
+//    		}
 			
 			#cy {
   				height: 60%;
@@ -85,9 +88,9 @@
 			    height: 100%;
 			    width: 100%;
 			    padding: 10px;
-    			border-radius: 25px;
-    			border: 2px solid #000000;
-    			box-shadow: 2px 2px 1px #888888;
+ //   			border-radius: 25px;
+ //   			border: 2px solid #000000;
+ //   			box-shadow: 2px 2px 1px #888888;
 			}
             
             #comments {
@@ -96,5 +99,13 @@
                 overflow: scroll;
                 width: 100%;
             }
+			
+			#legend {
+                position: relative;
+                height: 100%;
+                overflow: scroll;
+                width: 100%;
+            }
+
 
 	

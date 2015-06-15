@@ -1,6 +1,7 @@
 // Cytoscape
 $(function(){ // on dom ready
 
+var NodeWeight = 40;
 // Defines Nodes and Edges and Their Styles
 var cy = cytoscape({
   container: $('#cy')[0],
@@ -150,11 +151,10 @@ var cose = {
 //    numIter: 10000,
     animate: true
   };
-  
 var arbor = {
     name: 'arbor',
     maxSimulationTime: 10000,
-    repulsion: 2000,
+    repulsion: 20000,
     padding: 10,
 //    friction: 0,
 //    gravity: false,
@@ -164,12 +164,10 @@ var arbor = {
     edgeLength: 2,
 //    infinite: true
 };  
-
 var springy = {
     name: 'springy',
     infinite: true
 };
-
 var cola = {
     name: 'cola',
 };
@@ -200,19 +198,31 @@ cy.on('mouseout', 'edge', function(){
 cy.on('tap', 'node', function(){
     try { // your browser may block popups
         window.open( this.data('href'), 'content' );
-//		window.open( this.data('bio'), 'comment' ); trying to show bio in comment box
+//		window.open( this.data('bio'), 'comments' ); trying to show bio in comment box
     } catch(e){ // fall back on url change
         window.location.href = this.data('href');
 //		window.location.href = this.data('bio'); trying to show bio in comment box
     }
 });
 
-// Populate Comments Div on Tap
-cy.on('tap', 'edge', function(){
-	try {
-	    window.open( this.data('href'), 'comments');
-	} catch(e){
-	    window.location.href = this.data('href');
+// Populate Comments Div on Hover Unless Faded
+cy.on('mouseover', 'edge', function(){
+	if(!this.hasClass('faded')){
+		try {
+	    	window.open( this.data('href'), 'comments');
+		} catch(e){
+	    	window.location.href = this.data('href');
+		}
+	}
+});
+
+cy.on('mouseout', 'edge', function(){
+	if(!this.hasClass('faded')){
+		try {
+			window.open('text/legends/authors-by-approach.html', 'comments');
+		} catch(e) {
+			window.location.href = 'text/legends/authors-by-approach.html';
+		}
 	}
 });
 
@@ -231,6 +241,7 @@ cy.on('tap', 'node', function (e) {
 cy.on('tap', function (e) {
     if (e.cyTarget === cy) {
         cy.elements().removeClass('faded');
+//		window.frames('content').location.src.reload();
     }
 });
 

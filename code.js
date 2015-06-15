@@ -48,6 +48,7 @@ var cy = cytoscape({
             'padding-right': '10px',
             'text-valign': 'top',
             'text-halign': 'center',
+            'z-index': 1000,
             'height': 200,
             'width': 100
     })            
@@ -82,7 +83,6 @@ var cy = cytoscape({
             'text-outline-width': 3,
             'color': 'white',
             'font-size': 25,
-            'z-index': 100,
             'text-outcolor': 'black',
 			'width': 'data(width)',
             'line-color': 'data(AuthColor)',
@@ -104,7 +104,9 @@ var cy = cytoscape({
     
     .selector('node.triggered')
         .css({
-            'background-color': 'red'
+            'background-color': 'red',
+            'border-color': 'black',
+            'border-width': 1
     }),
     
   // Call the Nodes and Edges
@@ -141,10 +143,11 @@ var cose = {
     name: 'cose',
     padding: 5,
     nodeRepulsion: 8000000,
-    idealEdgeLength: 5,
+    idealEdgeLength: 10,
     nodeOverlap: 100,
-    edgeElasticity: 25,
+    edgeElasticity: 50,
     fit: true,
+//    numIter: 10000,
     animate: true
   };
   
@@ -154,22 +157,26 @@ var arbor = {
     repulsion: 2000,
     padding: 10,
 //    friction: 0,
-    gravity: false,
+//    gravity: false,
 //    boundingBox: {0, 0, 100, 200},
 //    fit: false,
     stiffness: 800,
     edgeLength: 2,
 //    infinite: true
 };  
-//var arbor = {  older version
-//    name: 'arbor',
-//    repulsion: 200,
-//    infinite: true
-//};
 
-// Calls Desired Layout  
-cy.layout(cose); 
-// cy.elements("[filter!='yes']").layout(arbor);
+var springy = {
+    name: 'springy',
+    infinite: true
+};
+
+var cola = {
+    name: 'cola',
+};
+
+// Calls Desired Layout for all but filter elements
+
+cy.elements("[filter!='yes']").layout(arbor);
 
 // Highlights nodes on hover
 cy.on('mouseover', 'node', function(){
@@ -200,8 +207,8 @@ cy.on('tap', 'node', function(){
     }
 });
 
-// Populate Comments Div on Edge Hover
-cy.on('mouseover', 'edge', function(){
+// Populate Comments Div on Tap
+cy.on('tap', 'edge', function(){
 	try {
 	    window.open( this.data('href'), 'comments');
 	} catch(e){
@@ -215,7 +222,7 @@ cy.on('tap', 'node', function (e) {
     if (this.data('filter') != 'yes'){
         var node = e.cyTarget;
         var neighborhood = node.neighborhood().add(node);
-        cy.elements().addClass('faded');
+        cy.elements("[filter!='yes']").addClass('faded');
         neighborhood.removeClass('faded');
     }
 });
@@ -281,13 +288,29 @@ cy.on('layoutstop', function() {
     cy.fit(10);
 });
 
-// Resizes Graph to fit viewport
+// Resizes graph to viewport
 window.onresize = function() {
     cy.fit(10);
 };
 
+/*
 // Fit view to selection
+ cy.on('tap', 'node', function (e) {
+    // Only adds faded class if this isn't a filter node
+    if (this.data('filter') != 'yes'){
+        var node = e.cyTarget;
+        var neighborhood = node.neighborhood().add(node);
+        cy.fit(neighborhood, 10);
+    }
+});
+*/
 
+// Resizes on background tap
+ cy.on('tap', function (e) {
+    if (e.cyTarget === cy) {
+        cy.fit(10);
+    }
+});
 
 }); // on dom ready
 

@@ -1,69 +1,81 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Inhabiting the Anthropocene</title>
-<link href="bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="layout-style.css">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="cytoscape/dist/cytoscape.js"></script>
-<script src="approach_elements.js"></script>
-<script src="code.js"></script>
-</head>
-<body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      <a class="navbar-brand" href="#">Inhabiting the Anthropocene</a> </div>
-    <div id="navbar" class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-    <!--/.nav-collapse --> 
-  </div>
-</nav>
-<div class="bodycontainer">
-  <div class="left">
-    <div class="shadow" id="cy"></div>
-    <div class="bottomleft">
-      <div class="nav-internal">
-        <nav class="navbar navbar-inverse">
-          <div class="container-fluid">
-            <div class="navbar-header"> <a class="navbar-brand" href="#">Approaches</a> </div>
-            <div>
-              <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Select a View <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="ITA_Vis-approach.html">Approaches</a></li>
-                    <li><a href="ITA_Vis-themes.html">Themes</a></li>
-                    <li><a href="ITA_Vis-author-pairings.html">Author-supplied Pairings</a></li>
-                    <li><a href="ITA_Vis-chrono.html">Chronological</a></li>
-                    <!-- li><a href="ITA_Vis-views.html">Views</a></li-->
-                  </ul>
-                </li>
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Inhabiting the Anthropocene</title>
+        <link href="bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">		
+        <link rel="stylesheet" href="layout-style.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>		
+		<script src="cytoscape/dist/cytoscape.js"></script>
+		<script src="cytoscape/lib/arbor.js"></script>		
+		<script src="approach_elements.js"></script>
+		<script src="code.js"></script>
+	</head>
+	<body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Inhabiting the Anthropocene</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
               </ul>
             </div>
           </div>
         </nav>
-      </div>
-      <div class="legend shadow"><em>Explanation of elements in Approach View</em>
-        <iframe src="./text/legends/approach.html" name="legend" frameborder="0" id="legend"></iframe>
-      </div>
-      <div class="comments shadow"><em>Comments</em>
-        <iframe src="./text/legends/authors-by-approach.html" name="comments" frameborder="0" id="comments"></iframe>
-      </div>
-    </div>
-  </div>
-  <div class="right">
-    <iframe src="text/main/approaches/approaches-main.html" name="content" frameborder="0" id="content"></iframe>
-  </div>
-</div>
-<script src="bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
-</body>
+	    <div class="bodycontainer">
+		    <div class="left">
+		        <div class="shadow" id="cy"></div>
+		        <div class="bottomleft">
+		    		<div class="nav-internal">
+ 					    <nav class="navbar navbar-inverse">
+  						    <div class="container-fluid">
+    						    <div class="navbar-header">
+      							    <a class="navbar-brand" href="#">Approaches</a>
+   	 						    </div>
+    						    <div>
+      							    <ul class="nav navbar-nav navbar-right">
+        							    <li class="dropdown">
+          								    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Select a View
+          								        <span class="caret"></span></a>
+          								    <ul class="dropdown-menu">
+            								    <li><a href="ITA_Vis-approach.html">Approaches</a></li>
+            								    <li><a href="ITA_Vis-themes.html">Themes</a></li>
+            								    <li><a href="ITA_Vis-author-pairings.html">Author-Supplied Pairings</a></li>
+            								    <li><a href="ITA_Vis-chrono.html">Chronological</a></li>
+            								    <!--li><a href="ITA_Vis-views.html">Views</a></li-->
+          								    </ul>
+        							    </li>
+      							    </ul>
+    						    </div>
+  						    </div>
+					    </nav>
+				    </div>
+			        <div class="legend shadow">
+			        	<em>Explanation of Elements in Approach View</em>
+        				<iframe src="./text/legends/approach.html" name="legend" frameborder="0" id="legend"></iframe>
+			        </div>
+			        <div class="comments shadow">
+			        	<em>Comments</em>
+        				<iframe src="./text/legends/authors-by-approach.html" name="comments" frameborder="0" id="comments"></iframe>
+			        </div>
+		        </div> 
+		    </div>
+		    <div class="right">
+		        <iframe src="text/main/approaches/approaches-main.html" name="content" frameborder="0" id="content"></iframe>
+		    </div> 		
+		</div>
+        <script src="bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+	</body>
 </html>

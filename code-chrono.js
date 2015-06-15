@@ -144,6 +144,7 @@ cy.on('tap', 'node', function(){
 });
 
 // Add Faded Class
+/*
 cy.on('tap', 'node', function (e) {
     var node = e.cyTarget;
     var neighborhood = node.neighborhood().add(node);
@@ -157,17 +158,17 @@ cy.on('tap', function (e) {
         cy.elements().removeClass('faded');
     }
 });
-
+*/
 // Sets zoom options
 cy.on('layoutstop', function() {
     cy.maxZoom(2);
     cy.minZoom(.25);
-    cy.fit();
+    cy.fit(10);
 });
 
 // Resizes Graph to fit viewport
 window.onresize = function() {
-    cy.fit();
+    cy.fit(10);
 };
 
 }); // on dom ready

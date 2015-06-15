@@ -7,8 +7,10 @@ var cy = cytoscape({
   style: cytoscape.stylesheet()
     .selector('node')
         .css({
+            'content': 'data(label)',
             'width': 'data(weight)',
             'height': 'data(weight)',
+            'shape': 'data(faveShape)',
             'text-valign': 'center',
             'text-outline-width': 1,
             'background-color': 'data(color)',
@@ -16,14 +18,14 @@ var cy = cytoscape({
             'border-style': 'solid',
             'border-width': 1,
             'text-outcolor': '#888',
-            'font-size': 25,
+            'font-size': 15,
     })
     .selector(':selected')
         .css({
-            'content': 'data(name)',
+//            'content': 'data(name)', keep view cleaner
             'text-valign': 'center',
             'text-outline-width': 3,
-            'font-size': 25,
+            'font-size': 15,
             'background-color': 'data(color)',
             'color': 'white',
             'z-index': 10,
@@ -105,8 +107,24 @@ var cose = {
     animate: true
   };
 
+var grid = {
+  name: 'grid',
+
+  fit: false, // whether to fit the viewport to the graph
+  padding: 30, // padding used on fit
+  boundingBox: undefined, // constrain layout bounds; { x1, y1, x2, y2 } or { x1, y1, w, h }
+  avoidOverlap: true, // prevents node overlap, may overflow boundingBox if not enough space
+  rows: 4, // force num of rows in the grid
+  columns: 4, // force num of cols in the grid
+  position: function( node ){}, // returns { row, col } for element
+  sort: undefined, // a sorting function to order the nodes; e.g. function(a, b){ return a.data('weight') - b.data('weight') }
+  animate: false, // whether to transition the node positions
+  animationDuration: 500, // duration of animation in ms if enabled
+  ready: undefined, // callback on layoutready
+  stop: undefined // callback on layoutstop
+};
 // Calls Desired Layout  
-cy.layout(concentric);
+cy.layout(grid);
 
 // Highlights nodes on hover
 cy.on('mouseover', 'node', function(){
@@ -126,6 +144,7 @@ cy.on('tap', 'node', function(){
 });
 
 // Add Faded Class
+/*
 cy.on('tap', 'node', function (e) {
     var node = e.cyTarget;
     var neighborhood = node.neighborhood().add(node);
@@ -139,7 +158,7 @@ cy.on('tap', function (e) {
         cy.elements().removeClass('faded');
     }
 });
-
+*/
 // Sets zoom options
 cy.on('layoutstop', function() {
     cy.maxZoom(2);

@@ -150,19 +150,20 @@ var cose = {
 //    numIter: 10000,
     animate: true
   };
+  
 var arbor = {
     name: 'arbor',
     maxSimulationTime: 10000,
     repulsion: 2000,
     padding: 10,
 //    friction: 0,
-    gravity: false,
+//    gravity: false,
 //    boundingBox: {0, 0, 100, 200},
 //    fit: false,
     stiffness: 800,
-    edgeLength: 2
+    edgeLength: 2,
 //    infinite: true
-};
+};  
 
 var springy = {
     name: 'springy',
@@ -199,12 +200,14 @@ cy.on('mouseout', 'edge', function(){
 cy.on('tap', 'node', function(){
     try { // your browser may block popups
         window.open( this.data('href'), 'content' );
+//		window.open( this.data('bio'), 'comment' ); trying to show bio in comment box
     } catch(e){ // fall back on url change
         window.location.href = this.data('href');
+//		window.location.href = this.data('bio'); trying to show bio in comment box
     }
 });
 
-// Populate Comments Div on Edge Hover
+// Populate Comments Div on Tap
 cy.on('tap', 'edge', function(){
 	try {
 	    window.open( this.data('href'), 'comments');
@@ -290,6 +293,7 @@ window.onresize = function() {
     cy.fit(10);
 };
 
+/*
 // Fit view to selection
  cy.on('tap', 'node', function (e) {
     // Only adds faded class if this isn't a filter node
@@ -299,6 +303,8 @@ window.onresize = function() {
         cy.fit(neighborhood, 10);
     }
 });
+*/
+
 // Resizes on background tap
  cy.on('tap', function (e) {
     if (e.cyTarget === cy) {

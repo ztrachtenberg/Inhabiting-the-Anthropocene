@@ -1,0 +1,111 @@
+ 			body {
+ 			    height: 100vh;
+			    padding-top: 50px;
+			}
+				
+            .bodycontainer {
+                padding: 1%;
+                position: relative;
+                height: 100%;
+                overflow: hidden;
+            }
+
+            .right {
+                height: 100%;
+                width: 45%;
+                float: right;
+                overflow: hidden;
+                padding: 5px;
+    			border-left: thick double #000000;
+            }
+
+            .left {
+				position: relative;
+				float: left;
+				padding: 10px;
+                height: 100%;
+                width: 54%;
+                overflow: scroll;
+            }
+            
+            .bottomleft {
+                float: left;
+                height: 40%;
+                width: 100%;
+                position: relative;
+			    left: 5;
+			    bottom: 0;
+			}
+			
+			.nav-internal {
+				width: 100%;
+				margin-top: 5px;
+			}
+		
+			.navbar-fixed-top {
+			    margin-bottom: 15px;
+			}
+			
+			.legend {
+			    float: left;
+			    width: 48%;
+			    min-width: 140px;
+			    margin-right: 1%;
+			    margin-bottom: 10px;
+			    height: 100%;
+			    padding: 5px;
+//    			border-radius: 25px;
+ //   			border: 2px solid #000000;
+			}
+			
+			.comments {
+			    float: right;
+			    min-width: 140px;
+			    width: 50%;
+			    padding: 5px;
+				margin-right: 1%;
+			    margin-bottom: 10px;
+			    height: 100%;
+ //   			border-radius: 25px;
+ //   			border: 2px solid #000000; 
+     			border-left: thick double #000000;
+
+			}
+			
+//			.shadow {
+ //   			box-shadow: 2px 2px 1px #888888;
+//    		}
+			
+			#cy {
+  				height: 60%;
+  				width: 100%;
+    			border-radius: 25px;
+    			border: 2px solid #000000;
+			}
+
+			#content {
+			    position: relative;
+			    height: 100%;
+			    width: 100%;
+			    padding: 10px;
+ //   			border-radius: 25px;
+ //   			border: 2px solid #000000;
+ //   			box-shadow: 2px 2px 1px #888888;
+			}
+            
+            #comments {
+                position: relative;
+                height: 100%;
+                overflow: scroll;
+                width: 100%;
+            }
+			
+			#legend {
+                position: relative;
+                height: 100%;
+                overflow: scroll;
+                width: 100%;
+            }
+
+
+	

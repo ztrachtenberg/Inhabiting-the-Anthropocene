@@ -143,6 +143,47 @@ cy.on('tap', 'node', function(){
     }
 });
 
+// Populate Comments Div on Hover Unless Faded
+cy.on('mouseover', 'edge', function(){
+	if(!this.hasClass('faded')){
+		try {
+	    	window.open( this.data('href'), 'comments');
+		} catch(e){
+	    	window.location.href = this.data('href');
+		}
+	}
+});
+
+cy.on('mouseout', 'edge', function(){
+	if(!this.hasClass('faded')){
+		try {
+			window.open('text/legends/authors-by-approach.html', 'comments');
+		} catch(e) {
+			window.location.href = 'text/legends/authors-by-approach.html';
+		}
+	}
+});
+
+cy.on('mouseover', 'node', function(){
+	if(!this.hasClass('faded')){
+		try {
+	    	window.open( this.data('bio'), 'comments');
+		} catch(e){
+	    	window.location.href = this.data('bio');
+		}
+	}
+});
+
+cy.on('mouseout', 'node', function(){
+	if(!this.hasClass('faded')){
+		try {
+			window.open('text/legends/authors-by-approach.html', 'comments');
+		} catch(e) {
+			window.location.href = 'text/legends/authors-by-approach.html';
+		}
+	}
+});
+
 // Add Faded Class
 /*
 cy.on('tap', 'node', function (e) {

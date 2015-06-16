@@ -205,7 +205,7 @@ cy.on('tap', 'node', function(){
     }
 });
 
-// Populate Comments Div on Hover Unless Faded
+// Populate Comments Div on Edge Hover Unless Faded
 cy.on('mouseover', 'edge', function(){
 	if(!this.hasClass('faded')){
 		try {
@@ -216,8 +216,12 @@ cy.on('mouseover', 'edge', function(){
 	}
 });
 
+cy.on('tap', 'edge', function() {
+    this.addClass(':selected')
+});
+
 cy.on('mouseout', 'edge', function(){
-	if(!this.hasClass('faded')){
+	if(!this.hasClass('faded') && !this.hasClass(':selected')){
 		try {
 			window.open('text/legends/authors-by-approach.html', 'comments');
 		} catch(e) {
@@ -237,11 +241,11 @@ cy.on('tap', 'node', function (e) {
     }
 });
 
-// Remove Faded Class when you click on background
+// Remove Faded Class and Reset Content iframe when you click on background
 cy.on('tap', function (e) {
     if (e.cyTarget === cy) {
         cy.elements().removeClass('faded');
-//		window.frames('content').location.src.reload();
+        document.getElementById('content').src = document.getElementById('content').src
     }
 });
 

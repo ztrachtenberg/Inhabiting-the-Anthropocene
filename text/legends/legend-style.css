@@ -2,3 +2,6 @@ html, body {
    height: 98vh;
   font: 11px helvetica neue, helvetica, arial, sans-serif;
 }
+img {
+    float: left; margin: 5px;
+}

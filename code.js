@@ -198,10 +198,10 @@ cy.on('mouseout', 'edge', function(){
 cy.on('tap', 'node', function(){
     try { // your browser may block popups
         window.open( this.data('href'), 'content' );
-//		window.open( this.data('bio'), 'comments' ); trying to show bio in comment box
+		window.open( this.data('bio'), 'comments' ); // trying to show bio in comment box
     } catch(e){ // fall back on url change
         window.location.href = this.data('href');
-//		window.location.href = this.data('bio'); trying to show bio in comment box
+		window.location.href = this.data('bio'); //trying to show bio in comment box
     }
 });
 
@@ -222,6 +222,26 @@ cy.on('tap', 'edge', function() {
 
 cy.on('mouseout', 'edge', function(){
 	if(!this.hasClass('faded') && !this.hasClass(':selected')){
+		try {
+			window.open('text/legends/authors-by-approach.html', 'comments');
+		} catch(e) {
+			window.location.href = 'text/legends/authors-by-approach.html';
+		}
+	}
+});
+
+cy.on('mouseover', 'node', function(){
+	if(!this.hasClass('faded')){
+		try {
+	    	window.open( this.data('bio'), 'comments');
+		} catch(e){
+	    	window.location.href = this.data('bio');
+		}
+	}
+});
+
+cy.on('mouseout', 'node', function(){
+	if(!this.hasClass('faded')){
 		try {
 			window.open('text/legends/authors-by-approach.html', 'comments');
 		} catch(e) {

@@ -198,13 +198,15 @@ cy.on('mouseout', 'edge', function(){
 
 // Links Nodes to the "Content" Div
 cy.on('tap', 'node', function(){
-	this.addClass(':selected');
-    try { // your browser may block popups
-        window.open( this.data('href'), 'content' );
-		window.open( this.data('bio'), 'comments' ); // trying to show bio in comment box
-    } catch(e){ // fall back on url change
-        window.location.href = this.data('href');
-		window.location.href = this.data('bio'); //trying to show bio in comment box
+	if (this.data('filter')!='yes') {
+		this.addClass(':selected');
+    	try { // your browser may block popups
+        	window.open( this.data('href'), 'content' );
+			window.open( this.data('bio'), 'comments' ); // trying to show bio in comment box
+    	} catch(e){ // fall back on url change
+        	window.location.href = this.data('href');
+			window.location.href = this.data('bio'); //trying to show bio in comment box
+    	}
     }
 });
 
@@ -248,7 +250,7 @@ cy.on('mouseover', 'node', function(){
 
 // Remove bio on mouseout unless node is selected
 cy.on('mouseout', 'node', function(){
-	if(!this.hasClass('faded') && !this.hasClass(':selected')){
+	if(this.data('filter')!='yes' && !this.hasClass('faded') && !this.hasClass(':selected')){
         document.getElementById('comments').src = document.getElementById('comments').src
 	}
 });

@@ -219,10 +219,12 @@ cy.on('mouseover', 'edge', function(){
 	}
 });
 
+// Add 'selected' class to edges on tap
 cy.on('tap', 'edge', function() {
     this.addClass(':selected')
 });
 
+// Return to default content of 'comments' box on mouseout unless edge is selected
 cy.on('mouseout', 'edge', function(){
 	if(!this.hasClass('faded') && !this.hasClass(':selected')){
 		try {
@@ -233,6 +235,7 @@ cy.on('mouseout', 'edge', function(){
 	}
 });
 
+// Display bio on hover
 cy.on('mouseover', 'node', function(){
 	if(!this.hasClass('faded')){
 		try {
@@ -243,13 +246,10 @@ cy.on('mouseover', 'node', function(){
 	}
 });
 
+// Remove bio on mouseout unless node is selected
 cy.on('mouseout', 'node', function(){
 	if(!this.hasClass('faded') && !this.hasClass(':selected')){
-		try {
-			window.open('text/legends/authors-by-approach.html', 'comments');
-		} catch(e) {
-			window.location.href = 'text/legends/authors-by-approach.html';
-		}
+        document.getElementById('comments').src = document.getElementById('comments').src
 	}
 });
 
@@ -264,10 +264,11 @@ cy.on('tap', 'node', function (e) {
     }
 });
 
-// Remove Faded Class and Reset Content iframe when you click on background
+// Remove Faded Class and Reset Content and Comments iframes when you click on background
 cy.on('tap', function (e) {
     if (e.cyTarget === cy) {
         cy.elements().removeClass('faded');
+        document.getElementById('comments').src = document.getElementById('comments').src
         document.getElementById('content').src = document.getElementById('content').src
     }
 });

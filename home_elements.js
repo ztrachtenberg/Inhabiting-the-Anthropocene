@@ -1,15 +1,56 @@
 //design notes
-//Node size: as now
+//Node size
+//--Approach nodes larger
+//--Post nodes as now
 //Mouse behavior
-//--Nodes: onHover--show name; onClick--go to URL with post
+//--Nodes
+//----Approach node: onHover--show name; onClick--go to URL with description
+//----Post node: onHover--show name; onClick--go to URL with post
 //--Edges: none
 //Color scheme
-//--Nodes: should have color of primary approach (from approach_elements)
-//--Edges: black
+//Color scheme
+//--Nodes
+//----Approach nodes should have 4 different primary colors
+//----Post nodes--should have color for author--see list below
+//--Edges
+//----"primary approach edges" should be same color as approach nodes--SOLID LINE
+//----"secondary approach edges" CHANGED TO COLOR OF APPROACH--DASHED LINE
+//Color palette
+//--Approach colors
+//----D: #AF923C (brownish)
+//----I: #9C3555 (reddish)
+//----N: #649C35 (greenish)
+//----P: #36367A (bluish)
+//--Author colors
+//---D color family
+//----Kiza: #FFEAAC
+//----Antonio: #D9BE6E
+//----Ingo: #876B19
+//----Lynn: #5C4501
+//---I color family
+//----Asa: #C2627F
+//----Noah: #791634
+//---N color family
+//----Zev: #8DC162
+//---P color family
+//----Meghan: #585898
 
 
 var BlogEles = {
     nodes: [
+
+    //Approach nodes
+        { data: { id: 'D', label: 'D', bio: 'text/legends/bios/D-bio.html', name: 'Descriptive', href: 'text/main/approaches/approaches-D.html', color: '#AF923C', weight:70, faveShape: 'roundrectangle' } },
+		{ data: { id: 'I', label: 'I', bio: 'text/legends/bios/I-bio.html', name: 'Interpretive', href: 'text/main/approaches/approaches-I.html', color: '#9C3555', weight:70, faveShape: 'roundrectangle' } },
+		{ data: { id: 'N', label: 'N', bio: 'text/legends/bios/N-bio.html', name: 'Normative', href: 'text/main/approaches/approaches-N.html', color: '#649C35', weight:70, faveShape: 'roundrectangle' } },
+		{ data: { id: 'P', label: 'P', bio: 'text/legends/bios/P-bio.html', name: 'Practical', href: 'text/main/approaches/approaches-P.html', color: '#36367A', weight:70, faveShape: 'roundrectangle' } },
+
+//Theme nodes
+	    { data: { id: 'H', label: 'H', bio: 'text/legends/bios/H-bio.html', name: 'History', href: 'text/main/themes/themes-H.html', color: '#737373', weight:70, faveShape: 'triangle'  } },
+		{ data: { id: 'F', label: 'F', bio: 'text/legends/bios/F-bio.html', name: 'Future', href: 'text/main/themes/themes-F.html', color: '#737373', weight:70, faveShape: 'rectangle'  } },
+		{ data: { id: 'A', label: 'A', bio: 'text/legends/bios/A-bio.html', name: 'Agency', href: 'text/main/themes/themes-A.html', color: '#737373', weight:70, faveShape: 'pentagon'  } },
+		{ data: { id: 'L', label: 'L', bio: 'text/legends/bios/L-bio.html', name: 'Limits', href: 'text/main/themes/themes-L.html', color: '#737373', weight:70, faveShape: 'hexagon'  } },
+		
     //Post nodes
         { data: { id: 'ZT1', label: 'ZT1', bio: 'text/legends/bios/ZT.html', name: 'Of Property', href: 'text/posts/ZT1.html', color: '#8DC162', weight:55, faveShape: 'ellipse' } },
         { data: { id: 'KG1', label: 'KG1', bio: 'text/legends/bios/KG.html', name: 'Organisms as Ecosystem Engineers', href: 'text/posts/KG1.html', color: '#FFEAAC', weight:55, faveShape: 'ellipse' } },
@@ -27,24 +68,5 @@ var BlogEles = {
         { data: { id: 'AC2', label: 'AC2', bio: 'text/legends/bios/AC.html', name: 'Habitability as a commons: Fearing a tragedy of human(ized) nature', href: 'text/posts/AC2.html', color: '#D9BE6E', weight:55, faveShape: 'ellipse' } },
         { data: { id: 'NT2', label: 'NT2', bio: 'text/legends/bios/NT.html', name: 'Toward a More Than Human Anthropocene', href: 'text/posts/NT2.html', color: '#791634', weight:55, faveShape: 'ellipse' } },
         { data: { id: 'LS2', label: 'LS2', bio: 'text/legends/bios/LS.html', name: 'The Dust of Civilization', href: 'text/posts/LS2.html', color: '#5C4501', weight:55, faveShape: 'ellipse' } }
-	],	
-	
-    edges: [
-        { data: { source: 'ZT1', target: 'KG1', AuthColor: 'red', width: 5, Arrow: 'triangle' } },
-        { data: { source: 'KG1', target: 'AR1', AuthColor: 'red', width: 5, Arrow: 'triangle' } },
-        { data: { source: 'AR1', target: 'MW1', AuthColor: 'red', width: 5, Arrow: 'triangle' } },
-        { data: { source: 'MW1', target: 'NT1', AuthColor: 'red', width: 5, Arrow: 'triangle' } },
-        { data: { source: 'NT1', target: 'LS1', AuthColor: 'red', width: 5, Arrow: 'triangle' } },
-        { data: { source: 'LS1', target: 'IS1', AuthColor: 'red', width: 5, Arrow: 'triangle' } },
-        { data: { source: 'IS1', target: 'AC1', AuthColor: 'red', width: 5, Arrow: 'triangle' } },
-        { data: { source: 'AC1', target: 'ZT2', AuthColor: 'red', width: 5, Arrow: 'triangle' } },
-        { data: { source: 'ZT2', target: 'KG2', AuthColor: 'red', width: 5, Arrow: 'triangle' } },
-        { data: { source: 'KG2', target: 'MW2', AuthColor: 'red', width: 5, Arrow: 'triangle' } },
-        { data: { source: 'MW2', target: 'IS2', AuthColor: 'red', width: 5, Arrow: 'triangle' } },
-        { data: { source: 'IS2', target: 'AR2', AuthColor: 'red', width: 5, Arrow: 'triangle' } },
-        { data: { source: 'AR2', target: 'AC2', AuthColor: 'red', width: 5, Arrow: 'triangle' } },
-        { data: { source: 'AC2', target: 'NT2', AuthColor: 'red', width: 5, Arrow: 'triangle' } },
-        { data: { source: 'NT2', target: 'LS2', AuthColor: 'red', width: 5, Arrow: 'triangle' } }
-
     ]
 }

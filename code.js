@@ -178,7 +178,7 @@ cy.elements("[filter!='yes']").layout(arbor);
 
 // Highlights nodes on hover
 cy.on('mouseover', 'node', function(){
-    if (this.data('filter') != 'yes'){
+    if (this.data('filter')!='yes' && !this.hasClass('faded')){
 	    this.addClass('hovered')
 	}
 });
@@ -188,7 +188,9 @@ cy.on('mouseout', 'node', function(){
 
 // Show edge comment on hover
 cy.on('mouseover', 'edge', function(){
-	this.addClass('hovered')
+	if(!this.hasClass('faded')){
+		this.addClass('hovered')
+	}
 });
 cy.on('mouseout', 'edge', function(){
 	this.removeClass('hovered')
@@ -196,6 +198,7 @@ cy.on('mouseout', 'edge', function(){
 
 // Links Nodes to the "Content" Div
 cy.on('tap', 'node', function(){
+	this.addClass(':selected');
     try { // your browser may block popups
         window.open( this.data('href'), 'content' );
 		window.open( this.data('bio'), 'comments' ); // trying to show bio in comment box
@@ -241,7 +244,7 @@ cy.on('mouseover', 'node', function(){
 });
 
 cy.on('mouseout', 'node', function(){
-	if(!this.hasClass('faded')){
+	if(!this.hasClass('faded') && !this.hasClass(':selected')){
 		try {
 			window.open('text/legends/authors-by-approach.html', 'comments');
 		} catch(e) {

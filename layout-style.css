@@ -30,7 +30,7 @@
             
             .bottomleft {
                 float: left;
-                height: 40%;
+                height: 35%;
                 width: 100%;
                 position: relative;
 			    left: 5;
@@ -40,8 +40,7 @@
 			
 			.bottomcontainer {
 			    overflow: hidden;
-			    bottom: 10;
-			    height: 75%;
+			    height: 100%;
 			}
 			
 			.nav-internal {
@@ -91,18 +90,16 @@
             
             #comments {
                 position: relative;
-                height: 90%;
-                overflow: scroll;
+                height: 75%;
                 width: 100%;
-			    padding-bottom: 10px;
+			    padding: 10px;
             }
 			
 			#legend {
                 position: relative;
-                height: 90%;
-                overflow: scroll;
+                height: 75%;
                 width: 100%;
-			    padding-bottom: 10px;
+			    padding: 10px;
             }
 
 

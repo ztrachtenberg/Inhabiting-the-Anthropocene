@@ -178,7 +178,7 @@ cy.elements("[filter!='yes']").layout(arbor);
 
 // Highlights nodes on hover
 cy.on('mouseover', 'node', function(){
-    if (this.data('filter') != 'yes'){
+    if (this.data('filter')!='yes' && !this.hasClass('faded')){
 	    this.addClass('hovered')
 	}
 });
@@ -188,7 +188,9 @@ cy.on('mouseout', 'node', function(){
 
 // Show edge comment on hover
 cy.on('mouseover', 'edge', function(){
-	this.addClass('hovered')
+	if(!this.hasClass('faded')){
+		this.addClass('hovered')
+	}
 });
 cy.on('mouseout', 'edge', function(){
 	this.removeClass('hovered')
@@ -196,12 +198,15 @@ cy.on('mouseout', 'edge', function(){
 
 // Links Nodes to the "Content" Div
 cy.on('tap', 'node', function(){
-    try { // your browser may block popups
-        window.open( this.data('href'), 'content' );
-		window.open( this.data('bio'), 'comments' ); // trying to show bio in comment box
-    } catch(e){ // fall back on url change
-        window.location.href = this.data('href');
-		window.location.href = this.data('bio'); //trying to show bio in comment box
+	if (this.data('filter')!='yes') {
+		this.addClass(':selected');
+    	try { // your browser may block popups
+        	window.open( this.data('href'), 'content' );
+			window.open( this.data('bio'), 'comments' ); // trying to show bio in comment box
+    	} catch(e){ // fall back on url change
+        	window.location.href = this.data('href');
+			window.location.href = this.data('bio'); //trying to show bio in comment box
+    	}
     }
 });
 
@@ -216,10 +221,12 @@ cy.on('mouseover', 'edge', function(){
 	}
 });
 
+// Add 'selected' class to edges on tap
 cy.on('tap', 'edge', function() {
     this.addClass(':selected')
 });
 
+// Return to default content of 'comments' box on mouseout unless edge is selected
 cy.on('mouseout', 'edge', function(){
 	if(!this.hasClass('faded') && !this.hasClass(':selected')){
 		try {
@@ -230,6 +237,7 @@ cy.on('mouseout', 'edge', function(){
 	}
 });
 
+// Display bio on hover
 cy.on('mouseover', 'node', function(){
 	if(!this.hasClass('faded')){
 		try {
@@ -240,13 +248,10 @@ cy.on('mouseover', 'node', function(){
 	}
 });
 
+// Remove bio on mouseout unless node is selected
 cy.on('mouseout', 'node', function(){
-	if(!this.hasClass('faded')){
-		try {
-			window.open('text/legends/authors-by-approach.html', 'comments');
-		} catch(e) {
-			window.location.href = 'text/legends/authors-by-approach.html';
-		}
+	if(this.data('filter')!='yes' && !this.hasClass('faded') && !this.hasClass(':selected')){
+        document.getElementById('comments').src = document.getElementById('comments').src
 	}
 });
 
@@ -261,10 +266,11 @@ cy.on('tap', 'node', function (e) {
     }
 });
 
-// Remove Faded Class and Reset Content iframe when you click on background
+// Remove Faded Class and Reset Content and Comments iframes when you click on background
 cy.on('tap', function (e) {
     if (e.cyTarget === cy) {
         cy.elements().removeClass('faded');
+        document.getElementById('comments').src = document.getElementById('comments').src
         document.getElementById('content').src = document.getElementById('content').src
     }
 });

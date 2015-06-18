@@ -116,30 +116,34 @@ var cy = cytoscape({
 });
 
 // Layout Options
-var circle = {
-  name: 'circle',
-  fit: true, // whether to fit the viewport to the graph
-  padding: 30, // the padding on fit
+var chrono = {
+  name: 'grid',
+  fit: false, // whether to fit the viewport to the graph
+  padding: 30, // padding used on fit
   boundingBox: undefined, // constrain layout bounds; { x1, y1, x2, y2 } or { x1, y1, w, h }
-  avoidOverlap: true, // prevents node overlap, may overflow boundingBox and radius if not enough space
-  radius: undefined, // the radius of the circle
-  startAngle: 3/2 * Math.PI, // the position of the first node
-  counterclockwise: false, // whether the layout should go counterclockwise (true) or clockwise (false)
+  avoidOverlap: true, // prevents node overlap, may overflow boundingBox if not enough space
+  rows: 4, // force num of rows in the grid
+  columns: 4, // force num of cols in the grid
+  position: function( node ){}, // returns { row, col } for element
   sort: undefined, // a sorting function to order the nodes; e.g. function(a, b){ return a.data('weight') - b.data('weight') }
   animate: false, // whether to transition the node positions
   animationDuration: 500, // duration of animation in ms if enabled
   ready: undefined, // callback on layoutready
   stop: undefined // callback on layoutstop
 };
-var concentric = {
-    name: 'concentric',
-    concentric: function(){ return this.data('weight'); },
-    levelWidth: function( nodes ){ return 5; },
-    minNodeSpacing: 30,
-    fit: true,
+var home = {
+    name: 'arbor',
+    maxSimulationTime: 5000000,
+    repulsion: 20000,
     padding: 10,
-    animate: true
-  };
+//    friction: 0,
+    gravity: true,
+//    boundingBox: {0, 0, 100, 200},
+    fit: false,
+    stiffness: 10000,
+    edgeLength: 2,
+    infinite: true
+};
 var cose = {
     name: 'cose',
     padding: 5,
@@ -156,25 +160,14 @@ var arbor = {
     maxSimulationTime: 10000,
     repulsion: 20000,
     padding: 10,
-//    friction: 0,
-//    gravity: false,
-//    boundingBox: {0, 0, 100, 200},
-//    fit: false,
     stiffness: 800,
     edgeLength: 2,
-//    infinite: true
 };  
-var springy = {
-    name: 'springy',
-    infinite: true
-};
-var cola = {
-    name: 'cola',
-};
 
 // Calls Desired Layout for all but filter elements
-
 cy.elements("[filter!='yes']").layout(arbor);
+cy.elements("[home='yes']").layout(home);
+cy.elements("[chrono='yes']").layout(chrono);
 
 // Highlights nodes on hover
 cy.on('mouseover', 'node', function(){
@@ -197,8 +190,10 @@ cy.on('mouseout', 'edge', function(){
  });
 
 // Links Nodes to the "Content" Div
-cy.on('tap', 'node', function(){
+cy.on('tap select', 'node', function(){
 	if (this.data('filter')!='yes') {
+	    cy.elements().removeClass('hovered');
+	    this.addClass('hovered');
 		this.addClass(':selected');
     	try { // your browser may block popups
         	window.open( this.data('href'), 'content' );
@@ -209,6 +204,28 @@ cy.on('tap', 'node', function(){
     	}
     }
 });
+
+// Add Faded Class to other elements
+cy.on('tap select', 'node', function (e) {
+    // Only adds faded class if this isn't a filter node
+    if (this.data('filter') != 'yes'){
+        var node = e.cyTarget;
+        var neighborhood = node.neighborhood().add(node);
+        cy.elements("[filter!='yes']").addClass('faded');
+        neighborhood.removeClass('faded');
+    }
+});
+
+// Remove Faded Class and Reset Content and Comments iframes when you click on background
+cy.on('tap', function (e) {
+    if (e.cyTarget === cy) {
+        cy.elements().removeClass('faded');
+        cy.elements().removeClass('hovered');
+        document.getElementById('comments').src = document.getElementById('comments').src
+        document.getElementById('content').src = document.getElementById('content').src
+    }
+});
+
 
 // Populate Comments Div on Edge Hover Unless Faded
 cy.on('mouseover', 'edge', function(){
@@ -221,11 +238,6 @@ cy.on('mouseover', 'edge', function(){
 	}
 });
 
-// Add 'selected' class to edges on tap
-cy.on('tap', 'edge', function() {
-    this.addClass(':selected')
-});
-
 // Return to default content of 'comments' box on mouseout unless edge is selected
 cy.on('mouseout', 'edge', function(){
 	if(!this.hasClass('faded') && !this.hasClass(':selected')){
@@ -235,6 +247,11 @@ cy.on('mouseout', 'edge', function(){
 			window.location.href = 'text/legends/authors-by-approach.html';
 		}
 	}
+});
+
+// Add 'selected' class to edges on tap
+cy.on('tap', 'edge', function() {
+    this.addClass(':selected')
 });
 
 // Display bio on hover
@@ -255,27 +272,7 @@ cy.on('mouseout', 'node', function(){
 	}
 });
 
-// Add Faded Class
-cy.on('tap', 'node', function (e) {
-    // Only adds faded class if this isn't a filter node
-    if (this.data('filter') != 'yes'){
-        var node = e.cyTarget;
-        var neighborhood = node.neighborhood().add(node);
-        cy.elements("[filter!='yes']").addClass('faded');
-        neighborhood.removeClass('faded');
-    }
-});
-
-// Remove Faded Class and Reset Content and Comments iframes when you click on background
-cy.on('tap', function (e) {
-    if (e.cyTarget === cy) {
-        cy.elements().removeClass('faded');
-        document.getElementById('comments').src = document.getElementById('comments').src
-        document.getElementById('content').src = document.getElementById('content').src
-    }
-});
-
-// Filter by comment to add invisible class based on name of node
+// Filter and Random Node Selector Function
 cy.on('tap', 'node', function () {
     if (!this.hasClass('triggered') && this.data('name') == 'Similar'){
         this.addClass('triggered');
@@ -319,7 +316,10 @@ cy.on('tap', 'node', function () {
                 element.removeClass('invisible');
             }
         })
-    }   
+    } else if (this.data('name') == 'Select Random'){
+        var random = cy.nodes("[filter!='yes']")[ Math.floor(Math.random() * cy.nodes().length) ];
+        random.select();
+    }
 });
 
 // Sets zoom options
@@ -335,6 +335,7 @@ window.onresize = function() {
 };
 
 /*
+
 // Fit view to selection
  cy.on('tap', 'node', function (e) {
     // Only adds faded class if this isn't a filter node
@@ -344,14 +345,8 @@ window.onresize = function() {
         cy.fit(neighborhood, 10);
     }
 });
-*/
 
-// Resizes on background tap
- cy.on('tap', function (e) {
-    if (e.cyTarget === cy) {
-        cy.fit(10);
-    }
-});
+*/
 
 }); // on dom ready
 

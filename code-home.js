@@ -100,13 +100,15 @@ cy.on('mouseout', 'node', function(){
  });
 
 // Links Nodes to the "Content" Div
-//cy.on('tap', 'node', function(){
-//    try { // your browser may block popups
-//        window.open( this.data('href'), 'content' );
-//    } catch(e){ // fall back on url change
-//        window.location.href = this.data('href');
-//    }
-//});
+cy.on('select', 'node', function(){
+    cy.nodes().removeClass('hovered');
+    this.addClass('hovered');
+    try { // your browser may block popups
+        window.open( this.data('href'), 'content' );
+    } catch(e){ // fall back on url change
+        window.location.href = this.data('href');
+    }
+});
 
 // Populate Comments Div on Hover Unless Faded
 cy.on('mouseover', 'edge', function(){
@@ -157,14 +159,17 @@ cy.on('tap', 'node', function (e) {
     cy.elements().addClass('faded');
     neighborhood.removeClass('faded');
 });
+*/
 
 // Remove Faded Class
 cy.on('tap', function (e) {
     if (e.cyTarget === cy) {
-        cy.elements().removeClass('faded');
+        cy.nodes().unselect();
+        var random = cy.nodes()[ Math.floor(Math.random() * cy.nodes().length) ];
+        random.select();
     }
 });
-*/
+
 // Sets zoom options
 cy.on('layoutstop', function() {
     cy.maxZoom(1);

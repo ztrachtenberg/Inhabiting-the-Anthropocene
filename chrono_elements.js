@@ -29,20 +29,20 @@ var BlogEles = {
         { data: { id: 'LS2', label: 'LS2', bio: 'text/legends/bios/LS.html', name: 'The Dust of Civilization', href: 'text/posts/LS2.html', color: '#5C4501', weight:55, faveShape: 'ellipse', chrono: 'yes' } }
 	],		
     edges: [
-        { data: { source: 'ZT1', target: 'KG1', AuthColor: 'red', width: 5, Arrow: 'triangle' } },
-        { data: { source: 'KG1', target: 'AR1', AuthColor: 'red', width: 5, Arrow: 'triangle' } },
-        { data: { source: 'AR1', target: 'MW1', AuthColor: 'red', width: 5, Arrow: 'triangle' } },
-        { data: { source: 'MW1', target: 'NT1', AuthColor: 'red', width: 5, Arrow: 'triangle' } },
-        { data: { source: 'NT1', target: 'LS1', AuthColor: 'red', width: 5, Arrow: 'triangle' } },
-        { data: { source: 'LS1', target: 'IS1', AuthColor: 'red', width: 5, Arrow: 'triangle' } },
-        { data: { source: 'IS1', target: 'AC1', AuthColor: 'red', width: 5, Arrow: 'triangle' } },
-        { data: { source: 'AC1', target: 'ZT2', AuthColor: 'red', width: 5, Arrow: 'triangle' } },
-        { data: { source: 'ZT2', target: 'KG2', AuthColor: 'red', width: 5, Arrow: 'triangle' } },
-        { data: { source: 'KG2', target: 'MW2', AuthColor: 'red', width: 5, Arrow: 'triangle' } },
-        { data: { source: 'MW2', target: 'IS2', AuthColor: 'red', width: 5, Arrow: 'triangle' } },
-        { data: { source: 'IS2', target: 'AR2', AuthColor: 'red', width: 5, Arrow: 'triangle' } },
-        { data: { source: 'AR2', target: 'AC2', AuthColor: 'red', width: 5, Arrow: 'triangle' } },
-        { data: { source: 'AC2', target: 'NT2', AuthColor: 'red', width: 5, Arrow: 'triangle' } },
-        { data: { source: 'NT2', target: 'LS2', AuthColor: 'red', width: 5, Arrow: 'triangle' } }
+        { data: { source: 'ZT1', target: 'KG1', AuthColor: 'red', width: 5, Arrow: 'triangle', chrono: 'yes' } },
+        { data: { source: 'KG1', target: 'AR1', AuthColor: 'red', width: 5, Arrow: 'triangle', chrono: 'yes' } },
+        { data: { source: 'AR1', target: 'MW1', AuthColor: 'red', width: 5, Arrow: 'triangle', chrono: 'yes' } },
+        { data: { source: 'MW1', target: 'NT1', AuthColor: 'red', width: 5, Arrow: 'triangle', chrono: 'yes' } },
+        { data: { source: 'NT1', target: 'LS1', AuthColor: 'red', width: 5, Arrow: 'triangle', chrono: 'yes' } },
+        { data: { source: 'LS1', target: 'IS1', AuthColor: 'red', width: 5, Arrow: 'triangle', chrono: 'yes' } },
+        { data: { source: 'IS1', target: 'AC1', AuthColor: 'red', width: 5, Arrow: 'triangle', chrono: 'yes' } },
+        { data: { source: 'AC1', target: 'ZT2', AuthColor: 'red', width: 5, Arrow: 'triangle', chrono: 'yes' } },
+        { data: { source: 'ZT2', target: 'KG2', AuthColor: 'red', width: 5, Arrow: 'triangle', chrono: 'yes' } },
+        { data: { source: 'KG2', target: 'MW2', AuthColor: 'red', width: 5, Arrow: 'triangle', chrono: 'yes' } },
+        { data: { source: 'MW2', target: 'IS2', AuthColor: 'red', width: 5, Arrow: 'triangle', chrono: 'yes' } },
+        { data: { source: 'IS2', target: 'AR2', AuthColor: 'red', width: 5, Arrow: 'triangle', chrono: 'yes' } },
+        { data: { source: 'AR2', target: 'AC2', AuthColor: 'red', width: 5, Arrow: 'triangle', chrono: 'yes' } },
+        { data: { source: 'AC2', target: 'NT2', AuthColor: 'red', width: 5, Arrow: 'triangle', chrono: 'yes' } },
+        { data: { source: 'NT2', target: 'LS2', AuthColor: 'red', width: 5, Arrow: 'triangle', chrono: 'yes' } }
     ]
 }

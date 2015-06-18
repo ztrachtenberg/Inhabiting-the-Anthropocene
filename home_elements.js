@@ -39,7 +39,7 @@
 var BlogEles = {
     nodes: [
     // Select Random
-        { data: { id: 'Rand', label: 'Select Random', name: 'Select Random', href: 'www.google.com', color: '#808080', weight: 45, faveShape: 'roundrectangle', filter: 'yes' }, position: { x: 50, y: 500}, locked: true },
+    //    { data: { id: 'Rand', label: 'Select Random', name: 'Select Random', href: 'www.google.com', color: '#808080', weight: 45, faveShape: 'roundrectangle', filter: 'yes' }, position: { x: 50, y: 500}, locked: true },
 
     //Approach nodes
         { data: { id: 'D', label: 'D', bio: 'text/legends/bios/D-bio.html', name: 'Descriptive', href: 'text/main/approaches/approaches-D.html', color: '#AF923C', weight:70, faveShape: 'roundrectangle', home: 'yes' } },

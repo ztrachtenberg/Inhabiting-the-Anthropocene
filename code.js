@@ -48,7 +48,7 @@ var cy = cytoscape({
             'text-valign': 'top',
             'text-halign': 'center',
             'z-index': 1000,
-            'height': 200,
+            'height': 175,
             'width': 100
     })            
     .selector('node.hovered')
@@ -135,6 +135,7 @@ var home = {
     fit: false,
     stiffness: 10000,
     edgeLength: 2,
+//	nodeMass: function(n){ return n.data('weight') },
     infinite: true
 };
 var cose = {
@@ -157,6 +158,7 @@ var arbor = {
     stiffness: 800,
     fit: true,
     edgeLength: .5,
+//	nodeMass: function(n){ return n.data('weight') },
     infinite: false
 };  
 
@@ -201,12 +203,14 @@ cy.on('tap select', 'node', function(){
 	    cy.elements().removeClass('hovered');
 	    this.addClass('hovered');
 		this.addClass(':selected');
-    	try { // your browser may block popups
-        	window.open( this.data('href'), 'content' );
-			window.open( this.data('bio'), 'comments' ); // trying to show bio in comment box
-    	} catch(e){ // fall back on url change
-        	window.location.href = this.data('href');
-			window.location.href = this.data('bio'); //trying to show bio in comment box
+		if (this.data('home')!='yes'){
+    		try { // your browser may block popups
+        		window.open( this.data('href'), 'content' );
+				window.open( this.data('bio'), 'comments' ); // trying to show bio in comment box
+    		} catch(e){ // fall back on url change
+        		window.location.href = this.data('href');
+				window.location.href = this.data('bio'); //trying to show bio in comment box
+    		}
     	}
     }
 });

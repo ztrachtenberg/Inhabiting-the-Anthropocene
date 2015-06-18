@@ -165,15 +165,23 @@ cy.elements("[filter!='yes']").layout(arbor);
 cy.elements("[home='yes']").layout(home);
 cy.elements("[chrono='yes']").layout(chrono);
 
-// Highlights nodes on hover
+// Highlights Nodes and Shows Bio in "Comments" Div on hover
 cy.on('mouseover', 'node', function(){
     if (this.data('filter')!='yes' && !this.hasClass('faded')){
 	    this.addClass('hovered')
+	    try {
+	    	window.open( this.data('bio'), 'comments');
+		} catch(e){
+	    	window.location.href = this.data('bio');
+		}
 	}
 });
-// Removes Highlight on Mouseout
+// Removes Highlight and Return to default content of "Comments" Div on mouseout unless Node is Selected
 cy.on('mouseout', 'node', function(){
-	this.removeClass('hovered')
+	this.removeClass('hovered');
+	if(this.data('filter')!='yes' && !this.hasClass('faded') && !this.hasClass(':selected')){
+        document.getElementById('comments').src = document.getElementById('comments').src
+	}
  });
 
 // Show edge comment on hover
@@ -182,7 +190,7 @@ cy.on('mouseover', 'edge', function(){
 		this.addClass('hovered')
 	}
 });
-// Removes comment on Mouseout
+// Removes comment on mouseout
 cy.on('mouseout', 'edge', function(){
 	this.removeClass('hovered')
  });
@@ -224,7 +232,6 @@ cy.on('tap', function (e) {
     }
 });
 
-
 // Populate Comments Div on Edge Hover Unless Faded
 cy.on('mouseover', 'edge', function(){
 	if(!this.hasClass('faded')){
@@ -235,8 +242,11 @@ cy.on('mouseover', 'edge', function(){
 		}
 	}
 });
-
-// Return to default content of "Comments" Div on mouseout unless edge has been selected
+// Add 'selected' class to edges on tap
+cy.on('tap', 'edge', function() {
+    this.addClass(':selected')
+});
+// Return to default content of "Comments" Div on mouseout unless Edge is Selected
 cy.on('mouseout', 'edge', function(){
 	if(!this.hasClass('faded') && !this.hasClass(':selected')){
 		try {
@@ -244,29 +254,6 @@ cy.on('mouseout', 'edge', function(){
 		} catch(e) {
 			window.location.href = 'text/legends/authors-by-approach.html';
 		}
-	}
-});
-
-// Add 'selected' class to edges on tap
-cy.on('tap', 'edge', function() {
-    this.addClass(':selected')
-});
-
-// Display Bio in "Comments" Div on Node Hover
-cy.on('mouseover', 'node', function(){
-	if(!this.hasClass('faded')){
-		try {
-	    	window.open( this.data('bio'), 'comments');
-		} catch(e){
-	    	window.location.href = this.data('bio');
-		}
-	}
-});
-
-// Remove Bio on Mouseout unless node is Selected
-cy.on('mouseout', 'node', function(){
-	if(this.data('filter')!='yes' && !this.hasClass('faded') && !this.hasClass(':selected')){
-        document.getElementById('comments').src = document.getElementById('comments').src
 	}
 });
 
@@ -327,11 +314,12 @@ cy.on('layoutstop', function() {
     cy.fit(10);
 });
 
-// Resizes graph to viewport
+// Resizes graph to viewport on window resize
 window.onresize = function() {
     cy.fit(10);
 };
 
+// Old code that fits view to selected neighborhood
 /*
 
 // Fit view to selection

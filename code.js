@@ -1,11 +1,9 @@
 // Cytoscape
 $(function(){ // on dom ready
 
-var NodeWeight = 40;
 // Defines Nodes and Edges and Their Styles
 var cy = cytoscape({
-  container: $('#cy')[0],
-  
+  container: $('#cy')[0], 
   style: cytoscape.stylesheet()
     .selector('node')
         .css({
@@ -76,7 +74,6 @@ var cy = cytoscape({
             'target-arrow-shape': 'data(Arrow)',
             'target-arrow-color': 'data(AuthColor)'
     })
-
     .selector('edge.hovered')
         .css({
             'content': 'data(comment)',
@@ -89,20 +86,17 @@ var cy = cytoscape({
             'line-color': 'data(AuthColor)',
             'line-style': 'data(style)',
             'target-arrow-shape': 'data(Arrow)'    
-    })
-        
+    })      
     .selector('.faded')
         .css({
             'opacity': .3,
             'text-opacity': 0
     })
-
     .selector('.invisible')
         .css({
             'opacity': 0,
             'text-opacity': 0
-    })
-    
+    })    
     .selector('node.triggered')
         .css({
             'background-color': 'red',
@@ -110,9 +104,8 @@ var cy = cytoscape({
             'border-width': 1
     }),
     
-  // Call the Nodes and Edges
-  elements: BlogEles
-    
+// Call the Nodes and Edges
+    elements: BlogEles    
 });
 
 // Layout Options
@@ -126,7 +119,7 @@ var chrono = {
   columns: 4, // force num of cols in the grid
   position: function( node ){}, // returns { row, col } for element
   sort: undefined, // a sorting function to order the nodes; e.g. function(a, b){ return a.data('weight') - b.data('weight') }
-  animate: false, // whether to transition the node positions
+  animate: true, // whether to transition the node positions
   animationDuration: 500, // duration of animation in ms if enabled
   ready: undefined, // callback on layoutready
   stop: undefined // callback on layoutstop
@@ -158,10 +151,13 @@ var cose = {
 var arbor = {
     name: 'arbor',
     maxSimulationTime: 10000,
+    gravity: true,
     repulsion: 20000,
     padding: 10,
     stiffness: 800,
-    edgeLength: 2,
+    fit: true,
+    edgeLength: .5,
+    infinite: false
 };  
 
 // Calls Desired Layout for all but filter elements
@@ -175,6 +171,7 @@ cy.on('mouseover', 'node', function(){
 	    this.addClass('hovered')
 	}
 });
+// Removes Highlight on Mouseout
 cy.on('mouseout', 'node', function(){
 	this.removeClass('hovered')
  });
@@ -185,11 +182,12 @@ cy.on('mouseover', 'edge', function(){
 		this.addClass('hovered')
 	}
 });
+// Removes comment on Mouseout
 cy.on('mouseout', 'edge', function(){
 	this.removeClass('hovered')
  });
 
-// Links Nodes to the "Content" Div
+// Links Nodes to the "Content" and "Comments" Divs, adds highlight (useful for the random node selector)
 cy.on('tap select', 'node', function(){
 	if (this.data('filter')!='yes') {
 	    cy.elements().removeClass('hovered');
@@ -205,7 +203,7 @@ cy.on('tap select', 'node', function(){
     }
 });
 
-// Add Faded Class to other elements
+// Add Faded Class to Unselected Elements
 cy.on('tap select', 'node', function (e) {
     // Only adds faded class if this isn't a filter node
     if (this.data('filter') != 'yes'){
@@ -216,7 +214,7 @@ cy.on('tap select', 'node', function (e) {
     }
 });
 
-// Remove Faded Class and Reset Content and Comments iframes when you click on background
+// Removes Faded and Hovered/Selected Classes and Resets Content and Comments iframes when you click on background
 cy.on('tap', function (e) {
     if (e.cyTarget === cy) {
         cy.elements().removeClass('faded');
@@ -238,7 +236,7 @@ cy.on('mouseover', 'edge', function(){
 	}
 });
 
-// Return to default content of 'comments' box on mouseout unless edge is selected
+// Return to default content of "Comments" Div on mouseout unless edge has been selected
 cy.on('mouseout', 'edge', function(){
 	if(!this.hasClass('faded') && !this.hasClass(':selected')){
 		try {
@@ -254,7 +252,7 @@ cy.on('tap', 'edge', function() {
     this.addClass(':selected')
 });
 
-// Display bio on hover
+// Display Bio in "Comments" Div on Node Hover
 cy.on('mouseover', 'node', function(){
 	if(!this.hasClass('faded')){
 		try {
@@ -265,14 +263,14 @@ cy.on('mouseover', 'node', function(){
 	}
 });
 
-// Remove bio on mouseout unless node is selected
+// Remove Bio on Mouseout unless node is Selected
 cy.on('mouseout', 'node', function(){
 	if(this.data('filter')!='yes' && !this.hasClass('faded') && !this.hasClass(':selected')){
         document.getElementById('comments').src = document.getElementById('comments').src
 	}
 });
 
-// Filter and Random Node Selector Function
+// Filter and Random Node Selector Functions
 cy.on('tap', 'node', function () {
     if (!this.hasClass('triggered') && this.data('name') == 'Similar'){
         this.addClass('triggered');
@@ -322,7 +320,7 @@ cy.on('tap', 'node', function () {
     }
 });
 
-// Sets zoom options
+// Sets zoom and fit options
 cy.on('layoutstop', function() {
     cy.maxZoom(2);
     cy.minZoom(.25);

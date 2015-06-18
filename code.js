@@ -199,7 +199,7 @@ cy.on('mouseout', 'edge', function(){
 
 // Links Nodes to the "Content" and "Comments" Divs, adds highlight (useful for the random node selector)
 cy.on('tap select', 'node', function(){
-	if (this.data('filter')!='yes') {
+	if (this.data('filter')!='yes' && this.data('home')!='yes') {
 	    cy.elements().removeClass('hovered');
 	    this.addClass('hovered');
 		this.addClass(':selected');
@@ -218,7 +218,7 @@ cy.on('tap select', 'node', function(){
 // Add Faded Class to Unselected Elements
 cy.on('tap select', 'node', function (e) {
     // Only adds faded class if this isn't a filter node
-    if (this.data('filter') != 'yes'){
+    if (this.data('filter') != 'yes' && this.data('home')!='yes'){
         var node = e.cyTarget;
         var neighborhood = node.neighborhood().add(node);
         cy.elements("[filter!='yes']").addClass('faded');
@@ -226,13 +226,23 @@ cy.on('tap select', 'node', function (e) {
     }
 });
 
+// Fit view to selection
+ cy.on('tap select', 'node', function (e) {
+    // Only adds faded class if this isn't a filter node
+    if (this.data('filter') != 'yes' && this.data('home')!='yes'){
+        var node = e.cyTarget;
+        var neighborhood = node.neighborhood().add(node);
+        cy.fit(neighborhood, 10);
+    }
+});
+
 // Removes Faded and Hovered/Selected Classes and Resets Content and Comments iframes when you click on background
 cy.on('tap', function (e) {
     if (e.cyTarget === cy) {
         cy.elements().removeClass('faded');
-        cy.elements().removeClass('hovered');
         document.getElementById('comments').src = document.getElementById('comments').src
-        document.getElementById('content').src = document.getElementById('content').src
+//        document.getElementById('content').src = document.getElementById('content').src
+        cy.fit(10);
     }
 });
 
@@ -313,8 +323,8 @@ cy.on('tap', 'node', function () {
 
 // Sets zoom and fit options
 cy.on('layoutstop', function() {
-    cy.maxZoom(2);
-    cy.minZoom(.25);
+    cy.maxZoom(1.5);
+    cy.minZoom(.5);
     cy.fit(10);
 });
 
@@ -323,20 +333,7 @@ window.onresize = function() {
     cy.fit(10);
 };
 
-// Old code that fits view to selected neighborhood
-/*
 
-// Fit view to selection
- cy.on('tap', 'node', function (e) {
-    // Only adds faded class if this isn't a filter node
-    if (this.data('filter') != 'yes'){
-        var node = e.cyTarget;
-        var neighborhood = node.neighborhood().add(node);
-        cy.fit(neighborhood, 10);
-    }
-});
-
-*/
 
 }); // on dom ready
 

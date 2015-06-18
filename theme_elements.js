@@ -62,10 +62,10 @@ var BlogEles = {
         { data: { id: 'LS2', label: 'LS2', bio: 'text/legends/bios/LS.html', name: 'The Dust of Civilization', href: 'text/posts/LS2.html', color: '#5C4501', weight:55, faveShape: 'ellipse' } },
 
 //Theme nodes
-	    { data: { id: 'H', label: 'H', bio: 'text/legends/bios/H-bio.html', name: 'History', href: 'text/main/themes/themes-H.html', color: '#737373', weight:70, faveShape: 'triangle'  } },
-		{ data: { id: 'F', label: 'F', bio: 'text/legends/bios/F-bio.html', name: 'Future', href: 'text/main/themes/themes-F.html', color: '#737373', weight:70, faveShape: 'rectangle'  } },
-		{ data: { id: 'A', label: 'A', bio: 'text/legends/bios/A-bio.html', name: 'Agency', href: 'text/main/themes/themes-A.html', color: '#737373', weight:70, faveShape: 'pentagon'  } },
-		{ data: { id: 'L', label: 'L', bio: 'text/legends/bios/L-bio.html', name: 'Limits', href: 'text/main/themes/themes-L.html', color: '#737373', weight:70, faveShape: 'hexagon'  } }
+	    { data: { id: 'H', label: 'H', bio: 'text/legends/bios/H-bio.html', name: 'History', href: 'text/main/themes/themes-H.html', color: '#737373', weight:60, faveShape: 'triangle'  } },
+		{ data: { id: 'F', label: 'F', bio: 'text/legends/bios/F-bio.html', name: 'Future', href: 'text/main/themes/themes-F.html', color: '#737373', weight:60, faveShape: 'rectangle'  } },
+		{ data: { id: 'A', label: 'A', bio: 'text/legends/bios/A-bio.html', name: 'Agency', href: 'text/main/themes/themes-A.html', color: '#737373', weight:60, faveShape: 'pentagon'  } },
+		{ data: { id: 'L', label: 'L', bio: 'text/legends/bios/L-bio.html', name: 'Limits', href: 'text/main/themes/themes-L.html', color: '#737373', weight:60, faveShape: 'hexagon'  } }
 	],	
     
    edges: [

@@ -43,6 +43,9 @@
 
 var BlogEles = {
     nodes: [
+    // Select Random
+        { data: { id: 'Rand', label: 'Select Random', name: 'Select Random', href: 'www.google.com', color: '#ff7400', weight: 45, faveShape: 'roundrectangle', filter: 'yes' }, position: { x: 1000, y: 625}, locked: true },
+
     //Post nodes
         { data: { id: 'ZT1', label: 'ZT1', bio: 'text/legends/bios/ZT.html', name: 'Of Property', href: 'text/posts/ZT1.html', color: '#8DC162', weight:55, faveShape: 'ellipse' } },
         { data: { id: 'KG1', label: 'KG1', bio: 'text/legends/bios/KG.html', name: 'Organisms as Ecosystem Engineers', href: 'text/posts/KG1.html', color: '#FFEAAC', weight:55, faveShape: 'ellipse' } },

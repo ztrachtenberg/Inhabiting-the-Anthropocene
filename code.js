@@ -1,11 +1,9 @@
 // Cytoscape
 $(function(){ // on dom ready
 
-var NodeWeight = 40;
 // Defines Nodes and Edges and Their Styles
 var cy = cytoscape({
-  container: $('#cy')[0],
-  
+  container: $('#cy')[0], 
   style: cytoscape.stylesheet()
     .selector('node')
         .css({
@@ -50,7 +48,7 @@ var cy = cytoscape({
             'text-valign': 'top',
             'text-halign': 'center',
             'z-index': 1000,
-            'height': 200,
+            'height': 175,
             'width': 100
     })            
     .selector('node.hovered')
@@ -76,7 +74,6 @@ var cy = cytoscape({
             'target-arrow-shape': 'data(Arrow)',
             'target-arrow-color': 'data(AuthColor)'
     })
-
     .selector('edge.hovered')
         .css({
             'content': 'data(comment)',
@@ -89,20 +86,17 @@ var cy = cytoscape({
             'line-color': 'data(AuthColor)',
             'line-style': 'data(style)',
             'target-arrow-shape': 'data(Arrow)'    
-    })
-        
+    })      
     .selector('.faded')
         .css({
             'opacity': .3,
             'text-opacity': 0
     })
-
     .selector('.invisible')
         .css({
             'opacity': 0,
             'text-opacity': 0
-    })
-    
+    })    
     .selector('node.triggered')
         .css({
             'background-color': 'red',
@@ -110,36 +104,40 @@ var cy = cytoscape({
             'border-width': 1
     }),
     
-  // Call the Nodes and Edges
-  elements: BlogEles
-    
+// Call the Nodes and Edges
+    elements: BlogEles    
 });
 
 // Layout Options
-var circle = {
-  name: 'circle',
-  fit: true, // whether to fit the viewport to the graph
-  padding: 30, // the padding on fit
+var chrono = {
+  name: 'grid',
+  fit: false, // whether to fit the viewport to the graph
+  padding: 30, // padding used on fit
   boundingBox: undefined, // constrain layout bounds; { x1, y1, x2, y2 } or { x1, y1, w, h }
-  avoidOverlap: true, // prevents node overlap, may overflow boundingBox and radius if not enough space
-  radius: undefined, // the radius of the circle
-  startAngle: 3/2 * Math.PI, // the position of the first node
-  counterclockwise: false, // whether the layout should go counterclockwise (true) or clockwise (false)
+  avoidOverlap: true, // prevents node overlap, may overflow boundingBox if not enough space
+  rows: 4, // force num of rows in the grid
+  columns: 4, // force num of cols in the grid
+  position: function( node ){}, // returns { row, col } for element
   sort: undefined, // a sorting function to order the nodes; e.g. function(a, b){ return a.data('weight') - b.data('weight') }
-  animate: false, // whether to transition the node positions
+  animate: true, // whether to transition the node positions
   animationDuration: 500, // duration of animation in ms if enabled
   ready: undefined, // callback on layoutready
   stop: undefined // callback on layoutstop
 };
-var concentric = {
-    name: 'concentric',
-    concentric: function(){ return this.data('weight'); },
-    levelWidth: function( nodes ){ return 5; },
-    minNodeSpacing: 30,
-    fit: true,
+var home = {
+    name: 'arbor',
+    maxSimulationTime: 5000000,
+    repulsion: 20000,
     padding: 10,
-    animate: true
-  };
+//    friction: 0,
+    gravity: true,
+//    boundingBox: {0, 0, 100, 200},
+    fit: false,
+    stiffness: 10000,
+    edgeLength: 2,
+//	nodeMass: function(n){ return n.data('weight') },
+    infinite: true
+};
 var cose = {
     name: 'cose',
     padding: 5,
@@ -154,54 +152,87 @@ var cose = {
 var arbor = {
     name: 'arbor',
     maxSimulationTime: 10000,
+    gravity: true,
     repulsion: 20000,
     padding: 10,
-//    friction: 0,
-//    gravity: false,
-//    boundingBox: {0, 0, 100, 200},
-//    fit: false,
     stiffness: 800,
-    edgeLength: 2,
-//    infinite: true
+    fit: true,
+    edgeLength: .5,
+//	nodeMass: function(n){ return n.data('weight') },
+    infinite: false
 };  
-var springy = {
-    name: 'springy',
-    infinite: true
-};
-var cola = {
-    name: 'cola',
-};
 
 // Calls Desired Layout for all but filter elements
-
 cy.elements("[filter!='yes']").layout(arbor);
+cy.elements("[home='yes']").layout(home);
+cy.elements("[chrono='yes']").layout(chrono);
 
-// Highlights nodes on hover
+// Highlights Nodes and Shows Bio in "Comments" Div on hover
 cy.on('mouseover', 'node', function(){
-    if (this.data('filter') != 'yes'){
+    if (this.data('filter')!='yes' && !this.hasClass('faded')){
 	    this.addClass('hovered')
+	    try {
+	    	window.open( this.data('bio'), 'comments');
+		} catch(e){
+	    	window.location.href = this.data('bio');
+		}
 	}
 });
+// Removes Highlight and Return to default content of "Comments" Div on mouseout unless Node is Selected
 cy.on('mouseout', 'node', function(){
-	this.removeClass('hovered')
+	this.removeClass('hovered');
+	if(this.data('filter')!='yes' && !this.hasClass('faded') && !this.hasClass(':selected')){
+        document.getElementById('comments').src = document.getElementById('comments').src
+	}
  });
 
 // Show edge comment on hover
 cy.on('mouseover', 'edge', function(){
-	this.addClass('hovered')
+	if(!this.hasClass('faded')){
+		this.addClass('hovered')
+	}
 });
+// Removes comment on mouseout
 cy.on('mouseout', 'edge', function(){
 	this.removeClass('hovered')
  });
 
-// Links Nodes to the "Content" Div
-cy.on('tap', 'node', function(){
-    try { // your browser may block popups
-        window.open( this.data('href'), 'content' );
-		window.open( this.data('bio'), 'comments' ); // trying to show bio in comment box
-    } catch(e){ // fall back on url change
-        window.location.href = this.data('href');
-		window.location.href = this.data('bio'); //trying to show bio in comment box
+// Links Nodes to the "Content" and "Comments" Divs, adds highlight (useful for the random node selector)
+cy.on('tap select', 'node', function(){
+	if (this.data('filter')!='yes') {
+	    cy.elements().removeClass('hovered');
+	    this.addClass('hovered');
+		this.addClass(':selected');
+		if (this.data('home')!='yes'){
+    		try { // your browser may block popups
+        		window.open( this.data('href'), 'content' );
+				window.open( this.data('bio'), 'comments' ); // trying to show bio in comment box
+    		} catch(e){ // fall back on url change
+        		window.location.href = this.data('href');
+				window.location.href = this.data('bio'); //trying to show bio in comment box
+    		}
+    	}
+    }
+});
+
+// Add Faded Class to Unselected Elements
+cy.on('tap select', 'node', function (e) {
+    // Only adds faded class if this isn't a filter node
+    if (this.data('filter') != 'yes'){
+        var node = e.cyTarget;
+        var neighborhood = node.neighborhood().add(node);
+        cy.elements("[filter!='yes']").addClass('faded');
+        neighborhood.removeClass('faded');
+    }
+});
+
+// Removes Faded and Hovered/Selected Classes and Resets Content and Comments iframes when you click on background
+cy.on('tap', function (e) {
+    if (e.cyTarget === cy) {
+        cy.elements().removeClass('faded');
+        cy.elements().removeClass('hovered');
+        document.getElementById('comments').src = document.getElementById('comments').src
+        document.getElementById('content').src = document.getElementById('content').src
     }
 });
 
@@ -215,11 +246,11 @@ cy.on('mouseover', 'edge', function(){
 		}
 	}
 });
-
+// Add 'selected' class to edges on tap
 cy.on('tap', 'edge', function() {
     this.addClass(':selected')
 });
-
+// Return to default content of "Comments" Div on mouseout unless Edge is Selected
 cy.on('mouseout', 'edge', function(){
 	if(!this.hasClass('faded') && !this.hasClass(':selected')){
 		try {
@@ -230,46 +261,7 @@ cy.on('mouseout', 'edge', function(){
 	}
 });
 
-cy.on('mouseover', 'node', function(){
-	if(!this.hasClass('faded')){
-		try {
-	    	window.open( this.data('bio'), 'comments');
-		} catch(e){
-	    	window.location.href = this.data('bio');
-		}
-	}
-});
-
-cy.on('mouseout', 'node', function(){
-	if(!this.hasClass('faded')){
-		try {
-			window.open('text/legends/authors-by-approach.html', 'comments');
-		} catch(e) {
-			window.location.href = 'text/legends/authors-by-approach.html';
-		}
-	}
-});
-
-// Add Faded Class
-cy.on('tap', 'node', function (e) {
-    // Only adds faded class if this isn't a filter node
-    if (this.data('filter') != 'yes'){
-        var node = e.cyTarget;
-        var neighborhood = node.neighborhood().add(node);
-        cy.elements("[filter!='yes']").addClass('faded');
-        neighborhood.removeClass('faded');
-    }
-});
-
-// Remove Faded Class and Reset Content iframe when you click on background
-cy.on('tap', function (e) {
-    if (e.cyTarget === cy) {
-        cy.elements().removeClass('faded');
-        document.getElementById('content').src = document.getElementById('content').src
-    }
-});
-
-// Filter by comment to add invisible class based on name of node
+// Filter and Random Node Selector Functions
 cy.on('tap', 'node', function () {
     if (!this.hasClass('triggered') && this.data('name') == 'Similar'){
         this.addClass('triggered');
@@ -313,22 +305,27 @@ cy.on('tap', 'node', function () {
                 element.removeClass('invisible');
             }
         })
-    }   
+    } else if (this.data('name') == 'Select Random'){
+        var random = cy.nodes("[filter!='yes']")[ Math.floor(Math.random() * cy.nodes().length) ];
+        random.select();
+    }
 });
 
-// Sets zoom options
+// Sets zoom and fit options
 cy.on('layoutstop', function() {
     cy.maxZoom(2);
     cy.minZoom(.25);
     cy.fit(10);
 });
 
-// Resizes graph to viewport
+// Resizes graph to viewport on window resize
 window.onresize = function() {
     cy.fit(10);
 };
 
+// Old code that fits view to selected neighborhood
 /*
+
 // Fit view to selection
  cy.on('tap', 'node', function (e) {
     // Only adds faded class if this isn't a filter node
@@ -338,14 +335,8 @@ window.onresize = function() {
         cy.fit(neighborhood, 10);
     }
 });
-*/
 
-// Resizes on background tap
- cy.on('tap', function (e) {
-    if (e.cyTarget === cy) {
-        cy.fit(10);
-    }
-});
+*/
 
 }); // on dom ready
 

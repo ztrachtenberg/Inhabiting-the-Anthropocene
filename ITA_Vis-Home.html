@@ -10,8 +10,8 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>		
 		<script src="cytoscape/dist/cytoscape.js"></script>
 		<script src="cytoscape/lib/arbor.js"></script>		
-		<script src="approach_elements.js"></script>
-		<script src="code.js"></script>
+		<script src="home_elements.js"></script>
+		<script src="code-home.js"></script>
 	</head>
 	<body>
         <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -46,7 +46,7 @@
  					    <nav class="navbar navbar-inverse">
   						    <div class="container-fluid">
     						    <div class="navbar-header">
-      							    <!-- a class="navbar-brand" href="ITA_Vis-approach.html" target="_self" --> <a class="navbar-brand" href="./text/main/approaches/approaches-Main.html" target="content">Approaches View</a>
+      							    <a class="navbar-brand" href="./ITA_Vis-Home.html" target="_self">Home</a>
    	 						    </div>
     						    <div>
       							    <ul class="nav navbar-nav navbar-right">
@@ -63,23 +63,22 @@
         							    </li>
       							    </ul>
     						    </div>
+                                <!-- div><a href="./ITA_Vis-Home.html" target="_self">Refresh view</a></div -->
   						    </div>
 					    </nav>
 				    </div>
-				    <div class="bottomcontainer">
-			            <div class="legend">
-			        	    <em>Explanation of Elements in Approach View</em>
-        				    <iframe src="./text/legends/approach.html" name="legend" frameborder="0" id="legend"></iframe>
-			            </div>
-			            <div class="comments">
-			        	    <em>Comments</em>
-        				    <iframe src="./text/legends/authors-by-approach.html" name="comments" frameborder="0" id="comments"></iframe>
-			            </div>
+			        <div class="legend shadow">
+			        	<em>Explanation of Elements Above</em>
+        				<iframe src="./text/legends/home.html" name="legend" frameborder="0" id="legend"></iframe>
+			        </div>
+			        <div class="comments shadow">
+			        	<em>Comments</em>
+        				<iframe src="./text/legends/authors-by-approach.html" name="comments" frameborder="0" id="comments"></iframe>
 			        </div>
 		        </div> 
 		    </div>
 		    <div class="right">
-		        <iframe src="./text/main/approaches/approaches-Main.html" name="content" frameborder="0" id="content"></iframe>
+		        <iframe src="./text/main/home.html" name="content" frameborder="0" id="content"></iframe>
 		    </div> 		
 		</div>
         <script src="bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>

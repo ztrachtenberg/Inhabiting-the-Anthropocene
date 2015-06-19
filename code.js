@@ -113,18 +113,12 @@ var cy = cytoscape({
 // Layout Options
 var chrono = {
   name: 'grid',
-  fit: false, // whether to fit the viewport to the graph
-  padding: 30, // padding used on fit
-  boundingBox: undefined, // constrain layout bounds; { x1, y1, x2, y2 } or { x1, y1, w, h }
+  fit: true, // whether to fit the viewport to the graph
   avoidOverlap: true, // prevents node overlap, may overflow boundingBox if not enough space
   rows: 4, // force num of rows in the grid
   columns: 4, // force num of cols in the grid
-  position: function( node ){}, // returns { row, col } for element
-  sort: undefined, // a sorting function to order the nodes; e.g. function(a, b){ return a.data('weight') - b.data('weight') }
   animate: true, // whether to transition the node positions
   animationDuration: 500, // duration of animation in ms if enabled
-  ready: undefined, // callback on layoutready
-  stop: undefined // callback on layoutstop
 };
 var home = {
     name: 'arbor',

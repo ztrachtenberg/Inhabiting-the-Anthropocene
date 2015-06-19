@@ -244,6 +244,7 @@ cy.on('tap select', 'node', function (e) {
 cy.on('tap', function (e) {
     if (e.cyTarget === cy) {
         cy.elements().removeClass('faded');
+        cy.elements().removeClass('hovered');
         document.getElementById('comments').src = document.getElementById('comments').src
 //        document.getElementById('content').src = document.getElementById('content').src
         cy.fit(10);
@@ -319,10 +320,7 @@ cy.on('tap', 'node', function () {
                 element.removeClass('invisible');
             }
         })
-    } else if (this.data('name') == 'Select Random'){
-        var random = cy.nodes("[filter!='yes']")[ Math.floor(Math.random() * cy.nodes().length) ];
-        random.select();
-    }
+    } 
 });
 
 // Sets zoom and fit options
@@ -341,12 +339,11 @@ window.onresize = function() {
 
 function RedrawGraph() {
     var cy = $('#cy').cytoscape('get');
-    cy.elements("[filter!='yes']").layout(grid);
-    cy.elements("[filter!='yes']").layout(arbor);
+    cy.init();
 };
 
 function SelectRandom() {
     var cy = $('#cy').cytoscape('get');
-    var random = cy.nodes("[filter!='yes']")[ Math.floor(Math.random() * cy.nodes().length) ];
+    var random = cy.nodes("[filter!='yes'][weight=55]")[ Math.floor(Math.random() * cy.nodes().length) ];
     random.select();
-}
+};

@@ -43,10 +43,14 @@
 
 var BlogEles = {
     nodes: [
-    // Select Random
-//        { data: { id: 'Rand', label: 'Select Random', name: 'Select Random', href: 'www.google.com', color: '#ff7400', weight: 45, faveShape: 'roundrectangle', filter: 'yes' }, position: { x: 1000, y: 625}, locked: true },
 
-    //Post nodes
+//Theme nodes
+	    { data: { id: 'H', label: 'H', bio: 'text/legends/bios/H-bio.html', name: 'History', href: 'text/main/themes/themes-H.html', color: '#737373', weight:60, faveShape: 'triangle'  } },
+		{ data: { id: 'F', label: 'F', bio: 'text/legends/bios/F-bio.html', name: 'Future', href: 'text/main/themes/themes-F.html', color: '#737373', weight:60, faveShape: 'rectangle'  } },
+		{ data: { id: 'A', label: 'A', bio: 'text/legends/bios/A-bio.html', name: 'Agency', href: 'text/main/themes/themes-A.html', color: '#737373', weight:60, faveShape: 'pentagon'  } },
+		{ data: { id: 'L', label: 'L', bio: 'text/legends/bios/L-bio.html', name: 'Limits', href: 'text/main/themes/themes-L.html', color: '#737373', weight:60, faveShape: 'hexagon'  } },
+
+//Post nodes
         { data: { id: 'ZT1', label: 'ZT1', bio: 'text/legends/bios/ZT.html', name: 'Of Property', href: 'text/posts/ZT1.html', color: '#8DC162', weight:55, faveShape: 'ellipse' } },
         { data: { id: 'KG1', label: 'KG1', bio: 'text/legends/bios/KG.html', name: 'Organisms as Ecosystem Engineers', href: 'text/posts/KG1.html', color: '#FFEAAC', weight:55, faveShape: 'ellipse' } },
         { data: { id: 'AR1', label: 'AR1', bio: 'text/legends/bios/AR.html', name: '"Diachronous Beginnings of the Anthropocene: The Lower Bounding Surface of Anthropogenic Deposits"', href: 'text/posts/AR1.html', color: '#C2627F', weight:55, faveShape: 'ellipse' } },
@@ -64,11 +68,6 @@ var BlogEles = {
         { data: { id: 'NT2', label: 'NT2', bio: 'text/legends/bios/NT.html', name: 'Toward a More Than Human Anthropocene', href: 'text/posts/NT2.html', color: '#791634', weight:55, faveShape: 'ellipse' } },
         { data: { id: 'LS2', label: 'LS2', bio: 'text/legends/bios/LS.html', name: 'The Dust of Civilization', href: 'text/posts/LS2.html', color: '#5C4501', weight:55, faveShape: 'ellipse' } },
 
-//Theme nodes
-	    { data: { id: 'H', label: 'H', bio: 'text/legends/bios/H-bio.html', name: 'History', href: 'text/main/themes/themes-H.html', color: '#737373', weight:60, faveShape: 'triangle'  } },
-		{ data: { id: 'F', label: 'F', bio: 'text/legends/bios/F-bio.html', name: 'Future', href: 'text/main/themes/themes-F.html', color: '#737373', weight:60, faveShape: 'rectangle'  } },
-		{ data: { id: 'A', label: 'A', bio: 'text/legends/bios/A-bio.html', name: 'Agency', href: 'text/main/themes/themes-A.html', color: '#737373', weight:60, faveShape: 'pentagon'  } },
-		{ data: { id: 'L', label: 'L', bio: 'text/legends/bios/L-bio.html', name: 'Limits', href: 'text/main/themes/themes-L.html', color: '#737373', weight:60, faveShape: 'hexagon'  } }
 	],	
     
    edges: [

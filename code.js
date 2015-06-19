@@ -3,7 +3,8 @@ $(function(){ // on dom ready
 
 // Defines Nodes and Edges and Their Styles
 var cy = cytoscape({
-  container: $('#cy')[0], 
+  container: $('#cy')[0],
+  userPanningEnabled: false,
   style: cytoscape.stylesheet()
     .selector('node')
         .css({
@@ -337,3 +338,15 @@ window.onresize = function() {
 };
 
 }); // on dom ready
+
+function RedrawGraph() {
+    var cy = $('#cy').cytoscape('get');
+    cy.elements("[filter!='yes']").layout(grid);
+    cy.elements("[filter!='yes']").layout(arbor);
+};
+
+function SelectRandom() {
+    var cy = $('#cy').cytoscape('get');
+    var random = cy.nodes("[filter!='yes']")[ Math.floor(Math.random() * cy.nodes().length) ];
+    random.select();
+}

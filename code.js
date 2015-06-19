@@ -163,9 +163,12 @@ var arbor = {
 };  
 
 // Calls Desired Layout for all but filter elements
-cy.elements("[filter!='yes']").layout(arbor);
-cy.elements("[home='yes']").layout(home);
-cy.elements("[chrono='yes']").layout(chrono);
+function CallLayouts(){
+    cy.elements("[filter!='yes']").layout(arbor);
+    cy.elements("[home='yes']").layout(home);
+    cy.elements("[chrono='yes']").layout(chrono);
+}
+CallLayouts();
 
 // Highlights Nodes and Shows Bio in "Comments" Div on hover
 cy.on('mouseover', 'node', function(){
@@ -333,7 +336,4 @@ window.onresize = function() {
     cy.fit(10);
 };
 
-
-
 }); // on dom ready
-

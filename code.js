@@ -163,7 +163,7 @@ function CallLayouts(){
     cy.elements("[filter!='yes']").layout(arbor);
     cy.elements("[home='yes']").layout(home);
     cy.elements("[chrono='yes']").layout(chrono);
-}
+};
 
 CallLayouts();
 
@@ -335,7 +335,55 @@ window.onresize = function() {
 
 function RedrawGraph() {
     var cy = $('#cy').cytoscape('get');
-    cy.elements().layout();
+    var chrono = {
+    name: 'grid',
+    fit: true, // whether to fit the viewport to the graph
+    avoidOverlap: true, // prevents node overlap, may overflow boundingBox if not enough space
+    rows: 4, // force num of rows in the grid
+    columns: 4, // force num of cols in the grid
+    animate: true, // whether to transition the node positions
+    animationDuration: 500, // duration of animation in ms if enabled
+    };
+    var home = {
+        name: 'arbor',
+        maxSimulationTime: 5000000,
+        repulsion: 20000,
+        padding: 10,
+//      friction: 0,
+        gravity: true,
+//      boundingBox: {0, 0, 100, 200},
+        fit: false,
+        stiffness: 10000,
+        edgeLength: 2,
+//	    nodeMass: function(n){ return n.data('weight') },
+        infinite: true
+    };
+    var cose = {
+        name: 'cose',
+        padding: 5,
+        nodeRepulsion: 8000000,
+        idealEdgeLength: 10,
+        nodeOverlap: 100,
+        edgeElasticity: 50,
+        fit: true,
+//      numIter: 10000,
+        animate: true
+    };
+    var arbor = {
+        name: 'arbor',
+        maxSimulationTime: 10000,
+        gravity: true,
+        repulsion: 20000,
+        padding: 10,
+        stiffness: 800,
+        fit: true,
+        edgeLength: .5,
+//	    nodeMass: function(n){ return n.data('weight') },
+        infinite: false
+    };
+    cy.elements("[filter!='yes']").layout(arbor);
+    cy.elements("[home='yes']").layout(home);
+    cy.elements("[chrono='yes']").layout(chrono);
 };
 
 function SelectRandom() {

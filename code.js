@@ -3,7 +3,9 @@ $(function(){ // on dom ready
 
 // Defines Nodes and Edges and Their Styles
 var cy = cytoscape({
-  container: $('#cy')[0], 
+  container: $('#cy')[0],
+  userPanningEnabled: false,
+  userZoomingEnabled: false,
   style: cytoscape.stylesheet()
     .selector('node')
         .css({
@@ -163,9 +165,13 @@ var arbor = {
 };  
 
 // Calls Desired Layout for all but filter elements
-cy.elements("[filter!='yes']").layout(arbor);
-cy.elements("[home='yes']").layout(home);
-cy.elements("[chrono='yes']").layout(chrono);
+function CallLayouts(){
+    cy.elements("[filter!='yes']").layout(arbor);
+    cy.elements("[home='yes']").layout(home);
+    cy.elements("[chrono='yes']").layout(chrono);
+}
+
+CallLayouts();
 
 // Highlights Nodes and Shows Bio in "Comments" Div on hover
 cy.on('mouseover', 'node', function(){
@@ -240,6 +246,7 @@ cy.on('tap select', 'node', function (e) {
 cy.on('tap', function (e) {
     if (e.cyTarget === cy) {
         cy.elements().removeClass('faded');
+        cy.elements().removeClass('hovered');
         document.getElementById('comments').src = document.getElementById('comments').src
 //        document.getElementById('content').src = document.getElementById('content').src
         cy.fit(10);
@@ -315,16 +322,13 @@ cy.on('tap', 'node', function () {
                 element.removeClass('invisible');
             }
         })
-    } else if (this.data('name') == 'Select Random'){
-        var random = cy.nodes("[filter!='yes']")[ Math.floor(Math.random() * cy.nodes().length) ];
-        random.select();
-    }
+    } 
 });
 
 // Sets zoom and fit options
 cy.on('layoutstop', function() {
-    cy.maxZoom(1.5);
-    cy.minZoom(.5);
+//    cy.maxZoom(1.5);
+//    cy.minZoom(.5);
     cy.fit(10);
 });
 
@@ -333,7 +337,15 @@ window.onresize = function() {
     cy.fit(10);
 };
 
-
-
 }); // on dom ready
 
+function RedrawGraph() {
+    var cy = $('#cy').cytoscape('get');
+    cy.elements().layout();
+};
+
+function SelectRandom() {
+    var cy = $('#cy').cytoscape('get');
+    var random = cy.nodes("[filter!='yes'][weight=55]")[ Math.floor(Math.random() * cy.nodes().length) ];
+    random.select();
+};

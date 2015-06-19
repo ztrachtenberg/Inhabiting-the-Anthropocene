@@ -31,7 +31,7 @@
 var BlogEles = {
     nodes: [
     // Select Random
-        { data: { id: 'Rand', label: 'Select Random', name: 'Select Random', href: 'www.google.com', color: '#ff7400', weight: 45, faveShape: 'roundrectangle', filter: 'yes' }, position: { x: 1000, y: 625}, locked: true },
+//        { data: { id: 'Rand', label: 'Select Random', name: 'Select Random', href: 'www.google.com', color: '#ff7400', weight: 45, faveShape: 'roundrectangle', filter: 'yes' }, position: { x: 1000, y: 625}, locked: true },
     
     // Filter Nodes
         { data: { id: 'B', label: 'Links for posts that are:', name: 'Filter By:', href: '', color: '#808080', weight: 600, faveShape: 'roundrectangle', filter: 'yes' }, position: { x: 1000, y: 500}, locked: true, selectable: false },

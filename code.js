@@ -341,5 +341,6 @@ function RedrawGraph() {
 function SelectRandom() {
     var cy = $('#cy').cytoscape('get');
     var random = cy.nodes("[filter!='yes'][weight=55]")[ Math.floor(Math.random() * cy.nodes().length) ];
+    cy.nodes().unselect();
     random.select();
 };

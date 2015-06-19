@@ -5,6 +5,7 @@ $(function(){ // on dom ready
 var cy = cytoscape({
   container: $('#cy')[0],
   userPanningEnabled: false,
+  userZoomingEnabled: false,
   style: cytoscape.stylesheet()
     .selector('node')
         .css({
@@ -169,6 +170,7 @@ function CallLayouts(){
     cy.elements("[home='yes']").layout(home);
     cy.elements("[chrono='yes']").layout(chrono);
 }
+
 CallLayouts();
 
 // Highlights Nodes and Shows Bio in "Comments" Div on hover
@@ -325,8 +327,8 @@ cy.on('tap', 'node', function () {
 
 // Sets zoom and fit options
 cy.on('layoutstop', function() {
-    cy.maxZoom(1.5);
-    cy.minZoom(.5);
+//    cy.maxZoom(1.5);
+//    cy.minZoom(.5);
     cy.fit(10);
 });
 
@@ -339,7 +341,7 @@ window.onresize = function() {
 
 function RedrawGraph() {
     var cy = $('#cy').cytoscape('get');
-    cy.init();
+    cy.elements().layout();
 };
 
 function SelectRandom() {

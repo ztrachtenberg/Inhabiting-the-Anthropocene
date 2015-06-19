@@ -381,6 +381,9 @@ function RedrawGraph() {
 //	    nodeMass: function(n){ return n.data('weight') },
         infinite: false
     };
+    cy.nodes().unselect();
+    cy.elements().removeClass('faded');
+    cy.elements().removeClass('hovered');
     cy.elements("[filter!='yes']").layout(arbor);
     cy.elements("[home='yes']").layout(home);
     cy.elements("[chrono='yes']").layout(chrono);

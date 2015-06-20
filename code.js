@@ -346,7 +346,7 @@ function RedrawGraph() {
     };
     var home = {
         name: 'arbor',
-        maxSimulationTime: 5000000,
+        maxSimulationTime: 10000,
         repulsion: 20000,
         padding: 10,
 //      friction: 0,

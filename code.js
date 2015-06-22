@@ -121,7 +121,7 @@ var chrono = {
   animationDuration: 500, // duration of animation in ms if enabled
 };
 var home = {
-    name: 'arbor',
+    name: 'cose',
     maxSimulationTime: 5000000,
     repulsion: 20000,
     padding: 10,

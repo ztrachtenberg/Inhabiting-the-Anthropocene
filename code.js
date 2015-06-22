@@ -111,6 +111,11 @@ var cy = cytoscape({
 });
 
 // Layout Options
+var springy = {
+	name: 'springy',
+	random: true
+};
+
 var chrono = {
   name: 'grid',
   fit: true, // whether to fit the viewport to the graph
@@ -120,10 +125,17 @@ var chrono = {
   animate: true, // whether to transition the node positions
   animationDuration: 500, // duration of animation in ms if enabled
 };
+
 var home = {
-    name: 'cose',
-    maxSimulationTime: 5000000,
-    repulsion: 20000,
+	name: 'springy',
+	fit: false,
+	infinite: true
+};
+
+var home1 = {
+    name: 'arbor',
+//    maxSimulationTime: 5000000,
+    repulsion: 200,
     padding: 10,
 //    friction: 0,
     gravity: true,
@@ -132,7 +144,7 @@ var home = {
     stiffness: 10000,
     edgeLength: 2,
 //	nodeMass: function(n){ return n.data('weight') },
-    infinite: true
+//    infinite: true
 };
 var cose = {
     name: 'cose',
@@ -149,9 +161,9 @@ var arbor = {
     name: 'arbor',
     maxSimulationTime: 10000,
     gravity: true,
-    repulsion: 20000,
+    repulsion: 200,
     padding: 10,
-    stiffness: 800,
+    stiffness: 80,
     fit: true,
     edgeLength: .5,
 //	nodeMass: function(n){ return n.data('weight') },
@@ -160,7 +172,7 @@ var arbor = {
 
 // Calls Desired Layout for all but filter elements
 function CallLayouts(){
-    cy.elements("[filter!='yes']").layout(arbor);
+    cy.elements("[filter!='yes']").layout(springy);
     cy.elements("[home='yes']").layout(home);
     cy.elements("[chrono='yes']").layout(chrono);
 };
@@ -180,7 +192,9 @@ cy.on('mouseover', 'node', function(){
 });
 // Removes Highlight and Return to default content of "Comments" Div on mouseout unless Node is Selected
 cy.on('mouseout', 'node', function(){
-	this.removeClass('hovered');
+	if(!this.hasClass(':selected')){
+		this.removeClass('hovered')
+	};
 	if(this.data('filter')!='yes' && !this.hasClass('faded') && !this.hasClass(':selected')){
         document.getElementById('comments').src = document.getElementById('comments').src
 	}
@@ -240,8 +254,8 @@ cy.on('tap select', 'node', function (e) {
 cy.on('tap', function (e) {
     if (e.cyTarget === cy) {
         cy.elements().removeClass('faded');
-        cy.elements().removeClass('hovered');
-        document.getElementById('comments').src = document.getElementById('comments').src
+//        cy.elements().removeClass('hovered');
+//        document.getElementById('comments').src = document.getElementById('comments').src
 //        document.getElementById('content').src = document.getElementById('content').src
         cy.fit(10);
     }
@@ -323,7 +337,7 @@ cy.on('tap', 'node', function () {
 cy.on('layoutstop', function() {
 //    cy.maxZoom(1.5);
 //    cy.minZoom(.5);
-    cy.fit(10);
+//    cy.fit(10);
 });
 
 // Resizes graph to viewport on window resize
@@ -344,10 +358,10 @@ function RedrawGraph() {
     animate: true, // whether to transition the node positions
     animationDuration: 500, // duration of animation in ms if enabled
     };
-    var home = {
+    var home1 = {
         name: 'arbor',
-        maxSimulationTime: 10000,
-        repulsion: 20000,
+//        maxSimulationTime: 5000000,
+        repulsion: 200,
         padding: 10,
 //      friction: 0,
         gravity: true,
@@ -356,8 +370,20 @@ function RedrawGraph() {
         stiffness: 10000,
         edgeLength: 2,
 //	    nodeMass: function(n){ return n.data('weight') },
-        infinite: true
+//        infinite: true
     };
+
+	var home = {
+		name: 'springy',
+		infinite: true
+	};
+    
+    var springy = {
+    	name: 'springy',
+    	fit: false,
+    	random: true
+    	};
+    
     var cose = {
         name: 'cose',
         padding: 5,
@@ -373,7 +399,7 @@ function RedrawGraph() {
         name: 'arbor',
         maxSimulationTime: 10000,
         gravity: true,
-        repulsion: 20000,
+        repulsion: 200,
         padding: 10,
         stiffness: 800,
         fit: true,
@@ -384,9 +410,11 @@ function RedrawGraph() {
     cy.nodes().unselect();
     cy.elements().removeClass('faded');
     cy.elements().removeClass('hovered');
-    cy.elements("[filter!='yes']").layout(arbor);
+    cy.elements("[filter!='yes']").layout(springy);
     cy.elements("[home='yes']").layout(home);
     cy.elements("[chrono='yes']").layout(chrono);
+    document.getElementById('comments').src = document.getElementById('comments').src
+  	document.getElementById('content').src = document.getElementById('content').src
 };
 
 function SelectRandom() {

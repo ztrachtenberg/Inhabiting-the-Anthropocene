@@ -107,8 +107,10 @@ var BlogEles = {
                 
         //Antonio's links (#D9BE6E)
         { data: { source: 'AC1', target: 'AC2', href: 'text/edges/pairs/authors/AC1-AC2.html', AuthColor: '#D9BE6E', width: 5, Arrow: 'triangle', style: 'solid', comment: 'Same author' } },
-//        { data: { source: 'AC1', target: 'ZT2', href: 'text/edges/pairs/authors/AC1-ZT2.html', AuthColor: '#D9BE6E', width: 5, Arrow: 'triangle', style: 'solid', comment: ' ' } },
-//        { data: { source: 'AC2', target: 'MW1', href: 'text/edges/pairs/authors/AC2-MW1.html', AuthColor: '#D9BE6E', width: 5, Arrow: 'triangle', style: 'solid', comment: ' ' } },
-        
+        { data: { source: 'AC1', target: 'ZT2', href: 'text/edges/pairs/authors/AC1-ZT2-s.html', AuthColor: '#D9BE6E', width: 5, Arrow: 'triangle', style: 'dashed', comment: 'Similar' } },
+        { data: { source: 'AC1', target: 'AR2', href: 'text/edges/pairs/authors/AC1-AR2-d.html', AuthColor: '#D9BE6E', width: 5, Arrow: 'none', style: 'dotted', comment: 'Different' } },
+        { data: { source: 'AC2', target: 'MW1', href: 'text/edges/pairs/authors/AC2-MW1-s.html', AuthColor: '#D9BE6E', width: 5, Arrow: 'triangle', style: 'dashed', comment: 'Similar' } },
+        { data: { source: 'IS2', target: 'AC2', href: 'text/edges/pairs/authors/IS2-AC2-d.html', AuthColor: '#D9BE6E', width: 5, Arrow: 'triangle', style: 'dotted', comment: 'Different' } },
+
     ]
 }

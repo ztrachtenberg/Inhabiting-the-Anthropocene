@@ -134,7 +134,7 @@ var home = {
 
 var home1 = {
     name: 'arbor',
-    maxSimulationTime: 5000000,
+//    maxSimulationTime: 5000000,
     repulsion: 200,
     padding: 10,
 //    friction: 0,

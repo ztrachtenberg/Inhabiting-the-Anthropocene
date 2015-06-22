@@ -129,6 +129,7 @@ var chrono = {
 var home = {
 	name: 'springy',
 	fit: false,
+	random: true,
 	infinite: true
 };
 
@@ -375,6 +376,8 @@ function RedrawGraph() {
 
 	var home = {
 		name: 'springy',
+		random: true,
+		fit: false,
 		infinite: true
 	};
     

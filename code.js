@@ -1,3 +1,73 @@
+// Layout Options
+var chrono = {
+  name: 'grid',
+  fit: true, // whether to fit the viewport to the graph
+  avoidOverlap: true, // prevents node overlap, may overflow boundingBox if not enough space
+  rows: 4, // force num of rows in the grid
+  columns: 4, // force num of cols in the grid
+  animate: true, // whether to transition the node positions
+  animationDuration: 500, // duration of animation in ms if enabled
+};
+var home = {
+	name: 'springy',
+	random: true,
+	animate: false,
+	fit: true,
+	maxSimulationTime: 10000,
+	infinite: false,
+	stiffness: 200,
+	repulsion: 200,
+ 	damping: .1
+};    
+var springy = {
+    name: 'springy',
+    fit: true,
+    animate: true,
+    random: true,
+    maxSimulationTime: 10000,
+    stiffness: 400,
+  	repulsion: 800,
+  	damping: .1
+};
+var home1 = {
+    name: 'arbor',
+//    maxSimulationTime: 5000000,
+    repulsion: 200,
+    padding: 10,
+//    friction: 0,
+    gravity: true,
+//    boundingBox: {0, 0, 100, 200},
+    fit: false,
+    stiffness: 10000,
+    edgeLength: 2,
+//	nodeMass: function(n){ return n.data('weight') },
+//    infinite: true
+};
+var cose = {
+    name: 'cose',
+    padding: 5,
+    nodeRepulsion: 8000000,
+    idealEdgeLength: 10,
+    nodeOverlap: 100,
+    edgeElasticity: 50,
+    fit: true,
+//    numIter: 10000,
+    animate: true
+};
+var arbor = {
+    name: 'arbor',
+    maxSimulationTime: 10000,
+    gravity: true,
+    repulsion: 200,
+    padding: 10,
+    stiffness: 80,
+    fit: true,
+    edgeLength: .5,
+//	nodeMass: function(n){ return n.data('weight') },
+    infinite: false
+};  
+
+
 // Cytoscape
 $(function(){ // on dom ready
 
@@ -144,79 +214,6 @@ var cy = cytoscape({
 // Call the Nodes and Edges
     elements: BlogEles    
 });
-
-// Layout Options
-
-var chrono = {
-  name: 'grid',
-  fit: true, // whether to fit the viewport to the graph
-  avoidOverlap: true, // prevents node overlap, may overflow boundingBox if not enough space
-  rows: 4, // force num of rows in the grid
-  columns: 4, // force num of cols in the grid
-  animate: true, // whether to transition the node positions
-  animationDuration: 500, // duration of animation in ms if enabled
-};
-
-	var home = {
-		name: 'springy',
-		random: true,
-		animate: false,
-		fit: true,
-		maxSimulationTime: 10000,
-		infinite: false,
-		stiffness: 200,
-  		repulsion: 200,
-  		damping: .1
-	};
-    
-    var springy = {
-    	name: 'springy',
-    	fit: true,
-    	animate: true,
-    	random: true,
-    	maxSimulationTime: 10000,
-    	stiffness: 400,
-  		repulsion: 800,
-  		damping: .1
-    	};
-
-var home1 = {
-    name: 'arbor',
-//    maxSimulationTime: 5000000,
-    repulsion: 200,
-    padding: 10,
-//    friction: 0,
-    gravity: true,
-//    boundingBox: {0, 0, 100, 200},
-    fit: false,
-    stiffness: 10000,
-    edgeLength: 2,
-//	nodeMass: function(n){ return n.data('weight') },
-//    infinite: true
-};
-var cose = {
-    name: 'cose',
-    padding: 5,
-    nodeRepulsion: 8000000,
-    idealEdgeLength: 10,
-    nodeOverlap: 100,
-    edgeElasticity: 50,
-    fit: true,
-//    numIter: 10000,
-    animate: true
-  };
-var arbor = {
-    name: 'arbor',
-    maxSimulationTime: 10000,
-    gravity: true,
-    repulsion: 200,
-    padding: 10,
-    stiffness: 80,
-    fit: true,
-    edgeLength: .5,
-//	nodeMass: function(n){ return n.data('weight') },
-    infinite: false
-};  
 
 // Calls Desired Layout for all but filter elements
 function CallLayouts(){
@@ -408,76 +405,6 @@ window.onresize = function() {
 
 function RedrawGraph() {
     var cy = $('#cy').cytoscape('get');
-    var chrono = {
-    name: 'grid',
-    fit: true, // whether to fit the viewport to the graph
-    avoidOverlap: true, // prevents node overlap, may overflow boundingBox if not enough space
-    rows: 4, // force num of rows in the grid
-    columns: 4, // force num of cols in the grid
-    animate: true, // whether to transition the node positions
-    animationDuration: 1000, // duration of animation in ms if enabled
-    };
-    var home1 = {
-        name: 'arbor',
-//        maxSimulationTime: 5000000,
-        repulsion: 200,
-        padding: 10,
-//      friction: 0,
-        gravity: true,
-//      boundingBox: {0, 0, 100, 200},
-        fit: false,
-        stiffness: 10000,
-        edgeLength: 2,
-//	    nodeMass: function(n){ return n.data('weight') },
-//        infinite: true
-    };
-
-	var home = {
-		name: 'springy',
-		random: true,
-		animate: false,
-		fit: true,
-		maxSimulationTime: 10000,
-		infinite: false,
-		stiffness: 400,
-  		repulsion: 800,
-  		damping: .1
-	};
-    
-    var springy = {
-    	name: 'springy',
-    	fit: true,
-    	animate: true,
-    	random: true,
-    	maxSimulationTime: 1000,
-    	stiffness: 400,
-  		repulsion: 800,
-  		damping: .1
-    	};
-    
-    var cose = {
-        name: 'cose',
-        padding: 5,
-        nodeRepulsion: 8000000,
-        idealEdgeLength: 10,
-        nodeOverlap: 100,
-        edgeElasticity: 50,
-        fit: true,
-//      numIter: 10000,
-        animate: true
-    };
-    var arbor = {
-        name: 'arbor',
-        maxSimulationTime: 10000,
-        gravity: true,
-        repulsion: 200,
-        padding: 10,
-        stiffness: 800,
-        fit: true,
-        edgeLength: .5,
-//	    nodeMass: function(n){ return n.data('weight') },
-        infinite: false
-    };
     cy.nodes().unselect();
     cy.elements().removeClass('faded');
     cy.elements().removeClass('clicked');

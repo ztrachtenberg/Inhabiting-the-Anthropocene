@@ -242,10 +242,8 @@ cy.on('mouseover', 'node', function(){
 	}; */
 
 cy.on('mouseout', 'node', function(){
-	
-		this.removeClass('hovered')
-	;
-	if(this.data('filter')!='yes' && !this.hasClass('faded') && !this.hasClass(':selected')){
+	this.removeClass('hovered');
+	if(this.data('filter')!='yes' && !this.hasClass('faded') && !this.hasClass('clicked')){
         document.getElementById('comments').src = document.getElementById('comments').src
 	}
  });

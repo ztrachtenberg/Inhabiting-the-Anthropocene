@@ -235,6 +235,7 @@ cy.on('mouseover', 'node', function(){
 		}
 	}
 });
+
 // Removes Highlight and Return to default content of "Comments" Div on mouseout unless Node is Selected
 /* cy.on('mouseout', 'node', function(){
 	if(!this.hasClass(':selected')){

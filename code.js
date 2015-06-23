@@ -39,6 +39,22 @@ var cy = cytoscape({
             'border-color': 'yellow',
             'border-width': 5
     })
+    .selector('node.clicked')
+        .css({
+            'text-valign': 'center',
+            'text-outline-width': 3,
+            'font-size': 20,
+            'background-color': 'data(color)',
+            'color': 'white',
+            'z-index': 10,
+            'target-arrow-color': 'black',
+            'source-arrow-color': 'black',
+            'text-outcolor': 'black',
+            'width': 'data(weight)',
+            'height': 'data(weight)',
+            'border-color': 'yellow',
+            'border-width': 4
+    })
     .selector('$node > node')
         .css({
             'color': 'black',
@@ -233,9 +249,7 @@ cy.on('mouseout', 'edge', function(){
 // Links Nodes to the "Content" and "Comments" Divs, adds highlight (useful for the random node selector)
 cy.on('tap select', 'node', function(){
 	if (this.data('filter')!='yes' && this.data('home')!='yes') {
-	    cy.elements().removeClass('hovered');
-//	    this.addClass('hovered');
-		this.addClass(':selected');
+	    cy.elements().removeClass('clicked');
 		if (this.data('home')!='yes'){
     		try { // your browser may block popups
         		window.open( this.data('href'), 'content' );
@@ -256,6 +270,7 @@ cy.on('tap select', 'node', function (e) {
         var neighborhood = node.neighborhood().add(node);
         cy.elements("[filter!='yes']").addClass('faded');
         neighborhood.removeClass('faded');
+        node.addClass('clicked');
     }
 });
 
@@ -263,6 +278,7 @@ cy.on('tap select', 'node', function (e) {
  cy.on('tap select', 'node', function (e) {
     // Only adds faded class if this isn't a filter node
     if (this.data('filter') != 'yes' && this.data('home')!='yes' && this.data('chrono') != 'yes'){
+        this.addClass('clicked');
         var node = e.cyTarget;
         var neighborhood = node.neighborhood().add(node);
         cy.fit(neighborhood, 10);
@@ -273,7 +289,7 @@ cy.on('tap select', 'node', function (e) {
 cy.on('tap', function (e) {
     if (e.cyTarget === cy) {
         cy.elements().removeClass('faded');
-        cy.elements().removeClass('hovered');
+//        cy.elements().removeClass('hovered');
 //        document.getElementById('comments').src = document.getElementById('comments').src
 //        document.getElementById('content').src = document.getElementById('content').src
         cy.fit(10);
@@ -440,7 +456,7 @@ function RedrawGraph() {
     };
     cy.nodes().unselect();
     cy.elements().removeClass('faded');
-    cy.elements().removeClass('hovered');
+    cy.elements().removeClass('clicked');
     cy.elements("[filter!='yes']").layout(springy);
     cy.elements("[home='yes']").layout(home);
     cy.elements("[chrono='yes']").layout(chrono);

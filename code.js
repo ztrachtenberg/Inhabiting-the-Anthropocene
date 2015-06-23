@@ -19,6 +19,7 @@ var cy = cytoscape({
             'color': 'white',
             'border-style': 'solid',
             'border-width': 1,
+            'border-color': 'black',
             'text-outcolor': '#888',
             'font-size': 25,
     })
@@ -119,8 +120,25 @@ var cy = cytoscape({
     .selector('node.triggered')
         .css({
             'background-color': 'red',
+            'font-size': 25,
             'border-color': 'black',
             'border-width': 1
+    })
+    .selector('node.untriggered')
+        .css({
+            'content': 'data(label)',
+            'width': 'data(weight)',
+            'height': 'data(weight)',
+            'shape': 'data(faveShape)',
+            'text-valign': 'center',
+            'text-outline-width': 1,
+            'background-color': 'data(color)',
+            'color': 'white',
+            'border-style': 'solid',
+            'border-color': 'black',
+            'border-width': 1,
+            'text-outcolor': '#888',
+            'font-size': 25,
     }),
     
 // Call the Nodes and Edges
@@ -324,6 +342,7 @@ cy.on('mouseout', 'edge', function(){
 // Filter and Random Node Selector Functions
 cy.on('tap', 'node', function () {
     if (!this.hasClass('triggered') && this.data('name') == 'Similar'){
+        this.removeClass('untriggered');
         this.addClass('triggered');
         cy.filter(function(i, element){
             if (element.isEdge() && (element.data("comment") == 'Similar')){
@@ -331,13 +350,15 @@ cy.on('tap', 'node', function () {
             }
         })
     } else if (this.hasClass('triggered') && this.data('name') == 'Similar'){   
-        this.removeClass('triggered'); 
+        this.removeClass('triggered');
+        this.addClass('untriggered'); 
         cy.filter(function(i, element){
             if (element.isEdge() && (element.data("comment") == 'Similar')){
                 element.removeClass('invisible');
             }
         })
     } else if (!this.hasClass('triggered') && this.data('name') == 'Different'){
+        this.removeClass('untriggered');
         this.addClass('triggered');
         cy.filter(function(i, element){
             if (element.isEdge() && (element.data("comment") == 'Different')){
@@ -345,13 +366,15 @@ cy.on('tap', 'node', function () {
             }
         })
     } else if (this.hasClass('triggered') && this.data('name') == 'Different'){   
-        this.removeClass('triggered'); 
+        this.removeClass('triggered');
+        this.addClass('untriggered');  
         cy.filter(function(i, element){
             if (element.isEdge() && (element.data("comment") == 'Different')){
                 element.removeClass('invisible');
             }
         })
     } else if (!this.hasClass('triggered') && this.data('name') == 'Same author'){
+        this.removeClass('untriggered');
         this.addClass('triggered');
         cy.filter(function(i, element){
             if (element.isEdge() && (element.data("comment") == 'Same author')){
@@ -360,6 +383,7 @@ cy.on('tap', 'node', function () {
         })
     } else if (this.hasClass('triggered') && this.data('name') == 'Same author'){   
         this.removeClass('triggered'); 
+         this.addClass('untriggered'); 
         cy.filter(function(i, element){
             if (element.isEdge() && (element.data("comment") == 'Same author')){
                 element.removeClass('invisible');

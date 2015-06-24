@@ -59,10 +59,11 @@
       <div class="nav-internal">
         <nav class="navbar navbar-inverse">
           <div class="container-fluid">
-            <div class="navbar-header"> <a class="navbar-brand" href="./text/main/pairings/a-s-pairings.html" target="content">Author-Supplied Pairings View</a> 
-              <!-- a class="navbar-brand" href="ITA_Vis-author-pairings.html" target="_self">Author-Supplied Pairings</a --> 
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#internalnav" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <a class="navbar-brand" href="./text/main/pairings/a-s-pairings.html" target="content">Author-Supplied Pairings View</a> 
             </div>
-            <div>
+            <div id="internalnav" class="collapse navbar-collapse">
               <ul class="nav navbar-nav navbar-right">
                 <li><a onclick="RedrawGraph()">Redraw Graph</a></li>
                 <li><a onclick="SelectRandom()">Random Post</a></li>

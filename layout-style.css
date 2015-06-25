@@ -13,7 +13,7 @@
                 height: 100%;
                 width: 45%;
                 float: right;
-                overflow: hidden;
+                overflow: scroll;
                 padding: 5px;
     			border-left: thick double #000000;
             }
@@ -24,7 +24,7 @@
 				padding: 10px;
                 height: 100%;
                 width: 54%;
-                overflow: hidden;
+                overflow: scroll;
             }
             
             .bottomleft {
@@ -38,9 +38,8 @@
 			}
 			
 			.bottomcontainer {
-                position: relative;
-                height: 100%;
-                overflow: hidden;
+			    overflow: scroll;
+			    height: 100%;
 			}
 			
 			.nav-internal {

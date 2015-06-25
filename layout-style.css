@@ -7,6 +7,7 @@
                 padding: 1%;
                 position: relative;
                 height: 100%;
+                overflow: scroll;
             }
 
             .right {
@@ -54,21 +55,22 @@
 			.legend {
 			    float: left;
 			    width: 48%;
+			    overflow: scroll;
 			    min-width: 140px;
-			    margin-right: 1%;
+			    margin-right: 5px;
 			    margin-bottom: 10px;
-			    height: 95%;
+			    height: 100%;
 			    padding: 5px;
 			}
 			
 			.comments {
 			    float: left;
 			    min-width: 140px;
+			    overflow: scroll;
 			    width: 50%;
 			    padding: 5px;
-				margin-right: 1%;
 			    margin-bottom: 10px;
-			    height: 95%;
+			    height: 100%;
      			border-left: thick double #000000;
 			}
 			

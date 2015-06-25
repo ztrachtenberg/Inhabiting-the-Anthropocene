@@ -262,6 +262,9 @@ cy.on('mouseout', 'edge', function(){
 
 // Links Nodes to the "Content" and "Comments" Divs, adds highlight (useful for the random node selector)
 cy.on('tap select', 'node', function(){
+    if (this.data('home')=='yes') {
+        this.unselect();
+    }
 	if (this.data('filter')!='yes' && this.data('home')!='yes') {
 	    cy.elements().removeClass('clicked');
 		if (this.data('home')!='yes'){
@@ -291,7 +294,7 @@ cy.on('tap select', 'node', function (e) {
 // Fit view to selection
  cy.on('tap select', 'node', function (e) {
     // Only adds faded class if this isn't a filter node
-    if (this.data('filter') != 'yes' && this.data('home')!='yes' && this.data('chrono') != 'yes'){
+    if (this.data('filter')!= 'yes' && this.data('home')!='yes' && this.data('chrono') != 'yes'){
         this.addClass('clicked');
         var node = e.cyTarget;
         var neighborhood = node.neighborhood().add(node);

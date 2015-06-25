@@ -7,7 +7,6 @@
                 padding: 1%;
                 position: relative;
                 height: 100%;
-                overflow: hidden;
             }
 
             .right {
@@ -88,18 +87,22 @@
 			    height: 100%;
 			    width: 100%;
 			    padding: 10px;
+			    overflow: scroll;
 			}
             
             #comments {
-			    position: relative;
-			    height: 80%;
-			    width: 100%;
+                position: relative;
+                height: 75%;
+                width: 100%;
+			    padding: 10px;
 			    overflow: scroll;
             }
 			
 			#legend {
-			    position: relative;
-			    height: 80%;
-			    width: 100%;
+                position: relative;
+                height: 75%;
+                width: 100%;
+			    padding: 10px;
+			    overflow: scroll;
             }
             

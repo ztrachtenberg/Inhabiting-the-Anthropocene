@@ -423,3 +423,7 @@ function SelectRandom() {
     cy.nodes().unselect();
     random.select();
 };
+
+$('#iframe_id').load(function () {
+    $(this).height($(this).contents().height());
+});

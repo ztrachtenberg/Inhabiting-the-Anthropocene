@@ -423,12 +423,3 @@ function SelectRandom() {
     cy.nodes().unselect();
     random.select();
 };
-
-function AdjustLegendHeightOnLoad() { document.getElementById("legend").style.height = document.getElementById("legend").contentWindow.document.body.scrollHeight + "px"; }
-function AdjustLegendHeight(i) { document.getElementById("legend").style.height = parseInt(i) + "px"; }
-
-function AdjustCommentsHeightOnLoad() { document.getElementById("comments").style.height = document.getElementById("comments").contentWindow.document.body.scrollHeight + "px"; }
-function AdjustCommentsHeight(i) { document.getElementById("comments").style.height = parseInt(i) + "px"; }
-
-function AdjustContentHeightOnLoad() { document.getElementById("content").style.height = document.getElementById("content").contentWindow.document.body.scrollHeight + "px"; }
-function AdjustContentHeight(i) { document.getElementById("content").style.height = parseInt(i) + "px"; }

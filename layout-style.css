@@ -7,7 +7,7 @@
                 padding: 1%;
                 position: relative;
                 height: 100%;
-                overflow: scroll;
+                overflow: visible;
             }
 
             .right {
@@ -22,11 +22,12 @@
 
             .left {
 				position: relative;
+                -webkit-overflow-scrolling: touch;
+  	            overflow-y: scroll;
 				float: left;
 				padding: 10px;
                 height: 100%;
                 width: 54%;
-                overflow: scroll;
             }
             
             .bottomleft {
@@ -40,7 +41,6 @@
 			}
 			
 			.bottomcontainer {
-			    overflow: scroll;
 			    height: 100%;
 			}
 			
@@ -89,23 +89,17 @@
 			    position: relative;
 			    height: 100%;
 			    width: 100%;
-			    padding: 10px;
-			    overflow: scroll;
 			}
             
             #comments {
                 position: relative;
                 height: 75%;
                 width: 100%;
-			    padding: 10px;
-			    overflow: scroll;
             }
 			
 			#legend {
                 position: relative;
                 height: 75%;
                 width: 100%;
-			    padding: 10px;
-			    overflow: scroll;
             }
             

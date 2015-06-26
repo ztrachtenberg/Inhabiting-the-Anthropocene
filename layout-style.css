@@ -1,12 +1,13 @@
- 			body {
- 			    height: 150vh;
+ 			body,html {
+ 			    height: 100%;
 			    padding-top: 50px;
 			}
 				
             .bodycontainer {
-                padding: 1%;
+                padding-right: 1%;
+                padding-left: 1%;
                 position: relative;
-                height: 100%;
+                height: 150vh;
             }
 
             .right {

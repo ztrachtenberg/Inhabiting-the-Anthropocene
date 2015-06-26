@@ -7,7 +7,6 @@
                 padding: 1%;
                 position: relative;
                 height: 100%;
-                overflow: scroll;
             }
 
             .right {
@@ -25,7 +24,6 @@
 				padding: 10px;
                 height: 100%;
                 width: 54%;
-                overflow: scroll;
             }
             
             .bottomleft {
@@ -39,7 +37,6 @@
 			}
 			
 			.bottomcontainer {
-			    overflow: scroll;
 			    height: 100%;
 			}
 			
@@ -66,7 +63,6 @@
 			.comments {
 			    float: left;
 			    min-width: 140px;
-			    overflow: scroll;
 			    width: 50%;
 			    padding: 5px;
 			    margin-bottom: 10px;
@@ -87,7 +83,6 @@
 			    height: 100%;
 			    width: 100%;
 			    padding: 10px;
-			    overflow: scroll;
 			}
             
             #comments {
@@ -95,7 +90,6 @@
                 height: 75%;
                 width: 100%;
 			    padding: 10px;
-			    overflow: scroll;
             }
 			
 			#legend {
@@ -103,6 +97,5 @@
                 height: 75%;
                 width: 100%;
 			    padding: 10px;
-			    overflow: scroll;
             }
             

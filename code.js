@@ -424,6 +424,14 @@ function SelectRandom() {
     random.select();
 };
 
-$('#iframe_id').load(function () {
+$('#legend').load(function () {
+    $(this).height($(this).contents().height());
+});
+
+$('#comments').load(function () {
+    $(this).height($(this).contents().height());
+});
+
+$('#content').load(function () {
     $(this).height($(this).contents().height());
 });

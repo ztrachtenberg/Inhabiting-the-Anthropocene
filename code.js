@@ -424,14 +424,11 @@ function SelectRandom() {
     random.select();
 };
 
-$('#legend').load(function () {
-    $(this).height($(this).contents().height());
-});
+function AdjustLegendHeightOnLoad() { document.getElementById("legend").style.height = document.getElementById("legend").contentWindow.document.body.scrollHeight + "px"; }
+function AdjustLegendHeight(i) { document.getElementById("legend").style.height = parseInt(i) + "px"; }
 
-$('#comments').load(function () {
-    $(this).height($(this).contents().height());
-});
+function AdjustCommentsHeightOnLoad() { document.getElementById("comments").style.height = document.getElementById("comments").contentWindow.document.body.scrollHeight + "px"; }
+function AdjustCommentsHeight(i) { document.getElementById("comments").style.height = parseInt(i) + "px"; }
 
-$('#content').load(function () {
-    $(this).height($(this).contents().height());
-});
+function AdjustContentHeightOnLoad() { document.getElementById("content").style.height = document.getElementById("content").contentWindow.document.body.scrollHeight + "px"; }
+function AdjustContentHeight(i) { document.getElementById("content").style.height = parseInt(i) + "px"; }

@@ -87,14 +87,14 @@
             
             #comments {
                 position: relative;
-                height: 75%;
+                height: 100%;
                 width: 100%;
 			    padding: 10px;
             }
 			
 			#legend {
                 position: relative;
-                height: 75%;
+                height: 100%;
                 width: 100%;
 			    padding: 10px;
             }

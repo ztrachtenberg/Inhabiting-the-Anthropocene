@@ -14,7 +14,8 @@
                 height: 100%;
                 width: 45%;
                 float: right;
-                overflow: scroll;
+                -webkit-overflow-scrolling: touch;
+  	            overflow-y: scroll;
                 padding: 5px;
     			border-left: thick double #000000;
             }
@@ -55,7 +56,8 @@
 			.legend {
 			    float: left;
 			    width: 48%;
-			    overflow: scroll;
+                -webkit-overflow-scrolling: touch;
+  	            overflow-y: scroll;
 			    min-width: 140px;
 			    margin-right: 5px;
 			    margin-bottom: 10px;
@@ -66,7 +68,8 @@
 			.comments {
 			    float: left;
 			    min-width: 140px;
-			    overflow: scroll;
+                -webkit-overflow-scrolling: touch;
+  	            overflow-y: scroll;
 			    width: 50%;
 			    padding: 5px;
 			    margin-bottom: 10px;

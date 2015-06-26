@@ -22,6 +22,8 @@
 
             .left {
 				position: relative;
+                -webkit-overflow-scrolling: touch;
+  	            overflow-y: scroll;
 				float: left;
 				padding: 10px;
                 height: 100%;

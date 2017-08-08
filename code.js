@@ -95,7 +95,7 @@ var cy = cytoscape({
     })
     .selector(':selected')
         .css({
-//            'content': 'data(name)', keep view cleaner
+            //'content': 'data(name)', //keep view cleaner
             'text-valign': 'center',
             'text-outline-width': 3,
             'font-size': 20,
@@ -107,7 +107,7 @@ var cy = cytoscape({
             'text-outcolor': 'black',
             'width': 'data(weight)',
             'height': 'data(weight)',
-            'border-color': 'yellow',
+            'border-color': 'green',
             'border-width': 5
     })
     .selector('node.clicked')
@@ -123,7 +123,7 @@ var cy = cytoscape({
             'text-outcolor': 'black',
             'width': 'data(weight)',
             'height': 'data(weight)',
-            'border-color': 'yellow',
+            'border-color': 'green',
             'border-width': 4
     })
     .selector('$node > node')
@@ -229,9 +229,9 @@ cy.on('mouseover', 'node', function(){
     if (this.data('filter')!='yes' && !this.hasClass('faded')){
 	    this.addClass('hovered')
 	    try {
-	    	window.open( this.data('bio'), 'comments');
+	    	window.open( this.data('preview'), 'comments');
 		} catch(e){
-	    	window.location.href = this.data('bio');
+	    	window.location.href = this.data('preview');
 		}
 	}
 });
@@ -244,10 +244,12 @@ cy.on('mouseover', 'node', function(){
 
 cy.on('mouseout', 'node', function(){
 	this.removeClass('hovered');
-	if(this.data('filter')!='yes' && !this.hasClass('faded') && !this.hasClass('clicked')){
+	/*if( !this.hasClass('clicked')){
         document.getElementById('comments').src = document.getElementById('comments').src
-	}
+	}*/
  });
+
+
 
 // Show edge comment on hover
 cy.on('mouseover', 'edge', function(){
@@ -257,8 +259,11 @@ cy.on('mouseover', 'edge', function(){
 });
 // Removes comment on mouseout
 cy.on('mouseout', 'edge', function(){
-	this.removeClass('hovered')
- });
+	this.removeClass('hovered');
+ 	if(this.data(!this.hasClass('faded') && !this.hasClass('clicked'))){
+        document.getElementById('comments').src = document.getElementById('comments').src
+	}
+});
 
 // Links Nodes to the "Content" and "Comments" Divs, adds highlight (useful for the random node selector)
 cy.on('tap select', 'node', function(){
@@ -328,7 +333,7 @@ cy.on('tap', 'edge', function() {
     this.addClass(':selected')
 });
 // Return to default content of "Comments" Div on mouseout unless Edge is Selected
-cy.on('mouseout', 'edge', function(){
+/*cy.on('mouseout', 'edge', function(){
 	if(!this.hasClass('faded') && !this.hasClass(':selected')){
 		try {
 			window.open('text/legends/authors-by-approach.html', 'comments');
@@ -336,11 +341,11 @@ cy.on('mouseout', 'edge', function(){
 			window.location.href = 'text/legends/authors-by-approach.html';
 		}
 	}
-});
+});*/
 
 // Filter and Random Node Selector Functions
 cy.on('tap', 'node', function () {
-    if (!this.hasClass('triggered') && this.data('name') == 'Similar'){
+	if (!this.hasClass('triggered') && this.data('name') == 'Similar'){
         this.removeClass('untriggered');
         this.addClass('triggered');
         cy.filter(function(i, element){
@@ -388,7 +393,7 @@ cy.on('tap', 'node', function () {
                 element.removeClass('invisible');
             }
         })
-    } 
+    }  
 });
 
 // Sets zoom and fit options

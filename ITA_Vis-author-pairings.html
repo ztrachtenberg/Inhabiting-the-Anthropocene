@@ -24,17 +24,18 @@
         <!-- li class="active" -->
         <li><a href="./text/main/intro.html" target="content">Introduction</a></li>
         <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">User Guide<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="./text/main/guide.html" target="content">Operation</a></li>
-          <li><a href="./text/main/guide2.html" target="content">Way-finding</a></li>
-          <li><a href="./text/main/guide3.html" target="content">Posts</a></li>
-        </ul>
+          <ul class="dropdown-menu">
+            <li><a href="./text/main/guide.html" target="content">Operation</a></li>
+            <li><a href="./text/main/guide2.html" target="content">Way-finding</a></li>
+            <li><a href="./text/main/guide3.html" target="content">Posts</a></li>
+          </ul>
         </li>
         <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Contents<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="./text/main/contents.html" target="content">List of Posts, Approaches, Themes</a></li>
+            <li><a href="./text/main/contents.html" target="content">List of Posts</a></li>
             <li><a href="./text/main/approaches/approaches-Main.html" target="content">Explanation of Approaches</a></li>
             <li><a href="./text/main/themes/themes-Main.html" target="content">Explanation of Themes</a></li>
+            <li><a href="./text/main/pairings/auto-pairings.html" target="content">Explanation of Emergent Pairings</a></li>
             <li><a href="./text/main/pairings/a-s-pairings.html" target="content">Explanation of Author-Supplied Pairings</a></li>
           </ul>
         </li>
@@ -47,7 +48,7 @@
             <li><a href="http://inhabitingtheanthropocene.com" target="_blank">Original blog</a></li>
           </ul>
         </li>
-<li><a href="http://inhabitingtheanthropocene.com/habitation-in-the-anthropocene/" target="_blank">Comment</a></li>
+        <li><a href="./text/main/comments.html" target="content">Comment</a></li>
       </ul>
     </div>
   </div>
@@ -60,18 +61,20 @@
         <nav class="navbar navbar-inverse">
           <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#internalnav" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                <a class="navbar-brand" href="./text/main/pairings/a-s-pairings.html" target="content">Author-Supplied Pairings View</a> 
-            </div>
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#internalnav" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+              <a class="navbar-brand" href="./text/main/pairings/a-s-pairings.html" target="content"><font color="#FFFFFF">Author-Supplied Pairings View</font></a> </div>
             <div id="internalnav" class="collapse navbar-collapse">
               <ul class="nav navbar-nav navbar-right">
                 <li><a onclick="RedrawGraph()">Redraw Graph</a></li>
                 <li><a onclick="SelectRandom()">Random Post</a></li>
                 <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Select a View <span class="caret"></span></a>
                   <ul class="dropdown-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="ITA_Vis-contents.html">Contents</a></li>
                     <li><a href="ITA_Vis-approach.html">Approaches</a></li>
                     <li><a href="ITA_Vis-themes.html">Themes</a></li>
-                    <li><a href="ITA_Vis-author-pairings.html">Author-Supplied Pairings</a></li>
+                    <li><a href="ITA_Vis-auto-pairings.html">Emergent Pairings</a></li>
+                    <li><a href="ITA_Vis-author-pairings.html"><em>Author-Supplied Pairings</em></a></li>
                     <li><a href="ITA_Vis-chrono.html">Chronological</a></li>
                     <!--li><a href="ITA_Vis-views.html">Views</a></li-->
                   </ul>
@@ -82,10 +85,10 @@
         </nav>
       </div>
       <div class="legend shadow"> <em>Key to  Elements in Author-Supplied Pairings View</em>
-          <iframe src="./text/legends/pairings.html" name="legend" frameborder="0" id="legend"></iframe>
+        <iframe src="./text/legends/author-pairings_legend.html" name="legend" frameborder="0" id="legend"></iframe>
       </div>
       <div class="comments shadow"> <em>Comments</em>
-        <iframe src="./text/legends/authors-by-approach.html" name="comments" frameborder="0" id="comments"></iframe>
+        <iframe src="./text/comments/author_comment.html" name="comments" frameborder="0" id="comments"></iframe>
       </div>
     </div>
   </div>

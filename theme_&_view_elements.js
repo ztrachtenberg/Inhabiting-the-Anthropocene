@@ -67,12 +67,7 @@ var BlogEles = {
         { data: { source: 'A', target: 'An', AuthColor: 'red', width: 5, Arrow: 'none' } },
         { data: { source: 'L', target: 'Lp', AuthColor: 'red', width: 5, Arrow: 'none' } },
         { data: { source: 'L', target: 'Lm', AuthColor: 'red', width: 5, Arrow: 'none' } },
-	//View-view edges
-//        { data: { source: 'Hc', target: 'Hr', AuthColor: 'purple', width: 5, Arrow: 'none' } },
-//        { data: { source: 'Fh', target: 'Fd', AuthColor: 'red', width: 5, Arrow: 'none' } },
-//        { data: { source: 'Ax', target: 'An', AuthColor: 'green', width: 5, Arrow: 'none' } },
-//        { data: { source: 'Lp', target: 'Lm', AuthColor: 'pink', width: 5, Arrow: 'none' } },
-		
+
     //Post-view edges
     //Theme 1
         { data: { source: '1', target: 'Ax', AuthColor: 'red', width: 5, Arrow: 'none' } },

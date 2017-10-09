@@ -84,22 +84,6 @@ var BlogEles = {
         { data: { source: '31', target: 'D', AuthColor: '#AF923C', width: 5, Arrow: 'none', style: 'dotted', href: 'text/post1.html', comment: 'From discipline' } },
         { data: { source: '32', target: 'I', AuthColor: '#9C3655', width: 5, Arrow: 'none', style: 'dotted', href: 'text/post1.html', comment: 'From discipline' } },
         { data: { source: '36', target: 'D', AuthColor: '#AF923C', width: 5, Arrow: 'none', style: 'dotted', href: 'text/post1.html', comment: 'From discipline' } },
-    //Secondary approach edges
-    //black edges
-//        { data: { source: '13', target: 'D', AuthColor: 'black', width: 5, Arrow: 'none', style: 'dotted', href: 'text/post1.html', comment: ' ' } },
-//        { data: { source: '14', target: 'N', AuthColor: 'black', width: 5, Arrow: 'none', style: 'dotted', href: 'text/post1.html', comment: ' ' } },
-//        { data: { source: '17', target: 'N', AuthColor: 'black', width: 5, Arrow: 'none', style: 'dotted', href: 'text/post1.html', comment: ' ' } },
-//        { data: { source: '18', target: 'I', AuthColor: 'black', width: 5, Arrow: 'none', style: 'dotted', href: 'text/post1.html', comment: ' ' } },
-//        { data: { source: '22', target: 'I', AuthColor: 'black', width: 5, Arrow: 'none', style: 'dotted', href: 'text/post1.html', comment: ' ' } },
-//        { data: { source: '23', target: 'N', AuthColor: 'black', width: 5, Arrow: 'none', style: 'dotted', href: 'text/post1.html', comment: ' ' } },
-//        { data: { source: '25', target: 'D', AuthColor: 'black', width: 5, Arrow: 'none', style: 'dotted', href: 'text/post1.html', comment: ' ' } },
-//        { data: { source: '26', target: 'P', AuthColor: 'black', width: 5, Arrow: 'none', style: 'dotted', href: 'text/post1.html', comment: ' ' } },
-//        { data: { source: '27', target: 'N', AuthColor: 'black', width: 5, Arrow: 'none', style: 'dotted', href: 'text/post1.html', comment: ' ' } },
-//        { data: { source: '28', target: 'I', AuthColor: 'black', width: 5, Arrow: 'none', style: 'dotted', href: 'text/post1.html', comment: ' ' } },
-//        { data: { source: '29', target: 'D', AuthColor: 'black', width: 5, Arrow: 'none', style: 'dotted', href: 'text/post1.html', comment: ' ' } },
-//        { data: { source: '31', target: 'I', AuthColor: 'black', width: 5, Arrow: 'none', style: 'dotted', href: 'text/post1.html', comment: ' ' } },
-//        { data: { source: '32', target: 'D', AuthColor: 'black', width: 5, Arrow: 'none', style: 'dotted', href: 'text/post1.html', comment: ' ' } },
-//        { data: { source: '36', target: 'P', AuthColor: 'black', width: 5, Arrow: 'none', style: 'dotted', href: 'text/post1.html', comment: ' ' } }
     //author color edges
         { data: { source: '13', target: 'D', AuthColor: '#C2627F', width: 5, Arrow: 'none', style: 'dotted', href: 'text/post1.html', comment: 'Found in post' } },
         { data: { source: '14', target: 'N', AuthColor: '#585898', width: 5, Arrow: 'none', style: 'dotted', href: 'text/post1.html', comment: 'Found in post' } },

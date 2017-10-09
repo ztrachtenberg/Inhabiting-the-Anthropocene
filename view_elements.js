@@ -43,11 +43,7 @@ var BlogEles = {
         { data: { id: '31', name: 'Habitability as a commons: Fearing a tragedy of human(ized) nature', href: 'http://sma.ztclasses.com/post31.html', color: '#FFFF00', weight:60 } },
         { data: { id: '32', name: 'Toward a More Than Human Anthropocene', href: 'http://sma.ztclasses.com/post32.html', color: '#0000FF', weight:60 } },
         { data: { id: '36', name: 'The Dust of Civilization', href: 'http://sma.ztclasses.com/post36.html', color: '#FFFF00', weight:60 } },
-	//Theme nodes
-//	    { data: { id: 'H', name: 'History', color: '#9900FF', weight:40 } },
-//		{ data: { id: 'F', name: 'Future', color: '#996633', weight:40 } },
-//		{ data: { id: 'A', name: 'Agency', color: '#009999', weight:40 } },
-//		{ data: { id: 'L', name: 'Limits', color: '#FF99CC', weight:40 } },
+
 	//View nodes
 		{ data: { id: 'Hc', name: 'Complex', color: '#7A00CC', weight:120 } },
 		{ data: { id: 'Fh', name: 'Hope', color: '#7A5229', weight:120 } },
@@ -59,15 +55,6 @@ var BlogEles = {
 		{ data: { id: 'Lm', name: 'Moral', color: '#FFB8DB', weight:120 } }
 	],	
     edges: [
-    //Theme-view edges
-//    	{ data: { source: 'H', target: 'Hc', AuthColor: 'red', width: 5, Arrow: 'none' } },
-//      { data: { source: 'H', target: 'Hr', AuthColor: 'red', width: 5, Arrow: 'none' } },
-//        { data: { source: 'F', target: 'Fh', AuthColor: 'red', width: 5, Arrow: 'none' } },
-//        { data: { source: 'F', target: 'Fd', AuthColor: 'red', width: 5, Arrow: 'none' } },
-//        { data: { source: 'A', target: 'Ax', AuthColor: 'red', width: 5, Arrow: 'none' } },
-//        { data: { source: 'A', target: 'An', AuthColor: 'red', width: 5, Arrow: 'none' } },
-//        { data: { source: 'L', target: 'Lp', AuthColor: 'red', width: 5, Arrow: 'none' } },
-//        { data: { source: 'L', target: 'Lm', AuthColor: 'red', width: 5, Arrow: 'none' } },
 	//View-view edges
         { data: { source: 'Hc', target: 'Hr', AuthColor: 'purple', width: 5, Arrow: 'none' } },
         { data: { source: 'Fh', target: 'Fd', AuthColor: 'red', width: 5, Arrow: 'none' } },

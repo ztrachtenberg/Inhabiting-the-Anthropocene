@@ -1,9 +1,3 @@
-// MOVE AWAY FROM COLOR IN THIS VIEW--WANT TO ASSOCIATE POST NODE COLOR TO THEME COLOR--BUT THAT'S WRONG
-// MOVE TO SHAPE, WITH SHADES OF GRAY--OR, FOUR DIFFERENT SHAPES
-// FOR EDGES--IDEAL TO HAVE 8 STYLES TO PICK OUT 8 VIEWS--MAYBE 4 SHADES OF GRAY X DOTS AND DASHES?
-//GRAY = #bdbdbd
-
-
 //Design notes
 //Node size
 //--Theme nodes largest, like Approach nodes in approach_elements
@@ -103,37 +97,5 @@ var BlogEles = {
         { data: { source: 'AC2', target: 'L', AuthColor: '#737373', width: 3, Arrow: 'none', style: 'solid', comment: 'Physical', href: 'text/edges/themes/Lp.html' } },
         { data: { source: 'NT2', target: 'L', AuthColor: '#737373', width: 3, Arrow: 'none', style: 'dashed', comment: 'Moral', href: 'text/edges/themes/Lm.html' } },
         { data: { source: 'LS2', target: 'A', AuthColor: '#737373', width: 3, Arrow: 'none', style: 'solid', comment: 'Exceptional', href: 'text/edges/themes/Ax.html' } }
-    //Theme 1 edges COLOR
-//        { data: { source: '1', target: 'A', AuthColor: '#42155A', width: 3, Arrow: 'none' } },
-//        { data: { source: '4', target: 'A', AuthColor: '#42155A', width: 3, Arrow: 'none' } },
-//        { data: { source: '13', target: 'H', AuthColor: '#FFD2AC', width: 3, Arrow: 'none' } },
-//        { data: { source: '14', target: 'L', AuthColor: '#6B9E9E', width: 3, Arrow: 'none' } },
-//        { data: { source: '17', target: 'A', AuthColor: '#9B79AF', width: 3, Arrow: 'none' } },
-//        { data: { source: '18', target: 'H', AuthColor: '#874B19', width: 3, Arrow: 'none' } },
-//        { data: { source: '22', target: 'A', AuthColor: '#42155A', width: 3, Arrow: 'none' } },
-//        { data: { source: '23', target: 'L', AuthColor: '#0F5151', width: 3, Arrow: 'none' } },
-//        { data: { source: '25', target: 'L', AuthColor: '#6B9E9E', width: 3, Arrow: 'none' } },
-//        { data: { source: '26', target: 'A', AuthColor: '#42155A', width: 3, Arrow: 'none' } },
-//        { data: { source: '27', target: 'L', AuthColor: '#6B9E9E', width: 3, Arrow: 'none' } },
-//        { data: { source: '28', target: 'A', AuthColor: '#42155A', width: 3, Arrow: 'none' } },
-//        { data: { source: '29', target: 'H', AuthColor: '#FFD2AC', width: 3, Arrow: 'none' } },
-//        { data: { source: '31', target: 'F', AuthColor: '#878719', width: 3, Arrow: 'none' } },
-//        { data: { source: '32', target: 'A', AuthColor: '#9B79AF', width: 3, Arrow: 'none' } },
-//        { data: { source: '36', target: 'F', AuthColor: '#D9D96E', width: 3, Arrow: 'none' } },
-    //Theme 2 edges COLOR
-//        { data: { source: '4', target: 'H', AuthColor: '#874B19', width: 3, Arrow: 'none' } },
-//        { data: { source: '14', target: 'H', AuthColor: '#874B19', width: 3, Arrow: 'none' } },
-//        { data: { source: '17', target: 'H', AuthColor: '#FFD2AC', width: 3, Arrow: 'none' } },
-//        { data: { source: '18', target: 'A', AuthColor: '#42155A', width: 3, Arrow: 'none' } },
-//        { data: { source: '22', target: 'H', AuthColor: '#874B19', width: 3, Arrow: 'none' } },
-//        { data: { source: '23', target: 'F', AuthColor: '#D9D96E', width: 3, Arrow: 'none' } },
-//        { data: { source: '25', target: 'A', AuthColor: '#42155A', width: 3, Arrow: 'none' } },
-//        { data: { source: '26', target: 'F', AuthColor: '#D9D96E', width: 3, Arrow: 'none' } },
-//        { data: { source: '27', target: 'F', AuthColor: '#878719', width: 3, Arrow: 'none' } },
-//        { data: { source: '28', target: 'H', AuthColor: '#874B19', width: 3, Arrow: 'none' } },
-//        { data: { source: '29', target: 'F', AuthColor: '#878719', width: 3, Arrow: 'none' } },
-//        { data: { source: '31', target: 'L', AuthColor: '#0F5151', width: 3, Arrow: 'none' } },
-//        { data: { source: '32', target: 'L', AuthColor: '#6B9E9E', width: 3, Arrow: 'none' } },
-//        { data: { source: '36', target: 'A', AuthColor: '#42155A', width: 3, Arrow: 'none' } }
     ]
 }

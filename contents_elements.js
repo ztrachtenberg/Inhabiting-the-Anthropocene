@@ -44,12 +44,6 @@
 var BlogEles = {
     nodes: [
 
-//Theme nodes
-//	    { data: { id: 'H', label: 'H', preview: 'text/comments/previews/H-bio.html', name: 'History', href: 'text/main/themes/themes-H.html', color: '#737373', weight:60, faveShape: 'triangle'  } },
-//		{ data: { id: 'F', label: 'F', preview: 'text/comments/previews/F-bio.html', name: 'Future', href: 'text/main/themes/themes-F.html', color: '#737373', weight:60, faveShape: 'rectangle'  } },
-//		{ data: { id: 'A', label: 'A', preview: 'text/comments/previews/A-bio.html', name: 'Agency', href: 'text/main/themes/themes-A.html', color: '#737373', weight:60, faveShape: 'pentagon'  } },
-//		{ data: { id: 'L', label: 'L', preview: 'text/comments/previews/L-bio.html', name: 'Limits', href: 'text/main/themes/themes-L.html', color: '#737373', weight:60, faveShape: 'hexagon'  } },
-
 //Post nodes
         { data: { id: 'AC1', label: 'AC1', bio: 'text/legends/bios/AC.html', preview:  'text/comments/previews/AC1.html', name: '"A Safe Operating Space for Humanity"', href: 'text/posts/AC1.html', color: '#D9BE6E', weight:55, faveShape: 'ellipse', chrono: 'yes' } },
         { data: { id: 'AC2', label: 'AC2', bio: 'text/legends/bios/AC.html', preview:  'text/comments/previews/AC2.html', name: 'Habitability as a commons: Fearing a tragedy of human(ized) nature', href: 'text/posts/AC2.html', color: '#D9BE6E', weight:55, faveShape: 'ellipse', chrono: 'yes'} },

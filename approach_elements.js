@@ -81,22 +81,7 @@ var BlogEles = {
         { data: { source: 'AC2', target: 'D', AuthColor: '#AF923C', width: 3, Arrow: 'none', style: 'solid', comment: 'From discipline' } },
         { data: { source: 'NT2', target: 'I', AuthColor: '#9C3555', width: 3, Arrow: 'none', style: 'solid', comment: 'From discipline' } },
         { data: { source: 'LS2', target: 'D', AuthColor: '#AF923C', width: 3, Arrow: 'none', style: 'solid', comment: 'From discipline' } },
-    //Secondary approach edges
-    //black edges
-//        { data: { source: '13', target: 'D', AuthColor: 'black', width: 3, Arrow: 'none', style: 'dotted', comment: ' ' } },
-//        { data: { source: '14', target: 'N', AuthColor: 'black', width: 3, Arrow: 'none', style: 'dotted', comment: ' ' } },
-//        { data: { source: '17', target: 'N', AuthColor: 'black', width: 3, Arrow: 'none', style: 'dotted', comment: ' ' } },
-//        { data: { source: '18', target: 'I', AuthColor: 'black', width: 3, Arrow: 'none', style: 'dotted', comment: ' ' } },
-//        { data: { source: '22', target: 'I', AuthColor: 'black', width: 3, Arrow: 'none', style: 'dotted', comment: ' ' } },
-//        { data: { source: '23', target: 'N', AuthColor: 'black', width: 3, Arrow: 'none', style: 'dotted', comment: ' ' } },
-//        { data: { source: '25', target: 'D', AuthColor: 'black', width: 3, Arrow: 'none', style: 'dotted', comment: ' ' } },
-//        { data: { source: '26', target: 'P', AuthColor: 'black', width: 3, Arrow: 'none', style: 'dotted', comment: ' ' } },
-//        { data: { source: '27', target: 'N', AuthColor: 'black', width: 3, Arrow: 'none', style: 'dotted', comment: ' ' } },
-//        { data: { source: '28', target: 'I', AuthColor: 'black', width: 3, Arrow: 'none', style: 'dotted', comment: ' ' } },
-//        { data: { source: '29', target: 'D', AuthColor: 'black', width: 3, Arrow: 'none', style: 'dotted', comment: ' ' } },
-//        { data: { source: '31', target: 'I', AuthColor: 'black', width: 3, Arrow: 'none', style: 'dotted', comment: ' ' } },
-//        { data: { source: '32', target: 'D', AuthColor: 'black', width: 3, Arrow: 'none', style: 'dotted', comment: ' ' } },
-//        { data: { source: '36', target: 'P', AuthColor: 'black', width: 3, Arrow: 'none', style: 'dotted', comment: ' ' } }
+
     //author color edges
         { data: { source: 'AR1', target: 'D', AuthColor: '#AF923C', width: 3, Arrow: 'none', style: 'dashed', comment: 'Found in post' } },
         { data: { source: 'MW1', target: 'N', AuthColor: '#649C35', width: 3, Arrow: 'none', style: 'dashed', comment: 'Found in post' } },

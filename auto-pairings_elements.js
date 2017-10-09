@@ -1,9 +1,3 @@
-// MOVE AWAY FROM COLOR IN THIS VIEW--WANT TO ASSOCIATE POST NODE COLOR TO THEME COLOR--BUT THAT'S WRONG
-// MOVE TO SHAPE, WITH SHADES OF GRAY--OR, FOUR DIFFERENT SHAPES
-// FOR EDGES--IDEAL TO HAVE 8 STYLES TO PICK OUT 8 VIEWS--MAYBE 4 SHADES OF GRAY X DOTS AND DASHES?
-//GRAY = #bdbdbd
-
-
 //Design notes
 //Node size
 //--Theme nodes largest, like Approach nodes in approach_elements
@@ -43,12 +37,6 @@
 
 var BlogEles = {
     nodes: [
-
-//Theme nodes
-//	    { data: { id: 'H', label: 'H', preview: 'text/comments/previews/H-bio.html', name: 'History', href: 'text/main/themes/themes-H.html', color: '#737373', weight:60, faveShape: 'triangle'  } },
-//		{ data: { id: 'F', label: 'F', preview: 'text/comments/previews/F-bio.html', name: 'Future', href: 'text/main/themes/themes-F.html', color: '#737373', weight:60, faveShape: 'rectangle'  } },
-//		{ data: { id: 'A', label: 'A', preview: 'text/comments/previews/A-bio.html', name: 'Agency', href: 'text/main/themes/themes-A.html', color: '#737373', weight:60, faveShape: 'pentagon'  } },
-//		{ data: { id: 'L', label: 'L', preview: 'text/comments/previews/L-bio.html', name: 'Limits', href: 'text/main/themes/themes-L.html', color: '#737373', weight:60, faveShape: 'hexagon'  } },
 
 //Post nodes
         { data: { id: 'ZT1', label: 'ZT1', bio: 'text/legends/bios/ZT.html', preview:  'text/comments/previews/ZT1.html', name: 'Of Property', href: 'text/posts/ZT1.html', color: '#8DC162', weight:55, faveShape: 'ellipse' } },

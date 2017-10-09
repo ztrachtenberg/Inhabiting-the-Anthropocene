@@ -46,13 +46,6 @@ var BlogEles = {
         { data: { id: 'N', label: 'Normative', name: 'Normative', href: '', color: '#649C35', weight: 45, faveShape: 'roundrectangle', parent: 'L', filter: 'yes' }, position: { x: 1000, y: 550 }, locked: true },
 		{ data: { id: 'P', label: 'Practical', name: 'Practical', href: '', color: '#36367A', weight: 45, faveShape: 'roundrectangle', parent: 'L', filter: 'yes' }, position: { x: 1000, y: 600 }, locked: true },
 
-
-//Approach nodes
-//        { data: { id: 'D', label: 'D', bio: 'text/legends/bios/D-bio.html', name: 'Descriptive', href: 'text/main/approaches/approaches-D.html', color: '#AF923C', weight:60, faveShape: 'roundrectangle' } },
-//		{ data: { id: 'I', label: 'I', bio: 'text/legends/bios/I-bio.html', name: 'Interpretive', href: 'text/main/approaches/approaches-I.html', color: '#9C3555', weight:60, faveShape: 'roundrectangle' } },
-//		{ data: { id: 'N', label: 'N', bio: 'text/legends/bios/N-bio.html', name: 'Normative', href: 'text/main/approaches/approaches-N.html', color: '#649C35', weight:60, faveShape: 'roundrectangle' } },
-//		{ data: { id: 'P', label: 'P', bio: 'text/legends/bios/P-bio.html', name: 'Practical', href: 'text/main/approaches/approaches-P.html', color: '#36367A', weight:60, faveShape: 'roundrectangle' } },
-
 //Post nodes
         { data: { id: 'ZT1', label: 'ZT1', bio: 'text/legends/bios/ZT.html', name: 'Of Property', href: 'text/posts/ZT1.html', color: '#8DC162', weight:55, faveShape: 'ellipse' } },
         { data: { id: 'KG1', label: 'KG1', bio: 'text/legends/bios/KG.html', name: 'Organisms as Ecosystem Engineers', href: 'text/posts/KG1.html', color: '#FFEAAC', weight:55, faveShape: 'ellipse' } },

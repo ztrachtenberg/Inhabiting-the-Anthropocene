@@ -38,16 +38,13 @@
 
 var BlogEles = {
     nodes: [
-    // Select Random
-    //    { data: { id: 'Rand', label: 'Select Random', name: 'Select Random', href: 'www.google.com', color: '#808080', weight: 45, faveShape: 'roundrectangle', filter: 'yes' }, position: { x: 50, y: 500}, locked: true },
-
     //Approach nodes
         { data: { id: 'D', label: 'D', bio: 'text/legends/bios/D-bio.html', name: 'Descriptive', href: 'text/main/approaches/approaches-D.html', color: '#AF923C', weight:60, faveShape: 'roundrectangle', home: 'yes' } },
 		{ data: { id: 'I', label: 'I', bio: 'text/legends/bios/I-bio.html', name: 'Interpretive', href: 'text/main/approaches/approaches-I.html', color: '#9C3555', weight:60, faveShape: 'roundrectangle', home: 'yes' } },
 		{ data: { id: 'N', label: 'N', bio: 'text/legends/bios/N-bio.html', name: 'Normative', href: 'text/main/approaches/approaches-N.html', color: '#649C35', weight:60, faveShape: 'roundrectangle', home: 'yes' } },
 		{ data: { id: 'P', label: 'P', bio: 'text/legends/bios/P-bio.html', name: 'Practical', href: 'text/main/approaches/approaches-P.html', color: '#36367A', weight:60, faveShape: 'roundrectangle', home: 'yes' } },
 
-//Theme nodes
+    //Theme nodes
 	    { data: { id: 'H', label: 'H', bio: 'text/legends/bios/H-bio.html', name: 'History', href: 'text/main/themes/themes-H.html', color: '#737373', weight:60, faveShape: 'triangle', home: 'yes'  } },
 		{ data: { id: 'F', label: 'F', bio: 'text/legends/bios/F-bio.html', name: 'Future', href: 'text/main/themes/themes-F.html', color: '#737373', weight:60, faveShape: 'rectangle', home: 'yes'  } },
 		{ data: { id: 'A', label: 'A', bio: 'text/legends/bios/A-bio.html', name: 'Agency', href: 'text/main/themes/themes-A.html', color: '#737373', weight:60, faveShape: 'pentagon', home: 'yes'  } },
